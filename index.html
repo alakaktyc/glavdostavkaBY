@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Title</title>
+</head>
+<body>
+<header class="header">
+    <div class="container flex-wrap header__container">
+
+        <div class="logo-box">
+            <a class="logo-box__link"><img src="assets/img/logo.svg" alt=""></a>
+        </div>
+
+
+        <div class="search-box">
+            <form class="search-form" action="">
+                <input type="search" placeholder="Введите текст">
+                <button class="search-form__btn"><img src="assets/img/icons/icon_search.svg" alt=""></button>
+            </form>
+        </div>
+
+        <div class="working-hours">
+            <img src="assets/img/icons/icon_time.svg" alt="">
+            <span class="working-hours__content">
+                <span class="working-hours__text">Пн-Пт с 08.30-18.00</span>
+                <span>Время работы контакт-центра</span>
+            </span>
+        </div>
+
+        <div class="calling-box">
+            <img src="assets/img/icons/icon_phone.svg" alt="">
+            <span class="calling-box__content">
+                <a href="tel:+375173362424" class="calling-box__text">+375 (17) <span
+                        class="calling-box__text calling-box__text--big">336-24-24</span></a>
+                <a class="calling-box__link">Заказать звонок</a>
+            </span>
+        </div>
+    </div>
+
+    <div class="menu-btn">
+        <input type="checkbox"/>
+        <span class="line--first"></span>
+        <span class="line--second"></span>
+        <span class="line--third"></span>
+    </div>
+
+    <nav class="navigation-box">
+        <ul class="main-menu main-menu_top">
+            <li><a href="">услуги</a></li>
+            <li><a href="">тарифы</a></li>
+            <li><a href="">акции</a></li>
+            <li><a href="">документы</a></li>
+            <li><a href="">способы оплаты</a></li>
+            <li><a href="">контакты</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+
+<main>
+    <section class="main-slider">
+        <h1>перевозки по беларуси</h1>
+        <div class="wrapper">
+
+
+            <div class="main-slider__item">
+                <figure class="slide active">
+                    <img src="assets/img/bg/slide-1_glavdostavka.jpg" alt="">
+
+                    <figcaption>
+                        <h2 class="slide__title">Доставка в любой регион РБ бесплатно!</h2>
+                        <p class="slide__text">Подробности уточняйте в разделе «ДОСТАВКА»</p>
+                    </figcaption>
+
+                </figure>
+
+                <!--<figure class="slide">
+                    <img src="assets/img/bg/slide-2_glavdostavka.jpg" alt="">
+
+                    <figcaption>
+                        <div class="container">
+                            <h2 class="slide__title">Доставка в любой регион РБ бесплатно!</h2>
+                            <p class="slide__text">Подробности уточняйте в разделе «ДОСТАВКА»</p>
+                        </div>
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="slide">
+                    <img src="assets/img/bg/slide-3_glavdostavka.jpg" alt="">
+
+                    <figcaption>
+                        <div class="container">
+                            <h2 class="slide__title">Доставка в любой регион РБ бесплатно!</h2>
+                            <p class="slide__text">Подробности уточняйте в разделе «ДОСТАВКА»</p>
+                        </div>
+                    </figcaption>
+
+                </figure>
+
+                <ul class="main-slider__control">
+                </ul>-->
+
+            </div>
+
+            <div class="calculator">
+                <form class="calculator-form" action="">
+                    <h3>рассчитать перевозку</h3>
+
+                    <div class="calculator-form__inner">
+                        <div class="calculator-form__cities">
+                            <label class="calculator-form__label calculator-form__label--longest">
+                                Город отправления
+                                <input class="calculator-form__input" type="text" value="Минск">
+                            </label>
+                            <label class="calculator-form__label calculator-form__label--longest">
+                                Город доставки
+                                <input class="calculator-form__input" type="text" value="Минск">
+                            </label>
+                            <button class="btn-reverse" type="button"><img src="assets/img/icons/icon_arrows.svg"
+                                                                           alt=""></button>
+                        </div>
+
+
+                        <div class="calculator-form__cargo">
+                            <label class="calculator-form__label">
+                                Вес
+                                <input class="calculator-form__input" type="text" value="0.3" maxlength="4">
+                                <span class="calculator-form__label-measure">кг</span>
+                            </label>
+                            <label class="calculator-form__label">
+                                Объём
+                                <input class="calculator-form__input" type="text" value="0.8" maxlength="4">
+                                <span class="calculator-form__label-measure">м<sup>3</sup></span>
+                            </label>
+                            <label class="calculator-form__label calculator-form__label--longer">
+                                Габариты
+                                <span class="calculator-form__inputs-row">
+                        <input class="calculator-form__input" type="text" value="0.3" maxlength="4">
+                        <span>x</span>
+                        <input class="calculator-form__input" type="text" value="0.3" maxlength="4">
+                        <span>x</span>
+                        <input class="calculator-form__input" type="text" value="0.3" maxlength="4">
+                    </span>
+                                <span class="calculator-form__label-info">Длина х Ширина х Высота</span>
+                                <span class="calculator-form__label-measure">м</span>
+                            </label>
+                            <label class="calculator-form__label">
+                                Кол-во груза
+                                <span class="btn-arrow btn-arrow--left">-</span>
+                                <input class="calculator-form__input calculator-form__input--indent" type="number"
+                                       value="1">
+                                <span class="btn-arrow btn-arrow--right">+</span>
+                                <span class="calculator-form__label-measure">шт</span>
+                            </label>
+
+                            <div class="controls-cargo">
+                                <button class="controls-cargo__btn controls-cargo__btn--white" type="button">-</button>
+                                <button class="controls-cargo__btn" type="button">+</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <label class="calculator-form-main__checkbox checkbox">
+                        <input type="checkbox">
+                        <span></span>
+                        Самостоятельно привезу груз на склад
+                    </label>
+
+                    <div class="date-box">
+
+                        <div class="date-box__item">
+                            <label class="calculator-form__label calculator-form__label--longest">
+                                <input class="calculator-form__input" type="date" value="2020-05-20">
+                                <span class="date-box__text"> &#8212; дата забора</span>
+                            </label>
+                        </div>
+
+
+                        <div class="date-box__item">
+                            <span class="date-box__text date-box__text--bold">30.05.2020</span>
+                            <span class="date-box__text"> &#8212; дата доставки</span>
+                        </div>
+
+                    </div>
+
+                    <div class="btn-box">
+                        <button class="btn btn--top btn--transparent">рассчитать</button>
+                        <button class="btn btn--top">оформить заявку</button>
+                    </div>
+
+                </form>
+                <div class="calculator-price">150 BYN с НДС</div>
+
+
+            </div>
+        </div>
+    </section>
+</main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
