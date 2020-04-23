@@ -15,6 +15,12 @@
   # Content 480px
   --------------------------------------------------------------*/
 
+
+  .services {
+    &__item {
+      width: calc(100%/2 - 10px);
+    }
+  }
   /*--------------------------------------------------------------
   # Footer 480px
   --------------------------------------------------------------*/
@@ -32,7 +38,7 @@
   # Header 576px
   --------------------------------------------------------------*/
   .header {
-    .working-hours,
+    .schedule-box,
     .calling-box {
       margin-left: auto;
     }
@@ -62,6 +68,11 @@
   # Content 640px
   --------------------------------------------------------------*/
 
+  .services {
+    &__item {
+      width: calc(100%/3 - 10px);
+    }
+  }
   /*--------------------------------------------------------------
   # Footer 640px
   --------------------------------------------------------------*/
@@ -145,7 +156,11 @@
   /*--------------------------------------------------------------
   # Typography 920px
   --------------------------------------------------------------*/
-
+  h1 {
+    margin: 10px 10px;
+    font-size: 40px;
+    line-height: 64px;
+  }
   /*--------------------------------------------------------------
   # Header 920px
   --------------------------------------------------------------*/
@@ -157,6 +172,7 @@
   /*--------------------------------------------------------------
   # Content 920px
   --------------------------------------------------------------*/
+
   .main-slider__item {
     position: relative;
     height: 720px;
@@ -165,17 +181,40 @@
     img {
       height: 720px;
     }
+    figcaption {
+      left: 0;
+      transform: translate(2%, -50%);
+      max-width: 380px;
+      text-align: justify;
+      .slide__title {
+        font-size: 30px;
+        line-height: 34px;
+        text-align: left;
+      }
+    }
   }
+
+
+
+  .wrapper {
+    top: 84px;
+    min-width: 1280px;
+    position: absolute;
+  }
+
   .calculator {
     position: absolute;
     top: 0;
-    right: 0;
+    left: calc(100vw/2 - 60px);
     max-width: 520px;
     border-radius: 0 0 20px 20px;
-    &-form__label {
+  }
+
+  .form {
+    &__label {
       width: 75px;
     }
-    &-form__input.calculator-form__input--indent {
+    &__input.form__input--indent {
       padding: 5px 20px;
     }
   }
@@ -195,6 +234,12 @@
 
   .date-box__item {
     margin-top: 0;
+  }
+
+  .services {
+    &__item {
+      width: calc(100%/3 - 30px);
+    }
   }
 
   /*--------------------------------------------------------------
@@ -226,6 +271,15 @@
   # Content 1152px
   --------------------------------------------------------------*/
 
+  .calculator {
+    right: 3%;
+  }
+
+  .services {
+    &__item {
+      width: calc(100%/4 - 10px);
+    }
+  }
   /*--------------------------------------------------------------
   # Footer 1152px
   --------------------------------------------------------------*/
@@ -240,6 +294,9 @@
   .container {
     width: 100%;
   }
+  .flex-wrap {
+    justify-content: space-between;
+  }
 
   /*--------------------------------------------------------------
   # Header 1280px
@@ -248,7 +305,7 @@
     &__container div {
       margin: 0;
     }
-    .working-hours,
+    .schedule-box,
     .calling-box {
       margin-left: 0;
     }
@@ -260,12 +317,37 @@
     display: block;
   }
 
-  .search-form {
+  .search-form input[type="search"] {
     width: 283px;
   }
+
   /*--------------------------------------------------------------
   # Content 1280px
   --------------------------------------------------------------*/
+  .slide {
+    figcaption {
+      left: 200px;
+      transform: translate(0%, -50%);
+      max-width: 320px;
+      text-align: left;
+      .slide__title {
+        font-size: 30px;
+        line-height: 34px;
+      }
+    }
+  }
+
+  .calculator {
+    /*margin-right: calc(100vw/3);*/
+    right: 0;
+  }
+
+  .services {
+    &__item {
+      margin: 0;
+      width: 240px;
+    }
+  }
 
   /*--------------------------------------------------------------
   # Footer 1280px
@@ -287,7 +369,19 @@
   /*--------------------------------------------------------------
   # Content 1440px
   --------------------------------------------------------------*/
-
+  .slide {
+    figcaption {
+      max-width: 550px;
+      .slide__title {
+        font-size: 38px;
+        line-height: 47px;
+      }
+      .slide__text {
+        font-size: 20px;
+        line-height: 22px;
+      }
+    }
+  }
   /*--------------------------------------------------------------
   # Footer 1440px
   --------------------------------------------------------------*/

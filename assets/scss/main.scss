@@ -3,6 +3,9 @@
 /*--------------------------------------------------------------
 # main-slider *
 --------------------------------------------------------------*/
+main {
+  position: relative;
+}
 .wrapper {
   position: relative;
 }
@@ -63,7 +66,7 @@
     transform: translate(-50%, -50%);
     text-align: center;
     .slide__title {
-      max-width: 541px;
+      /*max-width: 541px;*/
       font-family: 'Effra', 'Arial', sans-serif;
       font-style: normal;
       font-weight: bold;
@@ -108,109 +111,117 @@
     color: $basic-color-pink;
     background: #F7F7FF;
   }
-  &-form {
-    width: 90%;
+  &__btn.btn {
+    margin: 15px 0;
+  }
+}
+
+.form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  &__inner {
+    width: calc(100% - 25px);
+  }
+  &__cities {
+    position: relative;
+  }
+  &__cargo {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__label {
+    position: relative;
+    width: 140px;
+    margin-top: 16px;
     display: flex;
     flex-direction: column;
-    &__inner {
-      width: calc(100% - 25px);
+    font-size: 12px;
+    line-height: 20px;
+    color: #F7F7FF;
+    &.form__label--longest {
+      width: 100%;
     }
-    &__cities {
-      position: relative;
+    &.form__label--longer {
+      width: 195px;
     }
-    &__cargo {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    &__label {
-      position: relative;
-      width: 140px;
-      margin-top: 16px;
-      display: flex;
-      flex-direction: column;
+    &-info {
       font-size: 12px;
       line-height: 20px;
-      color: #F7F7FF;
-      &.calculator-form__label--longest {
-        width: 100%;
-      }
-      &.calculator-form__label--longer {
-        width: 195px;
-      }
-      &-info {
-        font-size: 12px;
-        line-height: 20px;
-        color: rgba(247, 247, 255, 0.5);
-      }
-      &-measure {
-        position: absolute;
-        top: 20px;
-        right: 0;
-        padding: 5px 10px;
-        font-size: 15px;
-        line-height: 20px;
-        color: #253746;
-      }
+      color: rgba(247, 247, 255, 0.5);
     }
-    &__input {
-      height: 30px;
+    &-measure {
+      position: absolute;
+      top: 20px;
+      right: 0;
       padding: 5px 10px;
       font-size: 15px;
       line-height: 20px;
       color: #253746;
-      box-sizing: border-box;
-      border: none;
-      border-radius: 5px;
-      background: #F7F7FF;
-      outline: none;
-      &.calculator-form__input--indent {
-        padding: 5px 31px;
-      }
-/*      &::-webkit-calendar-picker-indicator {
-        color: transparent;
-        opacity: 1;
-        background: none;
-        background-size: contain;
-      }*/
     }
-    &__inputs-row {
-      display: flex;
-      border-radius: 5px;
-      background: #F7F7FF;
-      input {
-        width: 30%;
-        padding-left: 0;
-        padding-right: 0;
-        text-align: center;
-      }
-      span {
-        padding: 5px 0;
-        font-size: 15px;
-        line-height: 20px;
-        color: #253746;
-      }
+  }
+  &__input {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #253746;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background: #F7F7FF;
+    outline: none;
+    &.form__input--indent {
+      padding: 5px 31px;
     }
-    &-main__checkbox.checkbox {
-      margin: 13px 0 0;
+    /*      &::-webkit-calendar-picker-indicator {
+            color: transparent;
+            opacity: 1;
+            background: none;
+            background-size: contain;
+          }*/
+  }
+  &__inputs-row {
+    display: flex;
+    border-radius: 5px;
+    background: #F7F7FF;
+    input {
+      width: 30%;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+    }
+    span {
+      padding: 5px 0;
       font-size: 15px;
       line-height: 20px;
-      color: #F7F7FF;
-      input[type="checkbox"]:checked + span:before,
-      input[type="checkbox"]:not(:checked) + span:before {
-        border: 2px solid #fff;
-        background-color: transparent;
-      }
+      color: #253746;
+    }
+  }
+  &-main__checkbox.checkbox {
+    margin: 13px 0 0;
+    font-size: 15px;
+    line-height: 20px;
+    color: #F7F7FF;
+    input[type="checkbox"]:checked + span:before,
+    input[type="checkbox"]:not(:checked) + span:before {
+      border: 2px solid #fff;
+      background-color: transparent;
+    }
 
-      input[type="checkbox"]:checked + span:after,
-      input[type="checkbox"]:not(:checked) + span:after {
-        border-left: 3px solid #fff;
-        border-bottom: 3px solid #fff;
-      }
+    input[type="checkbox"]:checked + span:after,
+    input[type="checkbox"]:not(:checked) + span:after {
+      border-left: 3px solid #fff;
+      border-bottom: 3px solid #fff;
     }
   }
 }
+
+
+
+
 
 .btn-arrow {
    position: absolute;
@@ -242,10 +253,10 @@
   padding-bottom: 30px;
   color: #F7F7FF;
   border-bottom: 4px solid #F7F7FF;
-  .calculator-form__input {
+  .form__input {
     width: 150px;
   }
-  .calculator-form__label {
+  .form__label {
     flex-direction: row;
     align-items: center;
   }
@@ -270,9 +281,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.btn.btn--top {
-  margin: 15px 0;
-}
+
 
 .btn-reverse {
   position: absolute;
@@ -324,3 +333,37 @@
     }
   }
 }
+
+/*--------------------------------------------------------------
+# services *
+--------------------------------------------------------------*/
+.services {
+  background: #F7F7FF;
+  min-height: 420px;
+  &__item {
+    width: 90%;
+    height: 200px;
+    margin: auto auto 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 5px;
+    background: #FFFFFF;
+  }
+  &__title {
+    max-width: 165px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #253746;
+    &.services__title--long {
+      max-width: 170px;
+    }
+  }
+}
+/*--------------------------------------------------------------
+# tariffs *
+--------------------------------------------------------------*/

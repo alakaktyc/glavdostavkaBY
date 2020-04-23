@@ -95,24 +95,42 @@ h6 {
   font-family: 'Effra', 'Arial', sans-serif;
   font-weight: bold;
   font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 h1 {
   margin: 24px 10px;
   font-size: 20px;
   line-height: 24px;
-  text-align: center;
-  text-transform: uppercase;
   color: #253746;
 }
 
 h3 {
+  position: relative;
+  margin: 0 0 14px;
+  padding: 44px 0 10px;
+  font-size: 40px;
+  line-height: 64px;
+  color: #253746;
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 74px;
+    border: 2px solid #EB0045;
+    content: "";
+  }
+}
+
+h4 {
   font-size: 20px;
   line-height: 20px;
-  text-align: center;
-  text-transform: uppercase;
   color: #F7F7FF;
 }
+
 ul {
   list-style: none;
   margin: 0;

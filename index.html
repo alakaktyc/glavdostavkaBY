@@ -22,10 +22,10 @@
             </form>
         </div>
 
-        <div class="working-hours">
+        <div class="schedule-box">
             <img src="assets/img/icons/icon_time.svg" alt="">
-            <span class="working-hours__content">
-                <span class="working-hours__text">Пн-Пт с 08.30-18.00</span>
+            <span class="schedule-box__content">
+                <span class="schedule-box__text">Пн-Пт с 08.30-18.00</span>
                 <span>Время работы контакт-центра</span>
             </span>
         </div>
@@ -64,7 +64,7 @@
 <main>
     <section class="main-slider">
         <h1>перевозки по беларуси</h1>
-        <div class="wrapper">
+
 
 
             <div class="main-slider__item">
@@ -107,56 +107,56 @@
                 </ul>-->
 
             </div>
-
+        <div class="wrapper">
             <div class="calculator">
-                <form class="calculator-form" action="">
-                    <h3>рассчитать перевозку</h3>
+                <form class="form" action="">
+                    <h4>рассчитать перевозку</h4>
 
-                    <div class="calculator-form__inner">
-                        <div class="calculator-form__cities">
-                            <label class="calculator-form__label calculator-form__label--longest">
+                    <div class="form__inner">
+                        <div class="form__cities">
+                            <label class="form__label form__label--longest">
                                 Город отправления
-                                <input class="calculator-form__input" type="text" value="Минск">
+                                <input class="form__input" type="text" value="Минск">
                             </label>
-                            <label class="calculator-form__label calculator-form__label--longest">
+                            <label class="form__label form__label--longest">
                                 Город доставки
-                                <input class="calculator-form__input" type="text" value="Минск">
+                                <input class="form__input" type="text" value="Минск">
                             </label>
                             <button class="btn-reverse" type="button"><img src="assets/img/icons/icon_arrows.svg"
                                                                            alt=""></button>
                         </div>
 
 
-                        <div class="calculator-form__cargo">
-                            <label class="calculator-form__label">
+                        <div class="form__cargo">
+                            <label class="form__label">
                                 Вес
-                                <input class="calculator-form__input" type="text" value="0.3" maxlength="4">
-                                <span class="calculator-form__label-measure">кг</span>
+                                <input class="form__input" type="text" value="0.3" maxlength="4">
+                                <span class="form__label-measure">кг</span>
                             </label>
-                            <label class="calculator-form__label">
+                            <label class="form__label">
                                 Объём
-                                <input class="calculator-form__input" type="text" value="0.8" maxlength="4">
-                                <span class="calculator-form__label-measure">м<sup>3</sup></span>
+                                <input class="form__input" type="text" value="0.8" maxlength="4">
+                                <span class="form__label-measure">м<sup>3</sup></span>
                             </label>
-                            <label class="calculator-form__label calculator-form__label--longer">
+                            <label class="form__label form__label--longer">
                                 Габариты
-                                <span class="calculator-form__inputs-row">
-                        <input class="calculator-form__input" type="text" value="0.3" maxlength="4">
+                                <span class="form__inputs-row">
+                        <input class="form__input" type="text" value="0.3" maxlength="4">
                         <span>x</span>
-                        <input class="calculator-form__input" type="text" value="0.3" maxlength="4">
+                        <input class="form__input" type="text" value="0.3" maxlength="4">
                         <span>x</span>
-                        <input class="calculator-form__input" type="text" value="0.3" maxlength="4">
+                        <input class="form__input" type="text" value="0.3" maxlength="4">
                     </span>
-                                <span class="calculator-form__label-info">Длина х Ширина х Высота</span>
-                                <span class="calculator-form__label-measure">м</span>
+                                <span class="form__label-info">Длина х Ширина х Высота</span>
+                                <span class="form__label-measure">м</span>
                             </label>
-                            <label class="calculator-form__label">
+                            <label class="form__label">
                                 Кол-во груза
                                 <span class="btn-arrow btn-arrow--left">-</span>
-                                <input class="calculator-form__input calculator-form__input--indent" type="number"
+                                <input class="form__input form__input--indent" type="number"
                                        value="1">
                                 <span class="btn-arrow btn-arrow--right">+</span>
-                                <span class="calculator-form__label-measure">шт</span>
+                                <span class="form__label-measure">шт</span>
                             </label>
 
                             <div class="controls-cargo">
@@ -168,7 +168,7 @@
                     </div>
 
 
-                    <label class="calculator-form-main__checkbox checkbox">
+                    <label class="form-main__checkbox checkbox">
                         <input type="checkbox">
                         <span></span>
                         Самостоятельно привезу груз на склад
@@ -177,8 +177,8 @@
                     <div class="date-box">
 
                         <div class="date-box__item">
-                            <label class="calculator-form__label calculator-form__label--longest">
-                                <input class="calculator-form__input" type="date" value="2020-05-20">
+                            <label class="form__label form__label--longest">
+                                <input class="form__input" type="date" value="2020-05-20">
                                 <span class="date-box__text"> &#8212; дата забора</span>
                             </label>
                         </div>
@@ -192,8 +192,8 @@
                     </div>
 
                     <div class="btn-box">
-                        <button class="btn btn--top btn--transparent">рассчитать</button>
-                        <button class="btn btn--top">оформить заявку</button>
+                        <button class="calculator__btn btn  btn--transparent">рассчитать</button>
+                        <button class="calculator__btn btn ">оформить заявку</button>
                     </div>
 
                 </form>
@@ -201,6 +201,39 @@
 
 
             </div>
+
+        </div>
+    </section>
+    <section class="services">
+        <h3>Услуги</h3>
+        <div class="container flex-wrap">
+            <div class="services__item">
+                <img src="assets/img/pics/services_group.svg" alt="">
+                <p class="services__title services__title--long">Перевозка сборных грузов</p>
+            </div>
+            <div class="services__item">
+                <img src="assets/img/pics/services_pallet.svg" alt="">
+                <p class="services__title">Паллетная доставка</p>
+            </div>
+            <div class="services__item">
+                <img src="assets/img/pics/services_car.svg" alt="">
+                <p class="services__title">Прямая машина</p>
+            </div>
+            <div class="services__item">
+                <img src="assets/img/pics/services_shop.svg" alt="">
+                <p class="services__title">Интернет-магазинам</p>
+            </div>
+            <div class="services__item">
+                <img src="assets/img/pics/services_package.svg" alt="">
+                <p class="services__title">Упаковка грузов</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tariffs">
+        <h3>тарифы</h3>
+        <div class="container">
+
         </div>
     </section>
 </main>

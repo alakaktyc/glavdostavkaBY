@@ -408,7 +408,7 @@ template {
     margin: auto; }
     .header__container div:not(:first-child) {
       padding-top: 10px; }
-  .header .working-hours,
+  .header .schedule-box,
   .header .calling-box {
     margin-left: 10px; }
 
@@ -450,27 +450,27 @@ template {
       transform: scale(1.1);
       transition: 0.3s ease; }
 
-.working-hours,
+.schedule-box,
 .calling-box {
   display: flex;
   align-items: center;
   font-size: 15px;
   line-height: 20px; }
-  .working-hours__content,
+  .schedule-box__content,
   .calling-box__content {
     display: flex;
     flex-direction: column;
     margin-left: 20px; }
-    .working-hours__content a,
+    .schedule-box__content a,
     .calling-box__content a {
       cursor: pointer; }
-  .working-hours__text,
+  .schedule-box__text,
   .calling-box__text {
     font-weight: bold; }
-    .working-hours__text--big,
+    .schedule-box__text--big,
     .calling-box__text--big {
       font-size: 20px; }
-  .working-hours__link,
+  .schedule-box__link,
   .calling-box__link {
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -480,7 +480,7 @@ template {
     border-bottom: 1px solid #EB0045;
     cursor: pointer;
     transition: 0.3s ease; }
-    .working-hours__link:hover,
+    .schedule-box__link:hover,
     .calling-box__link:hover {
       border-bottom: 1px solid transparent;
       transition: 0.3s ease; }
@@ -546,6 +546,9 @@ template {
 /*--------------------------------------------------------------
 # main-slider *
 --------------------------------------------------------------*/
+main {
+  position: relative; }
+
 .wrapper {
   position: relative; }
 
@@ -601,7 +604,7 @@ template {
     transform: translate(-50%, -50%);
     text-align: center; }
     .slide figcaption .slide__title {
-      max-width: 541px;
+      /*max-width: 541px;*/
       font-family: 'Effra', 'Arial', sans-serif;
       font-style: normal;
       font-weight: bold;
@@ -641,90 +644,93 @@ template {
     text-transform: uppercase;
     color: #EB0045;
     background: #F7F7FF; }
-  .calculator-form {
-    width: 90%;
+  .calculator__btn.btn {
+    margin: 15px 0; }
+
+.form {
+  width: 90%;
+  display: flex;
+  flex-direction: column; }
+  .form__inner {
+    width: calc(100% - 25px); }
+  .form__cities {
+    position: relative; }
+  .form__cargo {
+    position: relative;
     display: flex;
-    flex-direction: column; }
-    .calculator-form__inner {
-      width: calc(100% - 25px); }
-    .calculator-form__cities {
-      position: relative; }
-    .calculator-form__cargo {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap; }
-    .calculator-form__label {
-      position: relative;
-      width: 140px;
-      margin-top: 16px;
-      display: flex;
-      flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+  .form__label {
+    position: relative;
+    width: 140px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    line-height: 20px;
+    color: #F7F7FF; }
+    .form__label.form__label--longest {
+      width: 100%; }
+    .form__label.form__label--longer {
+      width: 195px; }
+    .form__label-info {
       font-size: 12px;
       line-height: 20px;
-      color: #F7F7FF; }
-      .calculator-form__label.calculator-form__label--longest {
-        width: 100%; }
-      .calculator-form__label.calculator-form__label--longer {
-        width: 195px; }
-      .calculator-form__label-info {
-        font-size: 12px;
-        line-height: 20px;
-        color: rgba(247, 247, 255, 0.5); }
-      .calculator-form__label-measure {
-        position: absolute;
-        top: 20px;
-        right: 0;
-        padding: 5px 10px;
-        font-size: 15px;
-        line-height: 20px;
-        color: #253746; }
-    .calculator-form__input {
-      height: 30px;
+      color: rgba(247, 247, 255, 0.5); }
+    .form__label-measure {
+      position: absolute;
+      top: 20px;
+      right: 0;
       padding: 5px 10px;
       font-size: 15px;
       line-height: 20px;
-      color: #253746;
-      box-sizing: border-box;
-      border: none;
-      border-radius: 5px;
-      background: #F7F7FF;
-      outline: none;
-      /*      &::-webkit-calendar-picker-indicator {
-        color: transparent;
-        opacity: 1;
-        background: none;
-        background-size: contain;
-      }*/ }
-      .calculator-form__input.calculator-form__input--indent {
-        padding: 5px 31px; }
-    .calculator-form__inputs-row {
-      display: flex;
-      border-radius: 5px;
-      background: #F7F7FF; }
-      .calculator-form__inputs-row input {
-        width: 30%;
-        padding-left: 0;
-        padding-right: 0;
-        text-align: center; }
-      .calculator-form__inputs-row span {
-        padding: 5px 0;
-        font-size: 15px;
-        line-height: 20px;
-        color: #253746; }
-    .calculator-form-main__checkbox.checkbox {
-      margin: 13px 0 0;
+      color: #253746; }
+  .form__input {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #253746;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background: #F7F7FF;
+    outline: none;
+    /*      &::-webkit-calendar-picker-indicator {
+            color: transparent;
+            opacity: 1;
+            background: none;
+            background-size: contain;
+          }*/ }
+    .form__input.form__input--indent {
+      padding: 5px 31px; }
+  .form__inputs-row {
+    display: flex;
+    border-radius: 5px;
+    background: #F7F7FF; }
+    .form__inputs-row input {
+      width: 30%;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center; }
+    .form__inputs-row span {
+      padding: 5px 0;
       font-size: 15px;
       line-height: 20px;
-      color: #F7F7FF; }
-      .calculator-form-main__checkbox.checkbox input[type="checkbox"]:checked + span:before,
-      .calculator-form-main__checkbox.checkbox input[type="checkbox"]:not(:checked) + span:before {
-        border: 2px solid #fff;
-        background-color: transparent; }
-      .calculator-form-main__checkbox.checkbox input[type="checkbox"]:checked + span:after,
-      .calculator-form-main__checkbox.checkbox input[type="checkbox"]:not(:checked) + span:after {
-        border-left: 3px solid #fff;
-        border-bottom: 3px solid #fff; }
+      color: #253746; }
+  .form-main__checkbox.checkbox {
+    margin: 13px 0 0;
+    font-size: 15px;
+    line-height: 20px;
+    color: #F7F7FF; }
+    .form-main__checkbox.checkbox input[type="checkbox"]:checked + span:before,
+    .form-main__checkbox.checkbox input[type="checkbox"]:not(:checked) + span:before {
+      border: 2px solid #fff;
+      background-color: transparent; }
+    .form-main__checkbox.checkbox input[type="checkbox"]:checked + span:after,
+    .form-main__checkbox.checkbox input[type="checkbox"]:not(:checked) + span:after {
+      border-left: 3px solid #fff;
+      border-bottom: 3px solid #fff; }
 
 .btn-arrow {
   position: absolute;
@@ -753,9 +759,9 @@ template {
   padding-bottom: 30px;
   color: #F7F7FF;
   border-bottom: 4px solid #F7F7FF; }
-  .date-box .calculator-form__input {
+  .date-box .form__input {
     width: 150px; }
-  .date-box .calculator-form__label {
+  .date-box .form__label {
     flex-direction: row;
     align-items: center; }
   .date-box__item {
@@ -774,9 +780,6 @@ template {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
-
-.btn.btn--top {
-  margin: 15px 0; }
 
 .btn-reverse {
   position: absolute;
@@ -824,249 +827,35 @@ template {
         transition: 0.3s ease; }
 
 /*--------------------------------------------------------------
-# Parameters * Переменные и миксины
+# services *
 --------------------------------------------------------------*/
-/*============== for landscape 480px ===========================*/
-@media screen and (min-width: 480px) {
-  /*--------------------------------------------------------------
-  # Typography 480px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Header 480px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Content 480px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Footer 480px
-  --------------------------------------------------------------*/ }
-
-/*============== for landscape 576px ===========================*/
-@media screen and (min-width: 576px) {
-  /*--------------------------------------------------------------
-  # Typography 576px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Header 576px
-  --------------------------------------------------------------*/
-  .header .working-hours,
-  .header .calling-box {
-    margin-left: auto; }
-  /*--------------------------------------------------------------
-  # Content 576px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Footer 576px
-  --------------------------------------------------------------*/ }
-
-/*===================================640px====================================*/
-@media screen and (min-width: 640px) {
-  /*--------------------------------------------------------------
-  # Typography 640px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Header 640px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Content 640px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Footer 640px
-  --------------------------------------------------------------*/ }
-
-@media screen and (min-width: 720px) {
-  /*--------------------------------------------------------------
-  # Typography 720px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Header 720px
-  --------------------------------------------------------------*/
-  .menu-btn {
-    display: none; }
-  .navigation-box {
-    position: relative;
-    height: 70px;
-    margin-top: 32px;
-    font-size: 15px;
+.services {
+  background: #F7F7FF;
+  min-height: 420px; }
+  .services__item {
+    width: 90%;
+    height: 200px;
+    margin: auto auto 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 5px;
+    background: #FFFFFF; }
+  .services__title {
+    max-width: 165px;
+    font-weight: bold;
+    font-size: 18px;
     line-height: 20px;
-    color: #253746;
-    border-top: 4px solid #F7F7FF;
-    border-bottom: 4px solid #F7F7FF;
-    background: none;
-    visibility: visible;
-    opacity: 1; }
-    .navigation-box .main-menu {
-      max-width: 830px;
-      margin: auto;
-      display: flex;
-      justify-content: space-around; }
-      .navigation-box .main-menu li {
-        margin: 23px 0 27px;
-        padding-bottom: 2px;
-        border-bottom: 2px solid transparent;
-        cursor: pointer;
-        transition: 0.3s ease; }
-        .navigation-box .main-menu li:hover {
-          border-bottom: 2px solid #EB0045;
-          transition: 0.3s ease; }
-  /*--------------------------------------------------------------
-  # Content 720px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Footer 720px
-  --------------------------------------------------------------*/ }
+    text-align: center;
+    text-transform: uppercase;
+    color: #253746; }
+    .services__title.services__title--long {
+      max-width: 170px; }
 
-/*============== for Tablet 768px ===========================*/
-@media screen and (min-width: 768px) {
-  /*--------------------------------------------------------------
-  # Typography 768px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Header 768px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Content 768px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Footer 768px
-  --------------------------------------------------------------*/ }
-
-/*============== for Tablet landscape 1024px ===========================*/
-@media screen and (min-width: 920px) {
-  /*--------------------------------------------------------------
-  # Typography 920px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Header 920px
-  --------------------------------------------------------------*/
-  .navigation-box .main-menu {
-    justify-content: space-between; }
-  /*--------------------------------------------------------------
-  # Content 920px
-  --------------------------------------------------------------*/
-  .main-slider__item {
-    position: relative;
-    height: 720px; }
-  .slide img {
-    height: 720px; }
-  .calculator {
-    position: absolute;
-    top: 0;
-    right: 0;
-    max-width: 520px;
-    border-radius: 0 0 20px 20px; }
-    .calculator-form__label {
-      width: 75px; }
-    .calculator-form__input.calculator-form__input--indent {
-      padding: 5px 20px; }
-  .btn-arrow.btn-arrow--right {
-    left: 32px;
-    border-left-color: #253746;
-    border-right: 0; }
-  .btn-arrow.btn-arrow--left {
-    left: 0;
-    border-right-color: #253746;
-    border-left: 0; }
-  .date-box__item {
-    margin-top: 0; }
-  /*--------------------------------------------------------------
-  # Footer 920px
-  --------------------------------------------------------------*/ }
-
-/*============== for Tablet landscape 1024px ===========================*/
-@media screen and (min-width: 1152px) {
-  /*--------------------------------------------------------------
-  # Typography 1152px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Header 1152px
-  --------------------------------------------------------------*/
-  .header {
-    margin-top: 40px; }
-    .header__container div {
-      margin: auto; }
-      .header__container div:not(:first-child) {
-        padding-top: 0; }
-  /*--------------------------------------------------------------
-  # Content 1152px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Footer 1152px
-  --------------------------------------------------------------*/ }
-
-/*============== for PC(notebook) 1280px ===========================*/
-@media screen and (min-width: 1280px) {
-  /*--------------------------------------------------------------
-  # Typography 1280px
-  --------------------------------------------------------------*/
-  .container {
-    width: 100%; }
-  /*--------------------------------------------------------------
-  # Header 1280px
-  --------------------------------------------------------------*/
-  .header__container div {
-    margin: 0; }
-  .header .working-hours,
-  .header .calling-box {
-    margin-left: 0; }
-  .logo-box {
-    width: 300px;
-    height: 97px;
-    display: block; }
-  .search-form {
-    width: 283px; }
-  /*--------------------------------------------------------------
-  # Content 1280px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Footer 1280px
-  --------------------------------------------------------------*/ }
-
-/*============== for PC(desktop) 1440px ===========================*/
-@media screen and (min-width: 1440px) {
-  /*--------------------------------------------------------------
-  # Typography 1440px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Header 1440px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Content 1440px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Footer 1440px
-  --------------------------------------------------------------*/ }
-
-/*============== for PC( HD ) 1600px ===========================*/
-@media screen and (min-width: 1600px) {
-  /*--------------------------------------------------------------
-  # Typography 1600px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Header 1600px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Content 1600px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Footer 1600px
-  --------------------------------------------------------------*/ }
-
-/*============== for PC( FullHD ) 1920px ===========================*/
-@media screen and (min-width: 1920px) {
-  /*--------------------------------------------------------------
-  # Typography 1920px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Header 1920px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Content 1920px
-  --------------------------------------------------------------*/
-  /*--------------------------------------------------------------
-  # Footer 1920px
-  --------------------------------------------------------------*/ }
-
+/*--------------------------------------------------------------
+# tariffs *
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Parameters * Переменные и миксины
 --------------------------------------------------------------*/
@@ -1139,21 +928,35 @@ h6 {
   font-size: 1em;
   font-family: 'Effra', 'Arial', sans-serif;
   font-weight: bold;
-  font-style: normal; }
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase; }
 
 h1 {
   margin: 24px 10px;
   font-size: 20px;
   line-height: 24px;
-  text-align: center;
-  text-transform: uppercase;
   color: #253746; }
 
 h3 {
+  position: relative;
+  margin: 0 0 14px;
+  padding: 44px 0 10px;
+  font-size: 40px;
+  line-height: 64px;
+  color: #253746; }
+  h3::before {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 74px;
+    border: 2px solid #EB0045;
+    content: ""; }
+
+h4 {
   font-size: 20px;
   line-height: 20px;
-  text-align: center;
-  text-transform: uppercase;
   color: #F7F7FF; }
 
 ul {
@@ -1284,5 +1087,299 @@ input[type=number] {
 /*---------------------------------------------------------------
 ## Forms *
 ----------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Parameters * Переменные и миксины
+--------------------------------------------------------------*/
+/*============== for landscape 480px ===========================*/
+@media screen and (min-width: 480px) {
+  /*--------------------------------------------------------------
+  # Typography 480px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Header 480px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Content 480px
+  --------------------------------------------------------------*/
+  .services__item {
+    width: calc(100%/2 - 10px); }
+  /*--------------------------------------------------------------
+  # Footer 480px
+  --------------------------------------------------------------*/ }
+
+/*============== for landscape 576px ===========================*/
+@media screen and (min-width: 576px) {
+  /*--------------------------------------------------------------
+  # Typography 576px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Header 576px
+  --------------------------------------------------------------*/
+  .header .schedule-box,
+  .header .calling-box {
+    margin-left: auto; }
+  /*--------------------------------------------------------------
+  # Content 576px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Footer 576px
+  --------------------------------------------------------------*/ }
+
+/*===================================640px====================================*/
+@media screen and (min-width: 640px) {
+  /*--------------------------------------------------------------
+  # Typography 640px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Header 640px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Content 640px
+  --------------------------------------------------------------*/
+  .services__item {
+    width: calc(100%/3 - 10px); }
+  /*--------------------------------------------------------------
+  # Footer 640px
+  --------------------------------------------------------------*/ }
+
+@media screen and (min-width: 720px) {
+  /*--------------------------------------------------------------
+  # Typography 720px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Header 720px
+  --------------------------------------------------------------*/
+  .menu-btn {
+    display: none; }
+  .navigation-box {
+    position: relative;
+    height: 70px;
+    margin-top: 32px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #253746;
+    border-top: 4px solid #F7F7FF;
+    border-bottom: 4px solid #F7F7FF;
+    background: none;
+    visibility: visible;
+    opacity: 1; }
+    .navigation-box .main-menu {
+      max-width: 830px;
+      margin: auto;
+      display: flex;
+      justify-content: space-around; }
+      .navigation-box .main-menu li {
+        margin: 23px 0 27px;
+        padding-bottom: 2px;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+        transition: 0.3s ease; }
+        .navigation-box .main-menu li:hover {
+          border-bottom: 2px solid #EB0045;
+          transition: 0.3s ease; }
+  /*--------------------------------------------------------------
+  # Content 720px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Footer 720px
+  --------------------------------------------------------------*/ }
+
+/*============== for Tablet 768px ===========================*/
+@media screen and (min-width: 768px) {
+  /*--------------------------------------------------------------
+  # Typography 768px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Header 768px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Content 768px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Footer 768px
+  --------------------------------------------------------------*/ }
+
+/*============== for Tablet landscape 1024px ===========================*/
+@media screen and (min-width: 920px) {
+  /*--------------------------------------------------------------
+  # Typography 920px
+  --------------------------------------------------------------*/
+  h1 {
+    margin: 10px 10px;
+    font-size: 40px;
+    line-height: 64px; }
+  /*--------------------------------------------------------------
+  # Header 920px
+  --------------------------------------------------------------*/
+  .navigation-box .main-menu {
+    justify-content: space-between; }
+  /*--------------------------------------------------------------
+  # Content 920px
+  --------------------------------------------------------------*/
+  .main-slider__item {
+    position: relative;
+    height: 720px; }
+  .slide img {
+    height: 720px; }
+  .slide figcaption {
+    left: 0;
+    transform: translate(2%, -50%);
+    max-width: 380px;
+    text-align: justify; }
+    .slide figcaption .slide__title {
+      font-size: 30px;
+      line-height: 34px;
+      text-align: left; }
+  .wrapper {
+    top: 84px;
+    min-width: 1280px;
+    position: absolute; }
+  .calculator {
+    position: absolute;
+    top: 0;
+    left: calc(100vw/2 - 60px);
+    max-width: 520px;
+    border-radius: 0 0 20px 20px; }
+  .form__label {
+    width: 75px; }
+  .form__input.form__input--indent {
+    padding: 5px 20px; }
+  .btn-arrow.btn-arrow--right {
+    left: 32px;
+    border-left-color: #253746;
+    border-right: 0; }
+  .btn-arrow.btn-arrow--left {
+    left: 0;
+    border-right-color: #253746;
+    border-left: 0; }
+  .date-box__item {
+    margin-top: 0; }
+  .services__item {
+    width: calc(100%/3 - 30px); }
+  /*--------------------------------------------------------------
+  # Footer 920px
+  --------------------------------------------------------------*/ }
+
+/*============== for Tablet landscape 1024px ===========================*/
+@media screen and (min-width: 1152px) {
+  /*--------------------------------------------------------------
+  # Typography 1152px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Header 1152px
+  --------------------------------------------------------------*/
+  .header {
+    margin-top: 40px; }
+    .header__container div {
+      margin: auto; }
+      .header__container div:not(:first-child) {
+        padding-top: 0; }
+  /*--------------------------------------------------------------
+  # Content 1152px
+  --------------------------------------------------------------*/
+  .calculator {
+    right: 3%; }
+  .services__item {
+    width: calc(100%/4 - 10px); }
+  /*--------------------------------------------------------------
+  # Footer 1152px
+  --------------------------------------------------------------*/ }
+
+/*============== for PC(notebook) 1280px ===========================*/
+@media screen and (min-width: 1280px) {
+  /*--------------------------------------------------------------
+  # Typography 1280px
+  --------------------------------------------------------------*/
+  .container {
+    width: 100%; }
+  .flex-wrap {
+    justify-content: space-between; }
+  /*--------------------------------------------------------------
+  # Header 1280px
+  --------------------------------------------------------------*/
+  .header__container div {
+    margin: 0; }
+  .header .schedule-box,
+  .header .calling-box {
+    margin-left: 0; }
+  .logo-box {
+    width: 300px;
+    height: 97px;
+    display: block; }
+  .search-form input[type="search"] {
+    width: 283px; }
+  /*--------------------------------------------------------------
+  # Content 1280px
+  --------------------------------------------------------------*/
+  .slide figcaption {
+    left: 200px;
+    transform: translate(0%, -50%);
+    max-width: 320px;
+    text-align: left; }
+    .slide figcaption .slide__title {
+      font-size: 30px;
+      line-height: 34px; }
+  .calculator {
+    /*margin-right: calc(100vw/3);*/
+    right: 0; }
+  .services__item {
+    margin: 0;
+    width: 240px; }
+  /*--------------------------------------------------------------
+  # Footer 1280px
+  --------------------------------------------------------------*/ }
+
+/*============== for PC(desktop) 1440px ===========================*/
+@media screen and (min-width: 1440px) {
+  /*--------------------------------------------------------------
+  # Typography 1440px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Header 1440px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Content 1440px
+  --------------------------------------------------------------*/
+  .slide figcaption {
+    max-width: 550px; }
+    .slide figcaption .slide__title {
+      font-size: 38px;
+      line-height: 47px; }
+    .slide figcaption .slide__text {
+      font-size: 20px;
+      line-height: 22px; }
+  /*--------------------------------------------------------------
+  # Footer 1440px
+  --------------------------------------------------------------*/ }
+
+/*============== for PC( HD ) 1600px ===========================*/
+@media screen and (min-width: 1600px) {
+  /*--------------------------------------------------------------
+  # Typography 1600px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Header 1600px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Content 1600px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Footer 1600px
+  --------------------------------------------------------------*/ }
+
+/*============== for PC( FullHD ) 1920px ===========================*/
+@media screen and (min-width: 1920px) {
+  /*--------------------------------------------------------------
+  # Typography 1920px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Header 1920px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Content 1920px
+  --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+  # Footer 1920px
+  --------------------------------------------------------------*/ }
 
 /*# sourceMappingURL=style.css.map */
