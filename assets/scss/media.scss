@@ -198,6 +198,8 @@
 
   .wrapper {
     top: 84px;
+    left: 50%;
+    transform: translate(-50%, -50%);
     min-width: 1280px;
     position: absolute;
   }
@@ -205,7 +207,8 @@
   .calculator {
     position: absolute;
     top: 0;
-    left: calc(100vw/2 - 60px);
+    /*left: calc(100vw/2 - 60px);*/
+    right: 14%;
     max-width: 520px;
     border-radius: 0 0 20px 20px;
   }
@@ -272,7 +275,7 @@
   --------------------------------------------------------------*/
 
   .calculator {
-    right: 3%;
+    right: 6%;
   }
 
   .services {
@@ -338,7 +341,6 @@
   }
 
   .calculator {
-    /*margin-right: calc(100vw/3);*/
     right: 0;
   }
 
