@@ -1232,12 +1232,15 @@ input[type=number] {
       text-align: left; }
   .wrapper {
     top: 84px;
+    left: 50%;
+    transform: translate(-50%, -50%);
     min-width: 1280px;
     position: absolute; }
   .calculator {
     position: absolute;
     top: 0;
-    left: calc(100vw/2 - 60px);
+    /*left: calc(100vw/2 - 60px);*/
+    right: 14%;
     max-width: 520px;
     border-radius: 0 0 20px 20px; }
   .form__label {
@@ -1278,7 +1281,7 @@ input[type=number] {
   # Content 1152px
   --------------------------------------------------------------*/
   .calculator {
-    right: 3%; }
+    right: 6%; }
   .services__item {
     width: calc(100%/4 - 10px); }
   /*--------------------------------------------------------------
@@ -1320,7 +1323,6 @@ input[type=number] {
       font-size: 30px;
       line-height: 34px; }
   .calculator {
-    /*margin-right: calc(100vw/3);*/
     right: 0; }
   .services__item {
     margin: 0;
