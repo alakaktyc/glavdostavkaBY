@@ -864,6 +864,8 @@ main {
     align-items: flex-end;
     flex-wrap: wrap; }
   .tariffs__label {
+    width: 100%;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     font-size: 12px;
@@ -871,7 +873,7 @@ main {
     color: #253746; }
   .tariffs__input {
     position: relative;
-    width: 260px;
+    width: 90%;
     height: 30px;
     margin-top: 3px;
     display: flex;
@@ -900,7 +902,8 @@ main {
   border: none;
   outline: none;
   background: transparent;
-  cursor: pointer; }
+  cursor: pointer;
+  transform: rotate(90deg); }
 
 /*--------------------------------------------------------------
 # Parameters * Переменные и миксины
@@ -1157,7 +1160,7 @@ input[type=number] {
   # Content 480px
   --------------------------------------------------------------*/
   .services__item {
-    width: calc(100%/2 - 10px); }
+    width: calc(100% / 2 - 10px); }
   /*--------------------------------------------------------------
   # Footer 480px
   --------------------------------------------------------------*/ }
@@ -1192,7 +1195,7 @@ input[type=number] {
   # Content 640px
   --------------------------------------------------------------*/
   .services__item {
-    width: calc(100%/3 - 10px); }
+    width: calc(100% / 3 - 10px); }
   /*--------------------------------------------------------------
   # Footer 640px
   --------------------------------------------------------------*/ }
@@ -1235,6 +1238,10 @@ input[type=number] {
   /*--------------------------------------------------------------
   # Content 720px
   --------------------------------------------------------------*/
+  .tariffs__label {
+    width: 230px; }
+  .tariffs__input {
+    width: 230px; }
   /*--------------------------------------------------------------
   # Footer 720px
   --------------------------------------------------------------*/ }
@@ -1313,7 +1320,7 @@ input[type=number] {
   .date-box__item {
     margin-top: 0; }
   .services__item {
-    width: calc(100%/3 - 30px); }
+    width: calc(100% / 3 - 30px); }
   /*--------------------------------------------------------------
   # Footer 920px
   --------------------------------------------------------------*/ }
@@ -1338,7 +1345,7 @@ input[type=number] {
   .calculator {
     right: 6%; }
   .services__item {
-    width: calc(100%/4 - 10px); }
+    width: calc(100% / 4 - 10px); }
   /*--------------------------------------------------------------
   # Footer 1152px
   --------------------------------------------------------------*/ }

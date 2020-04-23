@@ -376,6 +376,8 @@ main {
     flex-wrap: wrap;
   }
   &__label {
+    width: 100%;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     font-size: 12px;
@@ -384,7 +386,7 @@ main {
   }
   &__input {
     position: relative;
-    width: 260px;
+    width: 90%;
     height: 30px;
     margin-top: 3px;
     display: flex;
@@ -418,4 +420,5 @@ main {
   outline: none;
   background: transparent;
   cursor: pointer;
+  transform: rotate(90deg);
 }
