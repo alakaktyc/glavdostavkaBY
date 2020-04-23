@@ -856,6 +856,55 @@ main {
 /*--------------------------------------------------------------
 # tariffs *
 --------------------------------------------------------------*/
+.tariffs {
+  min-height: 500px; }
+  .tariffs__parameters {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-wrap: wrap; }
+  .tariffs__label {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    line-height: 20px;
+    color: #253746; }
+  .tariffs__input {
+    position: relative;
+    width: 90%;
+    height: 30px;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    padding-left: 11px;
+    font-size: 15px;
+    line-height: 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: #F7F7FF; }
+    .tariffs__input.tariffs__input--select {
+      cursor: pointer; }
+      .tariffs__input.tariffs__input--select::before {
+        position: absolute;
+        right: 11.5px;
+        display: inline-block;
+        margin-left: 10px;
+        padding: 3px;
+        border: solid #000;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        content: ""; }
+
+.btn-reverse--black {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  transform: rotate(90deg); }
+
 /*--------------------------------------------------------------
 # Parameters * Переменные и миксины
 --------------------------------------------------------------*/
@@ -1013,6 +1062,15 @@ img {
       border: 2px solid transparent;
       background: #EB0045;
       transition: 0.3s ease; }
+  .btn.btn--color-word {
+    color: #EB0045;
+    border: 2px solid #EB0045;
+    background: transparent;
+    transition: 0.3s ease; }
+    .btn.btn--color-word:hover {
+      color: #F7F7FF;
+      background: #EB0045;
+      transition: 0.3s ease; }
 
 .active {
   visibility: visible;
@@ -1102,7 +1160,7 @@ input[type=number] {
   # Content 480px
   --------------------------------------------------------------*/
   .services__item {
-    width: calc(100%/2 - 10px); }
+    width: calc(100% / 2 - 10px); }
   /*--------------------------------------------------------------
   # Footer 480px
   --------------------------------------------------------------*/ }
@@ -1137,7 +1195,7 @@ input[type=number] {
   # Content 640px
   --------------------------------------------------------------*/
   .services__item {
-    width: calc(100%/3 - 10px); }
+    width: calc(100% / 3 - 10px); }
   /*--------------------------------------------------------------
   # Footer 640px
   --------------------------------------------------------------*/ }
@@ -1180,6 +1238,10 @@ input[type=number] {
   /*--------------------------------------------------------------
   # Content 720px
   --------------------------------------------------------------*/
+  .tariffs__label {
+    width: 230px; }
+  .tariffs__input {
+    width: 230px; }
   /*--------------------------------------------------------------
   # Footer 720px
   --------------------------------------------------------------*/ }
@@ -1258,7 +1320,7 @@ input[type=number] {
   .date-box__item {
     margin-top: 0; }
   .services__item {
-    width: calc(100%/3 - 30px); }
+    width: calc(100% / 3 - 30px); }
   /*--------------------------------------------------------------
   # Footer 920px
   --------------------------------------------------------------*/ }
@@ -1283,7 +1345,7 @@ input[type=number] {
   .calculator {
     right: 6%; }
   .services__item {
-    width: calc(100%/4 - 10px); }
+    width: calc(100% / 4 - 10px); }
   /*--------------------------------------------------------------
   # Footer 1152px
   --------------------------------------------------------------*/ }

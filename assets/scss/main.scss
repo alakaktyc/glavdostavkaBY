@@ -367,3 +367,58 @@ main {
 /*--------------------------------------------------------------
 # tariffs *
 --------------------------------------------------------------*/
+.tariffs {
+  min-height: 500px;
+  &__parameters {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+  &__label {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    line-height: 20px;
+    color: #253746;
+  }
+  &__input {
+    position: relative;
+    width: 90%;
+    height: 30px;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    padding-left: 11px;
+    font-size: 15px;
+    line-height: 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: #F7F7FF;
+    &.tariffs__input--select{
+      cursor: pointer;
+      &::before {
+        position: absolute;
+        right: 11.5px;
+        display: inline-block;
+        margin-left: 10px;
+        padding: 3px;
+        border: solid #000;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        content: "";
+      }
+    }
+
+  }
+}
+.btn-reverse--black {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  transform: rotate(90deg);
+}

@@ -233,14 +233,29 @@
     <section class="tariffs">
         <h3>тарифы</h3>
         <div class="container">
-            <label>
-                Город отправления
-                <input type="text" value="Минск">
-            </label>
-            <label>
-                Город доставки
-                <input type="text" value="Минск">
-            </label>
+
+            <div class="tariffs__parameters">
+
+                <label class="tariffs__label">
+                    Город отправления
+                    <input class="tariffs__input" type="text" value="Минск">
+                </label>
+
+                <button class="btn-reverse--black"><img src="assets/img/icons/icon_arrows-black.svg" alt=""></button>
+
+                <span class="tariffs__label">
+                    Город отправления
+                    <span class="tariffs__input tariffs__input--select">Минск</span>
+                </span>
+
+                <span class="tariffs__label">
+                    Тип услуги
+                    <span class="tariffs__input tariffs__input--select">Сборный груз</span>
+                </span>
+
+                <button class="btn btn--transparent btn--color-word">узнать тариф</button>
+            </div>
+
         </div>
     </section>
 </main>
