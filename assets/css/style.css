@@ -610,7 +610,8 @@ main {
       font-weight: bold;
       font-size: 24px;
       text-transform: uppercase;
-      line-height: 28px; }
+      line-height: 28px;
+      color: #FFF; }
     .slide figcaption .slide__text {
       margin-top: 18px;
       font-family: 'Effra', 'Arial', sans-serif;
