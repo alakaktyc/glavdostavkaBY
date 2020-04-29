@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/slick/slick-theme.css">
-    <link rel="stylesheet" href="assets/slick/slick.css">
+    <link rel="stylesheet" href="assets/owl/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/owl/css/owl.theme.default.min.css">
+<!--    <link rel="stylesheet" href="assets/slick/slick-theme.css">
+    <link rel="stylesheet" href="assets/slick/slick.css">-->
     <title>Title</title>
 </head>
 <body>
@@ -64,8 +66,9 @@
 
 
 <main>
+    <h1>перевозки по беларуси</h1>
     <section class="main-slider">
-        <h1>перевозки по беларуси</h1>
+
 
 
 
@@ -84,13 +87,15 @@
 
                 </figure>
 
-                <!--<figure class="slide">
+                <figure class="slide">
                     <img src="assets/img/bg/slide-2_glavdostavka.jpg" alt="">
 
                     <figcaption>
-                        <div class="container">
-                            <h2 class="slide__title">Доставка в любой регион РБ бесплатно!</h2>
-                            <p class="slide__text">Подробности уточняйте в разделе «ДОСТАВКА»</p>
+                        <div class="slide__content">
+                            <h2 class="slide__title">Чёткие графики!</h2>
+                            <p class="slide__text">Гомель 5 рейсов в неделю <br>
+                                Гродно, Витебск - 4 рейса в неделю <br>
+                                Брест, Могилёв - 3 рейса в неделю</p>
                         </div>
                     </figcaption>
 
@@ -101,16 +106,16 @@
                     <img src="assets/img/bg/slide-3_glavdostavka.jpg" alt="">
 
                     <figcaption>
-                        <div class="container">
-                            <h2 class="slide__title">Доставка в любой регион РБ бесплатно!</h2>
-                            <p class="slide__text">Подробности уточняйте в разделе «ДОСТАВКА»</p>
+                        <div class="slide__content">
+                            <h2 class="slide__title">-20% для новых клиентов!</h2>
+                            <p class="slide__text">Для новых юридических лиц. На услугу Перевозка по Беларуси <br>
+                                *скидки не суммируются</p>
                         </div>
                     </figcaption>
 
                 </figure>
 
-                <ul class="main-slider__control">
-                </ul>-->
+                <ul class="main-slider__control"></ul>
 
             </div>
         <div class="wrapper">
@@ -140,12 +145,6 @@
                                 <input class="form__input" type="text" value="0.3" maxlength="4">
                                 <span class="form__label-measure">кг</span>
                             </label>
-
-<!--                            <label class="form__label">
-                                Объём
-                                <input class="form__input" type="text" value="0.8" maxlength="4">
-                                <span class="form__label-measure">м<sup>3</sup></span>
-                            </label>-->
 
                             <label class="form__label form__label--longer">
 
@@ -231,22 +230,37 @@
         <h3>Услуги</h3>
         <div class="container flex-wrap">
             <div class="services__item">
+                <svg class="services__ellipse">
+                    <use xlink:href="assets/sprite.svg#ellipse_cargo"></use>
+                </svg>
                 <img src="assets/img/pics/services_group.svg" alt="">
                 <p class="services__title services__title--long">Перевозка сборных грузов</p>
             </div>
             <div class="services__item">
+                <svg class="services__ellipse">
+                    <use xlink:href="assets/sprite.svg#ellipse_pallet"></use>
+                </svg>
                 <img src="assets/img/pics/services_pallet.svg" alt="">
                 <p class="services__title">Паллетная доставка</p>
             </div>
             <div class="services__item">
+                <svg class="services__ellipse">
+                    <use xlink:href="assets/sprite.svg#ellipse_car"></use>
+                </svg>
                 <img src="assets/img/pics/services_car.svg" alt="">
                 <p class="services__title">Прямая машина</p>
             </div>
             <div class="services__item">
+                <svg class="services__ellipse">
+                    <use xlink:href="assets/sprite.svg#ellipse_geo"></use>
+                </svg>
                 <img src="assets/img/pics/services_shop.svg" alt="">
                 <p class="services__title">Интернет-магазинам</p>
             </div>
             <div class="services__item">
+                <svg class="services__ellipse">
+                    <use xlink:href="assets/sprite.svg#ellipse_cargo"></use>
+                </svg>
                 <img src="assets/img/pics/services_package.svg" alt="">
                 <p class="services__title">Упаковка грузов</p>
             </div>
@@ -378,7 +392,7 @@
         <h3>Новости</h3>
         <div class="container">
 
-            <div class="news__slider">
+            <div class="news__slider owl-carousel">
 
                 <figure class="news__item">
                     <img src="assets/img/pics/news_1.png" alt="">
@@ -390,7 +404,7 @@
                             Доставка в сетевые магазины по Беларуси. <br>
                             Без предоплаты на счет.
                         </p>
-                        <a class="link" href="">Подробнее</a>
+                        <p><a class="link" href="">Подробнее</a></p>
                     </figcaption>
                 </figure>
 
@@ -403,7 +417,33 @@
                             Также как дальнейшее развитие различных форм деятельности играет важную роль в
                             формировании укрепления моральных ценностей.
                         </p>
-                        <a class="link" href="">Подробнее</a>
+                        <p><a class="link" href="">Подробнее</a></p>
+                    </figcaption>
+                </figure>
+
+                <figure class="news__item">
+                    <img src="assets/img/pics/news_2.png" alt="">
+                    <figcaption>
+                        <p class="news__date">03.03.2020 г.</p>
+                        <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
+                        <p class="news__text">
+                            Также как дальнейшее развитие различных форм деятельности играет важную роль в
+                            формировании укрепления моральных ценностей.
+                        </p>
+                        <p><a class="link" href="">Подробнее</a></p>
+                    </figcaption>
+                </figure>
+
+                <figure class="news__item">
+                    <img src="assets/img/pics/news_2.png" alt="">
+                    <figcaption>
+                        <p class="news__date">03.03.2020 г.</p>
+                        <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
+                        <p class="news__text">
+                            Также как дальнейшее развитие различных форм деятельности играет важную роль в
+                            формировании укрепления моральных ценностей.
+                        </p>
+                        <p><a class="link" href="">Подробнее</a></p>
                     </figcaption>
                 </figure>
 
@@ -416,10 +456,9 @@
                             Вот вам яркий пример современных тенденций - граница обучения кадров
                             позволяет выполнить важные задания по разработке новых предложений.
                         </p>
-                        <a class="link" href="">Подробнее</a>
+                        <p><a class="link" href="">Подробнее</a></p>
                     </figcaption>
                 </figure>
-
             </div>
 
         </div>
@@ -438,7 +477,7 @@
                 </div>
                 <div class="documents__item">
                     <h5>Для юридических лиц</h5>
-                    <p>Перевозка осуществляется с предоставлением ТТН заказчиком (4 экземпляра)</p>
+                    <p class="">Перевозка осуществляется с предоставлением ТТН заказчиком (4 экземпляра)</p>
                     <div class="documents__item-links">
                         <a class="documents__link link" href="#">Список документов ЮЛ.pdf</a>
                         <a class="documents__link link" href="#">Заявка ЮЛ.doc</a>
@@ -659,12 +698,13 @@
 <ul class="widgets-btn">
     <li class="widgets-btn__icon viber"><a href="#" target="_blank" rel="nofollow">перейти в вайбер</a></li>
     <li class="widgets-btn__icon phone btn-request"><a href="">заказать звонок</a></li>
-    <li class="widgets-btn__icon calc"><a href="#">рассчитать</a></li>
+    <li class="widgets-btn__icon calc"><a href="calculator.html">рассчитать</a></li>
     <li class="widgets-btn__icon top"><a href="#"></a></li>
 </ul>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-<script src="assets/slick/slick.min.js"></script>
+<script src="assets/owl/owl.carousel.min.js"></script>
+<!--<script src="assets/slick/slick.min.js"></script>-->
 <script src="assets/js/main.js"></script>
 </body>
 </html>
