@@ -136,22 +136,24 @@ function currentSlide(n) {
 
 $(document).ready(function () {
     $(".owl-carousel").owlCarousel({
-        loop:true,
-        responsiveClass:true,
-        navText: [" ", " "],
-        margin:20,
-        responsive: {
+            loop: true,
+            responsiveClass: true,
+            navText: [" ", " "],
+            margin: 20,
+            responsive: {
                 0: {
-                    items:1,
-                    nav:true
+                    items: 1,
+                    nav: false
+                },
+                768: {
+                    items: 2,
                 },
                 920: {
-                    items:2,
-                    nav:true
+                    items: 3,
                 },
-                1366: {
-                    items:3,
-                    nav:true
+                1280: {
+                    items: 3,
+                    nav: true
                 }
             }
         }

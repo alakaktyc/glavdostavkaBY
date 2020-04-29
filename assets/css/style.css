@@ -673,6 +673,8 @@ main {
       width: 100%; }
     .form__label.form__label--longer {
       width: 195px; }
+    .form__label.form__label--black {
+      color: #253746; }
     .form__label-info {
       font-size: 12px;
       line-height: 20px;
@@ -702,6 +704,8 @@ main {
             background: none;
             background-size: contain;
           }*/ }
+    .form__input.form__input--white {
+      background-color: #FFF; }
     .form__input.form__input--indent {
       padding: 5px 31px; }
   .form__inputs-row {
@@ -890,6 +894,8 @@ main {
     justify-content: space-between;
     align-items: flex-end;
     flex-wrap: wrap; }
+    .tariffs__parameters:nth-child(n) {
+      margin-right: 10px; }
   .tariffs__label {
     width: 100%;
     margin-bottom: 20px;
@@ -1264,6 +1270,12 @@ main {
     transform: rotate(-135deg); }
 
 /*--------------------------------------------------------------
+# big calculator *
+--------------------------------------------------------------*/
+.all-parameters {
+  background-color: #F7F7FF; }
+
+/*--------------------------------------------------------------
 # Parameters * Переменные и миксины
 --------------------------------------------------------------*/
 .footer {
@@ -1413,6 +1425,12 @@ h1 {
   line-height: 24px;
   color: #253746; }
 
+h2 {
+  padding-top: 43px;
+  font-size: 30px;
+  line-height: 20px;
+  color: #253746; }
+
 h3 {
   position: relative;
   margin: 0 0 14px;
@@ -1531,6 +1549,14 @@ img {
     .link.link--white:hover {
       border-bottom: 1px solid transparent;
       transition: 0.3s ease; }
+  .link.link--pink {
+    color: #EB0045;
+    border-bottom: 1px solid #EB0045;
+    transition: 0.3s ease; }
+    .link.link--pink:hover {
+      color: #253746;
+      border-bottom: 1px solid transparent;
+      transition: 0.3s ease; }
 
 .active {
   visibility: visible;
@@ -1554,8 +1580,10 @@ input[type=number] {
 
 /*------------------------------Кастомный checkbox----------------------- */
 .checkbox {
+  margin-top: 10px;
   display: flex;
-  align-items: flex-start; }
+  align-items: flex-start;
+  font-size: 15px; }
   .checkbox input[type="checkbox"]:checked,
   .checkbox input[type="checkbox"]:not(:checked) {
     position: absolute;
@@ -1577,7 +1605,7 @@ input[type=number] {
     height: 18px;
     box-sizing: border-box;
     border: 2px solid #253746;
-    background-color: #ffffff; }
+    background-color: transparent; }
   .checkbox input[type="checkbox"]:checked + span:before,
   .checkbox input[type="checkbox"]:not(:checked) + span:before {
     border-radius: 2px; }
@@ -1599,6 +1627,55 @@ input[type=number] {
   .checkbox input[type="checkbox"]:not(:checked) + span:after {
     opacity: 0; }
   .checkbox input[type="checkbox"]:checked + span:after {
+    opacity: 1; }
+
+/*------------------------------Кастомный radiobutton----------------------- */
+.radiobutton {
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-start;
+  font-size: 15px; }
+  .radiobutton input[type="radio"]:checked,
+  .radiobutton input[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px; }
+  .radiobutton input[type="radio"]:checked + span,
+  .radiobutton input[type="radio"]:not(:checked) + span {
+    display: inline-block;
+    position: relative;
+    padding-left: 28px;
+    line-height: 20px;
+    cursor: pointer; }
+  .radiobutton input[type="radio"]:checked + span:before,
+  .radiobutton input[type="radio"]:not(:checked) + span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+    border: 2px solid #253746;
+    background-color: transparent; }
+  .radiobutton input[type="radio"]:checked + span:before,
+  .radiobutton input[type="radio"]:not(:checked) + span:before {
+    border-radius: 100%; }
+  .radiobutton input[type="radio"]:checked + span:after,
+  .radiobutton input[type="radio"]:not(:checked) + span:after {
+    content: "";
+    position: absolute;
+    transition: all 0.2s ease; }
+  .radiobutton input[type="radio"]:checked + span:after,
+  .radiobutton input[type="radio"]:not(:checked) + span:after {
+    left: 4px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #253746; }
+  .radiobutton input[type="radio"]:not(:checked) + span:after {
+    opacity: 0; }
+  .radiobutton input[type="radio"]:checked + span:after {
     opacity: 1; }
 
 /*------------------------------прелоадер----------------------- */
