@@ -50,6 +50,17 @@
   # Footer 576px
   --------------------------------------------------------------*/
 
+  .footer{
+    &__list {
+      min-width: 491px;
+      li {
+        width: auto;
+      }
+    }
+    &__item {
+      margin-right: 20px;
+    }
+  }
 }
 
 /*===================================640px====================================*/
@@ -72,6 +83,14 @@
       width: calc(100% / 3 - 10px);
     }
   }
+
+  .payment {
+    &__item {
+      width: calc(100% / 2 - 10px);
+    }
+  }
+
+
   /*--------------------------------------------------------------
   # Footer 640px
   --------------------------------------------------------------*/
@@ -126,12 +145,87 @@
 
   .tariffs {
     &__label {
-      width: 230px;
+      width: 200px;
     }
     &__input {
-      width: 230px;
+      width: 200px;
     }
   }
+  .btn-reverse--black {
+    margin-bottom: 20px;
+    transform: rotate(0deg);
+  }
+
+
+
+  .shipping {
+    position: relative;
+    display: block;
+    background: #F7F7FF;
+    &__inner {
+      margin-top: 48px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__text {
+      display: block;
+      padding: 20px 50px;
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: bold;
+      text-transform: capitalize;
+      color: #253746;
+    }
+
+    &__item {
+      position: relative;
+      margin-bottom: 60px;
+      margin-left: 60px;
+      box-sizing: border-box;
+      border: 2px solid $basic-color-pink;
+      border-radius: 5px;
+      pointer-events: none;
+
+      &:not(:last-child)::after {
+        position: absolute;
+        top: 22px;
+        right: -70px;
+        width: 17px;
+        height: 10px;
+        margin: 0 31px 60px;
+        display: flex;
+        align-self: center;
+        background: url("../img/icons/icon_arrow-right.svg") center center no-repeat;
+        content: "";
+      }
+
+      @for $i from 1 to 10 {
+        &:nth-child(#{$i})::before {
+          position: absolute;
+          top: -30px;
+          left: -30px;
+          width: 60px;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 20px;
+          color: rgba(37, 55, 70, 0.5);
+          border-radius: 50%;
+          background: #FFFFFF;
+          box-shadow: 2px 2px 10px rgba(37, 55, 70, 0.2);
+          content: "0#{$i}";
+        }
+      }
+    }
+
+  }
+
+
 
   /*--------------------------------------------------------------
   # Footer 720px
@@ -153,6 +247,14 @@
   /*--------------------------------------------------------------
   # Content 768px
   --------------------------------------------------------------*/
+  .tariffs {
+    &__label {
+      width: 215px;
+    }
+    &__input {
+      width: 215px;
+    }
+  }
 
   /*--------------------------------------------------------------
   # Footer 768px
@@ -252,6 +354,42 @@
     }
   }
 
+  .documents {
+    &__item {
+      margin: 0;
+      width: 22%;
+      &:nth-child(2) {
+        width: 50%;
+        padding-left: 30px;
+        border-right: 3px solid #F7F7FF;
+        border-left: 3px solid #F7F7FF;
+      }
+    }
+  }
+
+
+
+  .contacts {
+    &__item {
+      width: calc(100% / 2 - 30px);
+      &:last-child {
+        width: 100%;
+      }
+    }
+    &__form {
+      align-items: center;
+    }
+  }
+  .form-call {
+    margin-bottom: 20px;
+    &__label {
+      width: calc(100% - 300px);
+    }
+    &__input {
+      width: calc(100% - 300px);
+    }
+  }
+
   /*--------------------------------------------------------------
   # Footer 920px
   --------------------------------------------------------------*/
@@ -301,9 +439,6 @@
   /*--------------------------------------------------------------
   # Typography 1280px
   --------------------------------------------------------------*/
-  .container {
-    width: 100%;
-  }
   .flex-wrap {
     justify-content: space-between;
   }
@@ -334,18 +469,34 @@
   /*--------------------------------------------------------------
   # Content 1280px
   --------------------------------------------------------------*/
+
+
+
+
   .slide {
     figcaption {
-      left: 200px;
-      transform: translate(0%, -50%);
-      max-width: 320px;
-      text-align: left;
+      min-width: 1280px;
+      width: 1280px;
+      margin: auto;
+      top: 50%;
+      left: 52%;
+      transform: translate(-50%, -50%);
+
+      .slide__content {
+        max-width: 700px;
+      }
       .slide__title {
-        font-size: 30px;
-        line-height: 34px;
+        font-size: 38px;
+        line-height: 47px;
+      }
+      .slide__text {
+        font-size: 20px;
+        line-height: 22px;
       }
     }
   }
+
+
 
   .calculator {
     right: 0;
@@ -358,12 +509,83 @@
     }
   }
 
+  .payment {
+    &__item {
+      width: calc(100% / 4 - 10px);
+    }
+  }
+
+
+
+  .contacts {
+    &__item {
+      width: 376px;
+      &:last-child {
+        width: 400px;
+        &::before {
+          width: 200%;
+        }
+      }
+    }
+  }
+
+  .form-call {
+    &__label {
+      width: 270px;
+    }
+    &__input {
+      width: 270px;
+    }
+  }
+
+
   /*--------------------------------------------------------------
   # Footer 1280px
   --------------------------------------------------------------*/
 
 }
 
+/*============== for PC(desktop) 1440px ===========================*/
+@media screen and (min-width: 1366px) {
+
+  /*--------------------------------------------------------------
+  # Typography 1366px
+  --------------------------------------------------------------*/
+  .container {
+    width: 100%;
+  }
+  /*--------------------------------------------------------------
+  # Header 1366px
+  --------------------------------------------------------------*/
+
+  /*--------------------------------------------------------------
+  # Content 1366px
+  --------------------------------------------------------------*/
+  .slide {
+    figcaption {
+      left: 50%;
+    }
+  }
+
+  .contacts {
+    &__item:last-child {
+        width: 460px;
+    }
+    &__form {
+      justify-content: space-between;
+    }
+  }
+
+
+  /*--------------------------------------------------------------
+  # Footer 1366px
+  --------------------------------------------------------------*/
+
+  .footer__inner {
+    padding-top: 50px;
+    justify-content: space-between;
+  }
+}
 /*============== for PC(desktop) 1440px ===========================*/
 @media screen and (min-width: 1440px) {
 
@@ -378,25 +600,13 @@
   /*--------------------------------------------------------------
   # Content 1440px
   --------------------------------------------------------------*/
-  .slide {
-    figcaption {
-      max-width: 550px;
-      .slide__title {
-        font-size: 38px;
-        line-height: 47px;
-      }
-      .slide__text {
-        font-size: 20px;
-        line-height: 22px;
-      }
-    }
-  }
+
+
   /*--------------------------------------------------------------
   # Footer 1440px
   --------------------------------------------------------------*/
 
 }
-
 /*============== for PC( HD ) 1600px ===========================*/
 @media screen and (min-width: 1600px) {
 

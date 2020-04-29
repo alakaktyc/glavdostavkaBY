@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/slick/slick-theme.css">
+    <link rel="stylesheet" href="assets/slick/slick.css">
     <title>Title</title>
 </head>
 <body>
@@ -69,11 +71,15 @@
 
             <div class="main-slider__item">
                 <figure class="slide active">
+
                     <img src="assets/img/bg/slide-1_glavdostavka.jpg" alt="">
 
                     <figcaption>
-                        <h2 class="slide__title">Доставка в любой регион РБ бесплатно!</h2>
-                        <p class="slide__text">Подробности уточняйте в разделе «ДОСТАВКА»</p>
+                        <div class="slide__content">
+                            <h2 class="slide__title">Доставка в любой регион РБ бесплатно!</h2>
+                            <p class="slide__text">Подробности уточняйте в разделе «ДОСТАВКА»</p>
+                        </div>
+
                     </figcaption>
 
                 </figure>
@@ -128,28 +134,45 @@
 
 
                         <div class="form__cargo">
+
                             <label class="form__label">
                                 Вес
                                 <input class="form__input" type="text" value="0.3" maxlength="4">
                                 <span class="form__label-measure">кг</span>
                             </label>
-                            <label class="form__label">
+
+<!--                            <label class="form__label">
                                 Объём
                                 <input class="form__input" type="text" value="0.8" maxlength="4">
                                 <span class="form__label-measure">м<sup>3</sup></span>
-                            </label>
+                            </label>-->
+
                             <label class="form__label form__label--longer">
-                                Габариты
-                                <span class="form__inputs-row">
-                        <input class="form__input" type="text" value="0.3" maxlength="4">
-                        <span>x</span>
-                        <input class="form__input" type="text" value="0.3" maxlength="4">
-                        <span>x</span>
-                        <input class="form__input" type="text" value="0.3" maxlength="4">
-                    </span>
-                                <span class="form__label-info">Длина х Ширина х Высота</span>
-                                <span class="form__label-measure">м</span>
+
+                                <span class="form__switch">
+                                    <span class="switch">Габариты</span> | <span>Объём</span>
+                                </span>
+
+                                <span class="form__parameter form__parameter--visible">
+                                    <span class="form__inputs-row">
+                                        <input class="form__input" type="text" value="0.3" maxlength="4">
+                                        <span>x</span>
+                                        <input class="form__input" type="text" value="0.3" maxlength="4">
+                                        <span>x</span>
+                                        <input class="form__input" type="text" value="0.3" maxlength="4">
+                                    </span>
+                                    <span class="form__label-info">Длина х Ширина х Высота</span>
+                                    <span class="form__label-measure">м</span>
+                                </span>
+
+                                <span class="form__parameter">
+                                    <input class="form__input" type="text" value="0.8" maxlength="4">
+                                    <span class="form__label-measure">м<sup>3</sup></span>
+                                </span>
+
                             </label>
+
+
                             <label class="form__label">
                                 Кол-во груза
                                 <span class="btn-arrow btn-arrow--left">-</span>
@@ -256,9 +279,392 @@
                 <button class="btn btn--transparent btn--color-word">узнать тариф</button>
             </div>
 
+            <p>Цены указаны на услугу <span class="bold">«Перевозка сборных грузов»</span>  из/в Минск <span class="bold">от подъезда — к подъезду.</span>  Без действующих скидок.</p>
+
+            <div class="tariffs__table">
+                <table class="tariffs__cargo visible" cellspacing="0">
+                    <tbody>
+
+                    <tr>
+                        <td class="tariffs__table-head">объём до (м<sup>3</sup>)</td>
+                        <td>0,02</td>
+                        <td>0,04</td>
+                        <td>0,08</td>
+                        <td>0,13</td>
+                        <td>0,17</td>
+                        <td>0,21</td>
+                        <td>0,32</td>
+                        <td>0,43</td>
+                        <td>0,53</td>
+                        <td>0,64</td>
+                        <td>0,75</td>
+                        <td>0,86</td>
+                        <td>0,99</td>
+                        <td>1,30</td>
+                        <td>1,73</td>
+                        <td>2,17</td>
+                        <td>2,60</td>
+                        <td>3,04</td>
+                        <td>3,90</td>
+                        <td>4,77</td>
+                        <td>5,60</td>
+                        <td>6,52</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tariffs__table-head">масса до (кг)</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>20</td>
+                        <td>30</td>
+                        <td>40</td>
+                        <td>50</td>
+                        <td>75</td>
+                        <td>99</td>
+                        <td>124</td>
+                        <td>149</td>
+                        <td>174</td>
+                        <td>199</td>
+                        <td>229</td>
+                        <td>299</td>
+                        <td>399</td>
+                        <td>499</td>
+                        <td>599</td>
+                        <td>699</td>
+                        <td>889</td>
+                        <td>1099</td>
+                        <td>1299</td>
+                        <td>1499</td>
+                    </tr>
+                    <tr>
+                        <td class="tariffs__table-head">цена (бел. руб.)</td>
+                        <td class="tariffs__price">7.20</td>
+                        <td class="tariffs__price">8.40</td>
+                        <td class="tariffs__price">10.80</td>
+                        <td class="tariffs__price">13.20</td>
+                        <td class="tariffs__price">15.00</td>
+                        <td class="tariffs__price">18.00</td>
+                        <td class="tariffs__price">16.80</td>
+                        <td class="tariffs__price">18.00</td>
+                        <td class="tariffs__price">22.90</td>
+                        <td class="tariffs__price">23.80</td>
+                        <td class="tariffs__price">25.60</td>
+                        <td class="tariffs__price">28.50</td>
+                        <td class="tariffs__price">29.70</td>
+                        <td class="tariffs__price">33.60</td>
+                        <td class="tariffs__price">39.60</td>
+                        <td class="tariffs__price">47.00</td>
+                        <td class="tariffs__price">54.15</td>
+                        <td class="tariffs__price">63.65</td>
+                        <td class="tariffs__price">76.50</td>
+                        <td class="tariffs__price">94.50</td>
+                        <td class="tariffs__price">100.00</td>
+                        <td class="tariffs__price">105.00</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tariffs__links-box">
+                <a class="tariffs__link link" href="#">Запросить индивидуальное предложение</a>
+                <a class="tariffs__link link" href="#">Скачать полный прайс-лист по сборным грузам</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="news">
+        <h3>Новости</h3>
+        <div class="container">
+
+            <div class="news__slider">
+
+                <figure class="news__item">
+                    <img src="assets/img/pics/news_1.png" alt="">
+                    <figcaption>
+                        <p class="news__date">03.03.2020 г.</p>
+                        <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
+                        <p class="news__text">
+                            Доставка в пункты выдачи для интернет-магазинов. <br>
+                            Доставка в сетевые магазины по Беларуси. <br>
+                            Без предоплаты на счет.
+                        </p>
+                        <a class="link" href="">Подробнее</a>
+                    </figcaption>
+                </figure>
+
+                <figure class="news__item">
+                    <img src="assets/img/pics/news_2.png" alt="">
+                    <figcaption>
+                        <p class="news__date">03.03.2020 г.</p>
+                        <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
+                        <p class="news__text">
+                            Также как дальнейшее развитие различных форм деятельности играет важную роль в
+                            формировании укрепления моральных ценностей.
+                        </p>
+                        <a class="link" href="">Подробнее</a>
+                    </figcaption>
+                </figure>
+
+                <figure class="news__item">
+                    <img src="assets/img/pics/news_3.png" alt="">
+                    <figcaption>
+                        <p class="news__date">03.03.2020 г.</p>
+                        <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
+                        <p class="news__text">
+                            Вот вам яркий пример современных тенденций - граница обучения кадров
+                            позволяет выполнить важные задания по разработке новых предложений.
+                        </p>
+                        <a class="link" href="">Подробнее</a>
+                    </figcaption>
+                </figure>
+
+            </div>
+
         </div>
     </section>
+
+    <section class="documents">
+        <h3>Документы</h3>
+        <div class="container">
+            <div class="documents__inner">
+                <div class="documents__item">
+                    <h5>Общие документы</h5>
+                    <div class="documents__item-links">
+                        <a class="documents__link link" href="#">График доставок.pdf</a>
+                        <a class="documents__link link" href="#">Правила перевозок.pdf</a>
+                    </div>
+                </div>
+                <div class="documents__item">
+                    <h5>Для юридических лиц</h5>
+                    <p>Перевозка осуществляется с предоставлением ТТН заказчиком (4 экземпляра)</p>
+                    <div class="documents__item-links">
+                        <a class="documents__link link" href="#">Список документов ЮЛ.pdf</a>
+                        <a class="documents__link link" href="#">Заявка ЮЛ.doc</a>
+                        <a class="documents__link link" href="#">Договор.pdf</a>
+                        <a class="documents__link link" href="#">Реестр-заявка.doc</a>
+                        <a class="documents__link link" href="#">Экспедиторская расписка.doc</a>
+                    </div>
+                </div>
+                <div class="documents__item">
+                    <h5>Для физических лиц</h5>
+                    <div class="documents__item-links">
+                        <a class="documents__link link" href="#">Список документов ЧЛ.pdf</a>
+                        <a class="documents__link link" href="#">Заказ-поручение.pdf</a>
+                        <a class="documents__link link" href="#">Заявка ФЛ.doc</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="shipping">
+        <h3>Процесс отправки</h3>
+        <div class="container">
+            <div class="shipping__inner">
+                <div class="shipping__item"><span class="shipping__text">обращение</span></div>
+                <div class="shipping__item"><span class="shipping__text">заявка</span></div>
+                <div class="shipping__item"><span class="shipping__text">согласование с личным менеджером</span></div>
+                <div class="shipping__item"><span class="shipping__text">подготовка документов</span></div>
+                <div class="shipping__item"><span class="shipping__text">отправка</span></div>
+                <div class="shipping__item"><span class="shipping__text">обмер груза на складе</span></div>
+                <div class="shipping__item"><span class="shipping__text">доставка</span></div>
+                <div class="shipping__item"><span class="shipping__text">оплата</span></div>
+                <!--<div class="shipping__item"><span class="shipping__text">Закрывающие документы</span></div>-->
+            </div>
+        </div>
+    </section>
+
+    <section class="payment">
+        <h3>Способы оплаты</h3>
+        <div class="container">
+            <div class="payment__inner">
+                <div class="payment__item">
+                    <div class="payment__content">
+                        <h5>1. ерип</h5>
+                        <p>Транспортные, экспедиционные услуги / Минск / ТМФ-Транс (номер услуги - 4673671, для физических лиц, в бел. руб)</p>
+                    </div>
+                </div>
+                <div class="payment__item">
+                    <div class="payment__content">
+                        <h5>2. наличные</h5>
+                        <p>При доставке водителю <br>
+                            (для физических лиц, в бел. руб)
+                        </p>
+                    </div>
+                </div>
+                <div class="payment__item">
+                    <div class="payment__content">
+                        <h5>3. карта</h5>
+                        <p>При доставке водителю<br>
+                            (для физических лиц, в бел. руб)
+                        </p>
+                    </div>
+                </div>
+                <div class="payment__item">
+                    <div class="payment__content">
+                        <h5>4. безналичный расчёт</h5>
+                        <p>Для юридических лиц, в бел. руб.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contacts">
+        <h3>Контакты</h3>
+        <div class="container">
+            <div class="contacts__inner">
+                <div class="contacts__item">
+                    <h5>склад</h5>
+
+                    <ul class="contacts__list">
+                        <li class="contacts__icon geo">
+                            <p>220075, г. Минск, Промышленная 1</p>
+                        </li>
+                        <li class="contacts__icon clock">
+                            <p>
+                                Пн-Пт 9:00-20:00 (сдача груза до 18.00);<br>
+                                Сб 9:00 - 14:00; Вс: выходной
+                            </p>
+                        </li>
+                        <li class="contacts__icon phone">
+                            <p>
+                                <a href="tel:+375173362424">+375 (17) 336-24-24</a>; <a href="tel:+375333292626">+375 (33) 329-26-26</a>
+                            </p>
+                        </li>
+                        <li class="contacts__icon mail">
+                            <p>
+                                <a href="mailto:info.minsk@glavdostavka.ru">info.minsk@glavdostavka.ru</a>
+                            </p>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="contacts__item">
+                    <h5>офис</h5>
+                    <ul class="contacts__list">
+                        <li class="contacts__icon geo">
+                            <p>220021, г. Минск, пер. Бехтерева 10, офис 1408</p>
+                        </li>
+                        <li class="contacts__icon clock">
+                            <p>Пн-Пт: 9:00-17:30; Сб: 9:00-14:00; Вс: выходной</p>
+                        </li>
+                        <li class="contacts__icon phone">
+                            <p>
+                                <a href="tel:+375173362626">+375 (17) 336-26-26</a>; <a href="tel:+375336202626">+375 (33) 620-26-26</a>
+                            </p>
+                        </li>
+                        <li class="contacts__icon mail">
+                            <p>
+                                <a href="mailto:info.minsk@glavdostavka.ru">info.minsk@glavdostavka.ru</a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contacts__item">
+                    <div class="contacts__form-content">
+                        <h5>Нет времени разбираться? Мы подскажем!</h5>
+                        <form class="contacts__form form-call" action="">
+                            <label class="form-call__label">
+                                Я хочу перевезти
+                                <input class="form-call__input" type="text" placeholder="Введите, что и куда хотите отправить">
+                                <span>Пример: обувь в Минск</span>
+                            </label>
+                            <button class="btn btn--pink">Заказать звонок</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
 </main>
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer__inner">
+
+            <div class="footer__item">
+                <ul class="footer__list">
+                    <li><a class="link link--white" href="">Вакансии</a></li>
+                    <li><a class="link link--white" href="">Виды упаковки</a></li>
+                    <li><a class="link link--white" href="">Ответы на вопросы</a></li>
+                    <li><a class="link link--white" href="">Условия перевозок</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__item social">
+                <ul class="social__list">
+                    <li>
+                        <a class="social__link" href="">
+                            <svg class="social__icon inst">
+                                <use xlink:href="assets/sprite.svg#inst"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social__link" href="">
+                            <svg class="social__icon fb">
+                                <use xlink:href="assets/sprite.svg#fb"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social__link" href="">
+                            <svg class="social__icon vk">
+                                <use xlink:href="assets/sprite.svg#vk"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social__link" href="">
+                            <svg class="social__icon vb">
+                                <use xlink:href="assets/sprite.svg#vb"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social__link" href="">
+                            <svg class="social__icon tg">
+                                <use xlink:href="assets/sprite.svg#tg"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="footer__item">
+                <span class="footer__text">
+                    2008-2020 © Транспортная компания «ГлавДоставка» — С любовью!
+                </span>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</footer>
+
+<ul class="widgets-btn">
+    <li class="widgets-btn__icon viber"><a href="#" target="_blank" rel="nofollow">перейти в вайбер</a></li>
+    <li class="widgets-btn__icon phone btn-request"><a href="">заказать звонок</a></li>
+    <li class="widgets-btn__icon calc"><a href="#">рассчитать</a></li>
+    <li class="widgets-btn__icon top"><a href="#"></a></li>
+</ul>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="assets/slick/slick.min.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
