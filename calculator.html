@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Title</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -60,9 +61,70 @@
     </header>
     <main>
         <h1>Расчёт стоимости и оформление заявки</h1>
-        <section>
+
+        <section class="all-parameters">
             <div class="container">
                 <h2>Направление перевозки</h2>
+
+
+
+                <div class="form__cities">
+                    <label class="form__label form__label--longest form__label--black">
+                        Город отправления
+                        <input class="form__input form__input--white" type="text" value="Минск">
+                    </label>
+
+                    <label class="radiobutton">
+                        <input type="radio" name="departure" checked>
+                        <span></span>
+                        Забрать груз у отправителя
+                    </label>
+
+                    <label class="radiobutton">
+                        <input type="radio" name="departure">
+                        <span></span>
+                        Самостоятельно привезу груз на склад
+                    </label>
+
+                    <label class="form__label form__label--longest form__label--black">
+                        Склад отправления
+                        <input class="form__input form__input--white" type="text" value="г. Минск, Промышленная, 1">
+                    </label>
+                    <div class="date-box__item">
+                        <label class="form__label form__label--longest form__label--black">
+                            Дата забора груза
+                            <input class="form__input form__input--white" type="date" value="2020-05-20">
+                        </label>
+                    </div>
+                    <a class="link link--pink" href="">Посмотреть место на карте</a>
+
+
+
+                    <button class="btn-reverse" type="button"><img src="assets/img/icons/icon_arrows.svg"
+                                                                   alt=""></button>
+
+                    <label class="form__label form__label--longest form__label--black">
+                        Город доставки
+                        <input class="form__input form__input--white" type="text" value="Минск">
+                    </label>
+                    <label class="radiobutton">
+                        <input type="radio" name="destination" checked>
+                        <span></span>
+                        Доставить груз получателю
+                    </label>
+
+                    <label class="radiobutton">
+                        <input type="radio" name="destination">
+                        <span></span>
+                        Самостоятельно заберу груз со склада
+                    </label>
+                    <label class="form__label form__label--longest form__label--black">
+                        Склад прибытия
+                        <input class="form__input form__input--white" type="text" value="г. Минск, Промышленная, 1">
+                    </label>
+                    <a class="link link--pink" href="">Посмотреть место на карте</a>
+                </div>
+
                 <h2>Параметры груза</h2>
 
                 <label class="checkbox">

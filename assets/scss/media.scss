@@ -114,7 +114,7 @@
     margin-top: 32px;
     font-size: 15px;
     line-height: 20px;
-    color: #253746;
+    color: $basic-color-black;
     border-top: 4px solid #F7F7FF;
     border-bottom: 4px solid #F7F7FF;
     background: none;
@@ -176,7 +176,7 @@
       line-height: 20px;
       font-weight: bold;
       text-transform: capitalize;
-      color: #253746;
+      color: $basic-color-black;
     }
 
     &__item {
@@ -334,12 +334,12 @@
   .btn-arrow {
     &.btn-arrow--right {
       left: 32px;
-      border-left-color: #253746;;
+      border-left-color: $basic-color-black;;
       border-right: 0;
     }
     &.btn-arrow--left {
       left: 0;
-      border-right-color: #253746;;
+      border-right-color: $basic-color-black;;
       border-left: 0;
     }
   }
