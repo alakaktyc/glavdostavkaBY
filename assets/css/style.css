@@ -848,6 +848,7 @@ main {
   background: #F7F7FF;
   min-height: 420px; }
   .services__item {
+    position: relative;
     width: 90%;
     height: 200px;
     margin: auto auto 15px;
@@ -856,7 +857,11 @@ main {
     align-items: center;
     justify-content: flex-end;
     border-radius: 5px;
-    background: #FFFFFF; }
+    background: #FFFFFF;
+    cursor: pointer; }
+    .services__item:hover .services__ellipse {
+      transform: skew(-20deg, 20deg);
+      transition: 0.3s ease; }
   .services__title {
     max-width: 165px;
     font-weight: bold;
@@ -867,6 +872,13 @@ main {
     color: #253746; }
     .services__title.services__title--long {
       max-width: 170px; }
+  .services__ellipse {
+    position: absolute;
+    top: 40px;
+    width: 100px;
+    height: 91px;
+    fill: #EB0045;
+    transition: 0.3s ease; }
 
 /*--------------------------------------------------------------
 # tariffs *
@@ -969,11 +981,19 @@ main {
   .news__item {
     max-width: 360px;
     min-height: 450px;
+    margin: auto;
     box-sizing: border-box;
     border-radius: 5px;
-    background: #FFFFFF; }
+    background: #FFFFFF;
+    cursor: pointer;
+    transition: 0.3s ease; }
     .news__item figcaption {
       margin: 0 30px; }
+    .news__item p {
+      padding-bottom: 10px; }
+    .news__item:hover h5 {
+      color: #EB0045;
+      transition: 0.3s ease; }
   .news__date {
     margin-top: 26px;
     margin-bottom: 8px;
@@ -981,7 +1001,7 @@ main {
     line-height: 20px;
     color: rgba(37, 55, 70, 0.5); }
   .news__text {
-    height: 80px;
+    height: 120px;
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 15px;
@@ -1003,6 +1023,9 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-start; }
+    .documents__item p {
+      font-size: 12px;
+      line-height: 20px; }
     .documents__item-links {
       display: flex;
       flex-wrap: wrap;
