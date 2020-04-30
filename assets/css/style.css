@@ -649,9 +649,14 @@ main {
     margin: 15px 0; }
 
 .form {
-  width: 90%;
+  width: 100%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  /*--------------------------------------------------------------
+# big calculator
+--------------------------------------------------------------*/ }
+  .form.form--little {
+    width: 90%; }
   .form__inner {
     width: calc(100% - 25px); }
   .form__cities {
@@ -680,6 +685,8 @@ main {
       font-size: 12px;
       line-height: 20px;
       color: rgba(247, 247, 255, 0.5); }
+      .form__label-info.form__label-info--black {
+        color: rgba(37, 55, 70, 0.5); }
     .form__label-measure {
       position: absolute;
       top: 20px;
@@ -733,10 +740,10 @@ main {
       .form__switch > span:hover {
         color: #fff;
         transition: 0.3s easy; }
-  .form__parameter {
+  .form__sizes {
     height: 50px;
     display: none; }
-    .form__parameter.form__parameter--visible {
+    .form__sizes.form__sizes--visible {
       display: block; }
   .form-main__checkbox.checkbox {
     margin: 13px 0 0;
@@ -751,6 +758,26 @@ main {
     .form-main__checkbox.checkbox input[type="checkbox"]:not(:checked) + span:after {
       border-left: 3px solid #fff;
       border-bottom: 3px solid #fff; }
+  .form__link {
+    margin-top: 15px; }
+  .form__wrap {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  .form__item {
+    width: 100%; }
+  .form__attention {
+    font-size: 12px;
+    line-height: 20px;
+    color: #EB0045; }
+  .form__inputs-row.form__inputs-row--white {
+    background: #FFF; }
+  .form__package, .form__services {
+    display: flex;
+    flex-wrap: wrap; }
+    .form__package .checkbox, .form__services .checkbox {
+      margin-right: 20px; }
 
 .btn-arrow {
   position: absolute;
@@ -810,6 +837,8 @@ main {
   outline: none;
   background: transparent;
   cursor: pointer; }
+  .btn-reverse.btn-reverse--black {
+    display: none; }
 
 .controls-cargo {
   position: absolute;
@@ -1274,7 +1303,43 @@ main {
 # big calculator *
 --------------------------------------------------------------*/
 .all-parameters {
+  padding-bottom: 45px;
   background-color: #F7F7FF; }
+
+.cargo {
+  max-width: 1090px; }
+  .cargo__title {
+    display: block;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgba(37, 55, 70, 0.5);
+    overflow: hidden; }
+    .cargo__title::before {
+      position: relative;
+      right: -65px;
+      width: 100%;
+      height: 1px;
+      margin-right: -100%;
+      display: inline-block;
+      content: "";
+      background-color: rgba(37, 55, 70, 0.5); }
+  .cargo__item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    .cargo__item .form__label:not(:last-child) {
+      margin-right: 20px; }
+  .cargo__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+
+.request__inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
 
 /*--------------------------------------------------------------
 # Parameters * Переменные и миксины
@@ -1534,6 +1599,7 @@ img {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  display: block;
   font-size: 15px;
   line-height: 20px;
   color: #253746;
@@ -1581,6 +1647,10 @@ input[type=number] {
 
 /*------------------------------Кастомный checkbox----------------------- */
 .checkbox {
+  box-sizing: border-box;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin-top: 10px;
   display: flex;
   align-items: flex-start;
@@ -1632,6 +1702,9 @@ input[type=number] {
 
 /*------------------------------Кастомный radiobutton----------------------- */
 .radiobutton {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin-top: 10px;
   display: flex;
   align-items: flex-start;
@@ -1787,6 +1860,13 @@ input[type=number] {
   /*--------------------------------------------------------------
   # Content 720px
   --------------------------------------------------------------*/
+  .form__item {
+    width: calc(100% / 2 - 20px); }
+  .btn-reverse.btn-reverse--black {
+    display: block;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%, 0); }
   .tariffs__label {
     width: 200px; }
   .tariffs__input {
@@ -2109,6 +2189,8 @@ input[type=number] {
   --------------------------------------------------------------*/
   .calculator {
     right: 6%; }
+  .form__item {
+    width: calc(100% / 2 - 40px); }
   .services__item {
     width: calc(100% / 4 - 10px); }
   /*--------------------------------------------------------------
@@ -2190,6 +2272,8 @@ input[type=number] {
   --------------------------------------------------------------*/
   .slide figcaption {
     left: 50%; }
+  .form__item {
+    width: calc(100% / 2 - 60px); }
   .contacts__item:last-child {
     width: 460px; }
   .contacts__form {

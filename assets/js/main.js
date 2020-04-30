@@ -9,20 +9,20 @@ btnMenu.addEventListener('click', function () {
 const switchParameter = document.querySelector('.form__switch');
 switchParameter.addEventListener('click', function (event) {
     let parameter = document.querySelectorAll('.form__switch span');
-    let formParameters = document.querySelectorAll('.form__parameter');
+    let formParameters = document.querySelectorAll('.form__sizes');
     let turnParam = event.target;
     if (turnParam.textContent === 'Габариты') {
         parameter[0].classList.add('switch');
         parameter[1].classList.remove('switch');
-        formParameters[0].classList.add('form__parameter--visible');
-        formParameters[1].classList.remove('form__parameter--visible');
+        formParameters[0].classList.add('form__sizes--visible');
+        formParameters[1].classList.remove('form__sizes--visible');
         console.log(turnParam.textContent)
     }
     if (turnParam.textContent === 'Объём') {
         parameter[1].classList.add('switch');
         parameter[0].classList.remove('switch');
-        formParameters[1].classList.add('form__parameter--visible');
-        formParameters[0].classList.remove('form__parameter--visible');
+        formParameters[1].classList.add('form__sizes--visible');
+        formParameters[0].classList.remove('form__sizes--visible');
         console.log(turnParam.textContent)
     }
 });

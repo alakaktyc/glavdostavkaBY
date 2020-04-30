@@ -118,12 +118,16 @@ main {
 }
 
 .form {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  &.form--little {
+    width: 90%;
+  }
   &__inner {
     width: calc(100% - 25px);
   }
+
   &__cities {
     position: relative;
   }
@@ -155,6 +159,9 @@ main {
       font-size: 12px;
       line-height: 20px;
       color: rgba(247, 247, 255, 0.5);
+      &.form__label-info--black {
+        color: rgba(37,55,70, 0.5);
+      }
     }
     &-measure {
       position: absolute;
@@ -223,10 +230,10 @@ main {
     }
   }
 
-  &__parameter {
+  &__sizes {
     height: 50px;
     display: none;
-    &.form__parameter--visible {
+    &.form__sizes--visible {
       display: block;
     }
   }
@@ -246,6 +253,42 @@ main {
     input[type="checkbox"]:not(:checked) + span:after {
       border-left: 3px solid #fff;
       border-bottom: 3px solid #fff;
+    }
+  }
+
+
+  /*--------------------------------------------------------------
+# big calculator
+--------------------------------------------------------------*/
+
+  &__link {
+    margin-top: 15px;
+  }
+
+  &__wrap {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    width: 100%;
+  }
+  &__attention {
+    font-size: 12px;
+    line-height: 20px;
+    color: $basic-color-pink;
+  }
+  &__inputs-row.form__inputs-row--white {
+    background: #FFF;
+  }
+  &__package,
+  &__services{
+    display: flex;
+    flex-wrap: wrap;
+    .checkbox {
+      margin-right: 20px;
     }
   }
 }
@@ -323,6 +366,9 @@ main {
   outline: none;
   background: transparent;
   cursor: pointer;
+  &.btn-reverse--black {
+    display: none;
+  }
 }
 
 .controls-cargo {
@@ -876,6 +922,50 @@ main {
 # big calculator *
 --------------------------------------------------------------*/
 .all-parameters {
+  padding-bottom: 45px;
   background-color: #F7F7FF;
 }
+.cargo {
+  max-width: 1090px;
+  &__title {
+    display: block;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgba(37, 55, 70, 0.5);
+    overflow: hidden;
+    &::before {
+      position: relative;
+      right: -65px;
+      width: 100%;
+      height: 1px;
+      margin-right: -100%;
+      display: inline-block;
+      content: "";
+      background-color: rgba(37, 55, 70, 0.5);;
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .form__label:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.request {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
 

@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8b346e0-edae-4fbd-b0d1-d58cc3e7e8a7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/media.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/media.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/calculator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,8 +27,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="79" column="31" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="31" />
+            <state relative-caret-position="132">
+              <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="179" selection-end-column="36" />
               <folding>
                 <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" />
@@ -41,8 +49,8 @@
       <file leaf-file-name="media.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/scss/media.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="178" column="31" selection-start-line="178" selection-start-column="31" selection-end-line="178" selection-end-column="31" />
+            <state relative-caret-position="22">
+              <caret line="151" column="21" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -50,8 +58,17 @@
       <file leaf-file-name="main.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/scss/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="72" column="22" lean-forward="true" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
+            <state relative-caret-position="765">
+              <caret line="966" column="20" selection-start-line="966" selection-start-column="20" selection-end-line="966" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -59,12 +76,14 @@
       <file leaf-file-name="calculator.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calculator.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+            <state relative-caret-position="690">
+              <caret line="330" column="22" selection-start-line="330" selection-start-column="22" selection-end-line="330" selection-end-column="22" />
               <folding>
                 <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#form#0;n#div#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#3;n#form#0;n#div#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
@@ -74,8 +93,8 @@
       <file leaf-file-name="typography.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/scss/typography.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="99" column="20" lean-forward="true" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+            <state relative-caret-position="286">
+              <caret line="289" column="25" selection-start-line="289" selection-start-column="25" selection-end-line="289" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -93,19 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>h4</find>
-      <find>conten</find>
-      <find>figca</find>
-      <find>1366</find>
-      <find>form</find>
-      <find>calc</find>
-      <find>docume</find>
-      <find>servi</find>
-      <find>wrapper</find>
-      <find>slick-lis</find>
-      <find>_.slideWidth</find>
-      <find>-item</find>
-      <find>owl-item</find>
       <find>owl-nav</find>
       <find>next</find>
       <find>wrapp</find>
@@ -116,13 +122,26 @@
       <find>fill</find>
       <find>tarif</find>
       <find>check</find>
-      <find>link</find>
       <find>#253746</find>
       <find>заказ</find>
       <find>#EB0045</find>
       <find>fff</find>
       <find>form_</find>
       <find>h2</find>
+      <find>link</find>
+      <find>citi</find>
+      <find>rad</find>
+      <find>transla</find>
+      <find>revers</find>
+      <find>h5</find>
+      <find>form</find>
+      <find>.form</find>
+      <find>para</find>
+      <find>label</find>
+      <find>info</find>
+      <find>cargo</find>
+      <find>pack</find>
+      <find>all-</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -140,13 +159,13 @@
         <option value="$PROJECT_DIR$/assets/sprite.svg" />
         <option value="$PROJECT_DIR$/assets/owl/css/owl.carousel.css" />
         <option value="$PROJECT_DIR$/assets/img/icons/next.svg" />
-        <option value="$PROJECT_DIR$/assets/js/main.js" />
         <option value="$PROJECT_DIR$/../gulpfile.js" />
         <option value="$PROJECT_DIR$/assets/scss/parameters.scss" />
         <option value="$PROJECT_DIR$/assets/scss/media.scss" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/calculator.html" />
+        <option value="$PROJECT_DIR$/assets/js/main.js" />
         <option value="$PROJECT_DIR$/assets/scss/typography.scss" />
+        <option value="$PROJECT_DIR$/calculator.html" />
         <option value="$PROJECT_DIR$/assets/scss/main.scss" />
       </list>
     </option>
@@ -171,7 +190,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,10 +224,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Work/glavdostavka/allnewglav/assets/scss/typography.scss" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../src" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
@@ -250,12 +270,14 @@
       <workItem from="1587891554988" duration="17767000" />
       <workItem from="1587997722109" duration="12928000" />
       <workItem from="1588085998787" duration="10537000" />
-      <workItem from="1588142842432" duration="26452000" />
+      <workItem from="1588142842432" duration="26665000" />
+      <workItem from="1588229558360" duration="5898000" />
+      <workItem from="1588235832792" duration="7769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138380000" />
+    <option name="totallyTimeSpent" value="152260000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -479,26 +501,9 @@
     <entry file="file://$PROJECT_DIR$/assets/img/icons/icon_elipse_geo.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/slick/slick-theme.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/slick/slick.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="787">
-          <caret line="75" column="1" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/slick/slick.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="1957" column="38" selection-start-line="1957" selection-start-column="26" selection-end-line="1957" selection-end-column="38" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/slick/slick-theme.css" />
+    <entry file="file://$PROJECT_DIR$/assets/slick/slick.css" />
+    <entry file="file://$PROJECT_DIR$/assets/slick/slick.js" />
     <entry file="file://$PROJECT_DIR$/assets/img/icons/prev.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -519,22 +524,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="145" column="30" lean-forward="true" selection-start-line="145" selection-start-column="30" selection-end-line="145" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/sprite.svg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/media.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="178" column="31" selection-start-line="178" selection-start-column="31" selection-end-line="178" selection-end-column="31" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/scss/parameters.scss">
       <provider selected="true" editor-type-id="text-editor">
@@ -543,30 +534,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calculator.html">
+    <entry file="file://$PROJECT_DIR$/assets/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/typography.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="99" column="20" lean-forward="true" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+        <state relative-caret-position="330">
+          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="79" column="31" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="31" />
+        <state relative-caret-position="132">
+          <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="179" selection-end-column="36" />
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" />
@@ -583,10 +561,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/typography.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="289" column="25" selection-start-line="289" selection-start-column="25" selection-end-line="289" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculator.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="330" column="22" selection-start-line="330" selection-start-column="22" selection-end-line="330" selection-end-column="22" />
+          <folding>
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#form#0;n#div#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#form#0;n#div#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/media.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="151" column="21" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/scss/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="72" column="22" lean-forward="true" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
+        <state relative-caret-position="765">
+          <caret line="966" column="20" selection-start-line="966" selection-start-column="20" selection-end-line="966" selection-end-column="20" />
         </state>
       </provider>
     </entry>
