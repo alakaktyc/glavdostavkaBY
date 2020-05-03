@@ -45,6 +45,7 @@
   font-weight: bold;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Effra';
   src: url('../fonts/Effra-Medium.eot');
@@ -57,27 +58,23 @@
   font-style: normal;
 }
 
-
-
 /*--------------------------------------------------------------
 # Animation * анимация
 --------------------------------------------------------------*/
-
-
-
 
 /*--------------------------------------------------------------
 # Typography * Базовые стили шаблона
 --------------------------------------------------------------*/
 
 html, body {
-	margin: 0 0 0 0;
-	padding: 0 0 0 0;
-	width: 100%;
-	height: 100%;
-	min-width: 100%;
-	min-height: 100%;
-	font-family: 'Effra', 'Arial', sans-serif;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  font-family: 'Effra', 'Arial', sans-serif;
+  scroll-behavior: smooth;
 }
 
 main {
@@ -103,7 +100,14 @@ h1 {
   margin: 24px 10px;
   font-size: 20px;
   line-height: 24px;
-  color: #253746;
+  color: $basic-color-black;
+}
+
+h2 {
+  padding-top: 43px;
+  font-size: 30px;
+  line-height: 20px;
+  color: $basic-color-black;
 }
 
 h3 {
@@ -112,7 +116,7 @@ h3 {
   padding: 44px 0 10px;
   font-size: 40px;
   line-height: 64px;
-  color: #253746;
+  color: $basic-color-black;
 
   &::before {
     position: absolute;
@@ -120,7 +124,7 @@ h3 {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 74px;
-    border: 2px solid #EB0045;
+    border: 2px solid $basic-color-pink;
     content: "";
   }
 }
@@ -129,6 +133,14 @@ h4 {
   font-size: 20px;
   line-height: 20px;
   color: #F7F7FF;
+}
+
+h5 {
+  margin: 0 0 11px;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: left;
+  color: #253746;
 }
 
 ul {
@@ -151,7 +163,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 
 .container {
   width: 95%;
@@ -195,32 +206,93 @@ img {
       transition: 0.3s ease;
     }
   }
+  &.btn--color-word {
+    color: $basic-color-pink;
+    border: 2px solid $basic-color-pink;
+    background: transparent;
+    transition: 0.3s ease;
+    &:hover {
+      color: #F7F7FF;
+      background: $basic-color-pink;
+      transition: 0.3s ease;
+    }
+  }
+  &.btn--pink {
+    padding: 10px 4px;
+    &:hover {
+      color: $basic-color-pink;
+      border: 2px solid $basic-color-pink;
+      transition: 0.3s ease;
+    }
+  }
 }
+
+.link {
+  width: fit-content;
+  display: block;
+  font-size: 15px;
+  line-height: 20px;
+  color: #253746;
+  border-bottom: 1px solid #253746;
+  transition: 0.3s ease;
+  &:hover {
+    color: $basic-color-pink;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s ease;
+  }
+  &.link--white {
+    color: #F7F7FF;
+    border-bottom: 1px solid #F7F7FF;
+    transition: 0.3s ease;
+    &:hover {
+      border-bottom: 1px solid transparent;
+      transition: 0.3s ease;
+    }
+  }
+  &.link--pink {
+    color: $basic-color-pink;
+    border-bottom: 1px solid $basic-color-pink;
+    transition: 0.3s ease;
+    &:hover {
+      color: $basic-color-black;
+      border-bottom: 1px solid transparent;
+      transition: 0.3s ease;
+    }
+  }
+}
+
 .active {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.6s linear;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 /* Для Chrome */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
 }
+
 /* Для Firefox */
-input[type=number]{
+input[type=number] {
   -moz-appearance: textfield;
 }
 
-
-
 /*------------------------------Кастомный checkbox----------------------- */
 .checkbox {
+  box-sizing: border-box;
+  width: fit-content;
+  margin-top: 10px;
   display: flex;
   align-items: flex-start;
+  font-size: 15px;
   input[type="checkbox"]:checked,
   input[type="checkbox"]:not(:checked) {
     position: absolute;
@@ -245,8 +317,8 @@ input[type=number]{
     width: 18px;
     height: 18px;
     box-sizing: border-box;
-    border: 2px solid #253746;
-    background-color: #ffffff;
+    border: 2px solid $basic-color-black;
+    background-color: transparent;
   }
 
   input[type="checkbox"]:checked + span:before,
@@ -268,8 +340,8 @@ input[type=number]{
     width: 8px;
     height: 5px;
     border-radius: 1px;
-    border-left: 3px solid #253746;
-    border-bottom: 3px solid #253746;
+    border-left: 3px solid $basic-color-black;
+    border-bottom: 3px solid $basic-color-black;
     transform: rotate(-45deg);
   }
 
@@ -283,14 +355,78 @@ input[type=number]{
 }
 
 
-/*------------------------------прелоадер----------------------- */
+/*------------------------------Кастомный radiobutton----------------------- */
+.radiobutton {
+  width: fit-content;
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-start;
+  font-size: 15px;
+  input[type="radio"]:checked,
+  input[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
 
+  input[type="radio"]:checked + span,
+  input[type="radio"]:not(:checked) + span {
+    display: inline-block;
+    position: relative;
+    padding-left: 28px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+
+  input[type="radio"]:checked + span:before,
+  input[type="radio"]:not(:checked) + span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+    border: 2px solid $basic-color-black;
+    background-color: transparent;
+  }
+
+  input[type="radio"]:checked + span:before,
+  input[type="radio"]:not(:checked) + span:before {
+    border-radius: 100%;
+  }
+
+  input[type="radio"]:checked + span:after,
+  input[type="radio"]:not(:checked) + span:after {
+    content: "";
+    position: absolute;
+    transition: all 0.2s ease;
+  }
+
+  input[type="radio"]:checked + span:after,
+  input[type="radio"]:not(:checked) + span:after {
+    left: 4px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: $basic-color-black;
+  }
+
+  input[type="radio"]:not(:checked) + span:after {
+    opacity: 0;
+  }
+
+  input[type="radio"]:checked + span:after {
+    opacity: 1;
+  }
+}
+
+
+/*------------------------------прелоадер----------------------- */
 
 /*--------------------------------------------------------------
 ## Breadcrumbs *
 --------------------------------------------------------------*/
-
-
 
 /*---------------------------------------------------------------
 ## Forms *
