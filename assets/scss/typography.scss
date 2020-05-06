@@ -73,6 +73,7 @@ html, body {
   height: 100%;
   min-width: 100%;
   min-height: 100%;
+  color: $basic-color-black;
   font-family: 'Effra', 'Arial', sans-serif;
   scroll-behavior: smooth;
 }
@@ -80,6 +81,8 @@ html, body {
 main {
   width: 100%;
   overflow: hidden;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 h1,
@@ -106,7 +109,7 @@ h1 {
 h2 {
   padding-top: 43px;
   font-size: 30px;
-  line-height: 20px;
+  line-height: 27px;
   color: $basic-color-black;
 }
 
@@ -168,6 +171,12 @@ img {
   width: 95%;
   max-width: 1280px;
   margin: 0 auto;
+  &.container--header:nth-child(n) {
+    margin: auto;
+    &:not(:first-child) {
+      padding-top: 10px;
+    }
+  }
 }
 
 .flex-wrap {
@@ -177,7 +186,16 @@ img {
   justify-content: space-between;
 }
 
+.title{
+  &--pink {
+    color: $basic-color-pink;
+  }
+  &--white {
+    color: #fff;
+  }
+}
 .btn {
+  display: block;
   padding: 10px 24px;
   font-weight: bold;
   font-size: 15px;
@@ -217,11 +235,27 @@ img {
       transition: 0.3s ease;
     }
   }
-  &.btn--pink {
+  &.btn--small {
     padding: 10px 4px;
     &:hover {
       color: $basic-color-pink;
       border: 2px solid $basic-color-pink;
+      transition: 0.3s ease;
+    }
+  }
+  &.btn--color-hover:hover {
+    color: $basic-color-pink;
+    border: 2px solid $basic-color-pink;
+    transition: 0.3s ease;
+  }
+  &.btn--white {
+    color: $basic-color-pink;
+    border: 2px solid $basic-color-pink;
+    background: transparent;
+    transition: 0.3s ease;
+    &:hover {
+      color: #fff;
+      background: $basic-color-pink;
       transition: 0.3s ease;
     }
   }
@@ -231,7 +265,7 @@ img {
   width: fit-content;
   display: block;
   font-size: 15px;
-  line-height: 20px;
+  line-height: 1;
   color: #253746;
   border-bottom: 1px solid #253746;
   transition: 0.3s ease;
@@ -287,6 +321,7 @@ input[type=number] {
 
 /*------------------------------Кастомный checkbox----------------------- */
 .checkbox {
+  position: relative;
   box-sizing: border-box;
   width: fit-content;
   margin-top: 10px;
