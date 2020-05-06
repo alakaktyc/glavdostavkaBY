@@ -115,7 +115,7 @@ main {
     text-align: center;
     text-transform: uppercase;
     color: $basic-color-pink;
-    background: #F7F7FF;
+    background: $basic-color-gray;
   }
   &__btn.btn {
     margin: 15px 0;
@@ -147,7 +147,7 @@ main {
     flex-direction: column;
     font-size: 12px;
     line-height: 20px;
-    color: #F7F7FF;
+    color: $basic-color-gray;
     &.form__label--small {
       width: 195px;
     }
@@ -184,7 +184,7 @@ main {
     box-sizing: border-box;
     border: none;
     border-radius: 5px;
-    background: #F7F7FF;
+    background: $basic-color-gray;
     outline: none;
     &.form__input--white {
       background-color: #FFF;
@@ -208,7 +208,7 @@ main {
   &__inputs-row {
     display: flex;
     border-radius: 5px;
-    background: #F7F7FF;
+    background: $basic-color-gray;
     input {
       width: 30%;
       padding-left: 0;
@@ -250,7 +250,7 @@ main {
     margin: 13px 0 0;
     font-size: 15px;
     line-height: 20px;
-    color: #F7F7FF;
+    color: $basic-color-gray;
     input[type="checkbox"]:checked + span:before,
     input[type="checkbox"]:not(:checked) + span:before {
       border: 2px solid #fff;
@@ -328,7 +328,7 @@ main {
   justify-content: space-between;
   align-items: baseline;
   padding-bottom: 30px;
-  color: #F7F7FF;
+  color: $basic-color-gray;
   .form__input {
     width: 150px;
   }
@@ -356,7 +356,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  border-bottom: 4px solid #F7F7FF;
+  border-bottom: 4px solid $basic-color-gray;
 }
 
 .btn-reverse {
@@ -390,7 +390,7 @@ main {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    color: #F7F7FF;
+    color: $basic-color-gray;
     box-sizing: border-box;
     border: 2px solid $basic-color-pink;
     border-radius: 5px;
@@ -404,10 +404,10 @@ main {
       transition: 0.3s ease;
     }
     &.controls-cargo__btn--white {
-      border: 2px solid #F7F7FF;
+      border: 2px solid $basic-color-gray;
       background: transparent;
       &:hover {
-        color: #F7F7FF;
+        color: $basic-color-gray;
         border: 2px solid transparent;
         background: $basic-color-pink;
         transition: 0.3s ease;
@@ -418,7 +418,7 @@ main {
       border: 2px solid $basic-color-black;
       background: transparent;
       &:hover {
-        color: #F7F7FF;
+        color: $basic-color-gray;
         border: 2px solid $basic-color-pink;
         background: $basic-color-pink;
         transition: 0.3s ease;
@@ -445,7 +445,7 @@ main {
 # services *
 --------------------------------------------------------------*/
 .services {
-  background: #F7F7FF;
+  background: $basic-color-gray;
   min-height: 420px;
   &__item {
     position: relative;
@@ -568,7 +568,7 @@ main {
     border: none;
     border-radius: 5px;
     outline: none;
-    background: #F7F7FF;
+    background: $basic-color-gray;
     &.tariffs__input--select {
       cursor: pointer;
       &::before {
@@ -648,7 +648,7 @@ main {
 --------------------------------------------------------------*/
 .news {
   min-height: 670px;
-  background: #F7F7FF;
+  background: $basic-color-gray;
   &__item {
     max-width: 360px;
     min-height: 450px;
@@ -743,7 +743,7 @@ main {
     padding: 10px;
     box-sizing: border-box;
     background: transparent;
-    border: 3px solid #F7F7FF;
+    border: 3px solid $basic-color-gray;
     border-radius: 5px;
     &:hover:nth-child(n)::before {
       opacity: 1;
@@ -820,7 +820,7 @@ main {
 
 .contacts {
   min-height: 390px;
-  background: #F7F7FF;
+  background: $basic-color-gray;
   &__inner {
     display: flex;
     flex-wrap: wrap;
@@ -907,7 +907,7 @@ main {
     border: none;
     border-radius: 5px;
     outline: none;
-    background: #F7F7FF;
+    background: $basic-color-gray;
   }
   span {
     padding: 0 0 10px;
@@ -998,7 +998,7 @@ main {
 --------------------------------------------------------------*/
 .all-parameters {
   padding-bottom: 45px;
-  background-color: #F7F7FF;
+  background-color: $basic-color-gray;
 }
 
 .cargo {
@@ -1067,6 +1067,12 @@ main {
     justify-content: space-between;
     align-items: baseline;
     padding-bottom: 10px;
+    &.response__price--bold {
+      font-weight: bold;
+    }
+    &.response__price--opacity {
+      color: #BDBDBD;
+    }
   }
   &__dots {
     width: calc(100% - 260px);
@@ -1104,7 +1110,6 @@ main {
       content: "";
     }
   }
-
 
   &__schedule {
     position: relative;
@@ -1145,16 +1150,14 @@ main {
 
 }
 
-
-.checkbox__prompt{
+.checkbox__prompt {
   display: none;
 }
-
 
 .request {
   min-height: 740px;
   padding-bottom: 50px;
-  background: #F7F7FF;
+  background: $basic-color-gray;
   &__inner {
     margin-top: 17px;
   }
@@ -1180,12 +1183,14 @@ main {
     margin: 40px auto auto;
   }
 }
+
 /*--------------------------------------------------------------
 # about-page *
 --------------------------------------------------------------*/
 .description {
   position: relative;
   min-height: 632px;
+  color: #fff;
   background: url("../img/pics/bg_about.png") no-repeat center;
   background-size: cover;
   &::before {
@@ -1195,38 +1200,69 @@ main {
     background: rgba(37, 55, 70, 0.5);
     content: "";
   }
-}
 
+  &__inner {
+    height: 632px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    /*    flex-wrap: wrap;*/
+
+  }
+
+  &__item {
+    position: relative;
+    height: 110px;
+    max-width: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+    /*    &:not(:last-child) {
+          margin-right: 60px;
+        }*/
+  }
+  &__title {
+    font-size: 40px;
+    line-height: 64px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  &__text {
+    color: $basic-color-gray;
+  }
+}
 
 .about-us {
   position: relative;
   display: block;
-  background: #F7F7FF;
   &__inner {
     margin-top: 48px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   &__text {
     display: block;
-    padding: 20px 50px;
+    padding: 20px 25px;
     font-size: 15px;
     line-height: 20px;
-    font-weight: bold;
-    text-transform: capitalize;
+    text-align: center;
     color: $basic-color-black;
   }
 
   &__item {
     position: relative;
     margin-bottom: 60px;
-    margin-left: 60px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
     box-sizing: border-box;
     border: 2px solid $basic-color-pink;
     border-radius: 5px;
-    pointer-events: none;
 
     @for $i from 1 to 10 {
       &:nth-child(#{$i})::before {
@@ -1249,5 +1285,11 @@ main {
       }
     }
   }
+}
 
+.advantages {
+  &__layout {
+    min-height: 360px;
+    background: $basic-color-gray;
+  }
 }
