@@ -2850,6 +2850,14 @@ input[type=number] {
     flex-wrap: nowrap; }
   .about-us__item {
     width: auto; }
+  .advantages__item {
+    align-items: flex-start; }
+    .advantages__item.advantages__item--indent {
+      margin-right: 65px; }
+  .advantages__layout:nth-child(even) .flex-box {
+    flex-direction: row-reverse; }
+  .advantages__layout .flex-box {
+    flex-direction: row; }
   /*--------------------------------------------------------------
   # Footer 1366px
   --------------------------------------------------------------*/
