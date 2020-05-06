@@ -1300,21 +1300,28 @@ main {
     &:nth-child(odd) {
       background: $basic-color-gray;
     }
-    &:nth-child(even) {
-      .flex-box {
-        flex-direction: row-reverse;
-      }
+    /*    &:nth-child(even) {
+          .flex-box {
+            flex-direction: row-reverse;
+          }
+        }*/
+    .flex-box {
+      flex-direction: column;
     }
-
   }
   &__item {
     padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &.advantages__item--slider {
-      max-width: 650px;
+      max-width: 210px;
     }
     figure {
-      width: 210px;
-      height: 210px;
+      min-width: 210px;
+      min-height: 210px;
+      display: flex;
+      align-items: center;
       img {
         border-radius: 5px;
       }

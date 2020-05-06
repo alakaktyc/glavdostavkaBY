@@ -9,14 +9,13 @@
 .owl-carousel {
   display: none;
   width: 100%;
-  max-width: 1120px;
-  margin: auto;
   -webkit-tap-highlight-color: transparent;
   /* position relative and z-index fix webkit rendering fonts issue */
   position: relative;
   z-index: 1; }
   .owl-carousel .owl-stage {
     position: relative;
+    margin: auto;
     -ms-touch-action: pan-Y;
     touch-action: manipulation;
     -moz-backface-visibility: hidden;
@@ -54,7 +53,6 @@
   .owl-carousel .owl-nav.disabled,
   .owl-carousel .owl-dots.disabled {
     display: none; }
-
   .owl-carousel .owl-nav .owl-prev,
   .owl-carousel .owl-nav .owl-next,
   .owl-carousel .owl-dot {
@@ -67,7 +65,7 @@
   .owl-carousel .owl-nav button.owl-prev,
   .owl-carousel .owl-nav button.owl-next,
   .owl-carousel button.owl-dot {
-    /*background: none;*/
+    background: none;
     color: inherit;
     border: none;
     padding: 0 !important;
@@ -187,40 +185,3 @@
   z-index: 1;
   height: 100%;
   width: 100%; }
-
-
-
-
-
-
-
-.owl-carousel .owl-nav {
-  top: 50%;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 1280px;
-}
-.owl-carousel .owl-nav .owl-prev,
-.owl-carousel .owl-nav .owl-next {
-  outline: none;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-}
-.owl-carousel .owl-nav .owl-next {
-  right: 0;
-  background: url("/assets/img/icons/next.svg") center no-repeat;
-}
-.owl-carousel .owl-nav .owl-prev {
-  background: url("/assets/img/icons/prev.svg") center no-repeat;
-}
-
-.owl-carousel .owl-nav .owl-prev span,
-.owl-carousel .owl-nav .owl-next span{
-  width: 50px;
-  height: 50px;
-}
-.owl-carousel .owl-nav .owl-prev span {
-  background: url("/assets/img/icons/prev.svg") center no-repeat;
-}
