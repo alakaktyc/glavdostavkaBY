@@ -1081,6 +1081,9 @@ main {
 .news {
   min-height: 670px;
   background: #F7F7FF; }
+  .news__slider {
+    max-width: 1120px;
+    margin: auto; }
   .news__item {
     max-width: 360px;
     min-height: 450px;
@@ -1732,9 +1735,35 @@ main {
       box-shadow: 2px 2px 10px rgba(37, 55, 70, 0.2);
       content: "09"; }
 
+.advantages h2 {
+  padding-bottom: 0; }
+
 .advantages__layout {
-  min-height: 360px;
-  background: #F7F7FF; }
+  padding-bottom: 40px;
+  /*    &:nth-child(even) {
+          .flex-box {
+            flex-direction: row-reverse;
+          }
+        }*/ }
+  .advantages__layout:nth-child(odd) {
+    background: #F7F7FF; }
+  .advantages__layout .flex-box {
+    flex-direction: column; }
+
+.advantages__item {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .advantages__item.advantages__item--slider {
+    max-width: 210px; }
+  .advantages__item figure {
+    min-width: 210px;
+    min-height: 210px;
+    display: flex;
+    align-items: center; }
+    .advantages__item figure img {
+      border-radius: 5px; }
 
 /*--------------------------------------------------------------
 # Parameters * Переменные и миксины
@@ -1953,6 +1982,11 @@ img {
 .flex-wrap {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between; }
+
+.flex-box {
+  display: flex;
   align-items: center;
   justify-content: space-between; }
 
@@ -2199,6 +2233,11 @@ input[type=number] {
   --------------------------------------------------------------*/
   .services__item {
     width: calc(100% / 2 - 10px); }
+  /*--------------------------------------------------------------
+  # about-page 480px
+  --------------------------------------------------------------*/
+  .advantages__item.advantages__item--slider {
+    max-width: 430px; }
   /*--------------------------------------------------------------
   # Footer 480px
   --------------------------------------------------------------*/ }
@@ -2506,6 +2545,8 @@ input[type=number] {
   .description__inner {
     flex-direction: row;
     flex-wrap: wrap; }
+  .advantages__item.advantages__item--slider {
+    max-width: 650px; }
   /*--------------------------------------------------------------
   # Footer 720px
   --------------------------------------------------------------*/ }
