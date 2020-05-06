@@ -3,7 +3,7 @@ $(document).ready(function () {
         loop: false,
         margin: 10,
         nav: true,
-        autoWidth:true,
+        autoWidth:true/*,
         responsive: {
             0: {
                 items: 1,
@@ -19,6 +19,6 @@ $(document).ready(function () {
                 items: 3,
                 nav: true
             }
-        }
+        }*/
     });
 });

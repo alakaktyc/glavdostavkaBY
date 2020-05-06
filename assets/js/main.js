@@ -140,6 +140,22 @@ $(document).ready(function () {
             responsiveClass: true,
             navText: [" ", " "],
             margin: 20,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                768: {
+                    items: 2,
+                },
+                920: {
+                    items: 3,
+                },
+                1280: {
+                    items: 3,
+                    nav: true
+                }
+            }
         }
     );
 
