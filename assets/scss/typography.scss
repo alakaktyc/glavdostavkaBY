@@ -101,12 +101,13 @@ h6 {
 
 h1 {
   margin: 24px 10px;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 40px;
+  line-height: 64px;
   color: $basic-color-black;
 }
 
 h2 {
+  margin-top: 0;
   padding-top: 43px;
   font-size: 30px;
   line-height: 27px;
@@ -135,7 +136,7 @@ h3 {
 h4 {
   font-size: 20px;
   line-height: 20px;
-  color: #F7F7FF;
+  color: $basic-color-gray;
 }
 
 h5 {
@@ -215,7 +216,7 @@ img {
     transition: 0.3s ease;
   }
   &.btn--transparent {
-    border: 2px solid #F7F7FF;
+    border: 2px solid $basic-color-gray;
     background: transparent;
     transition: 0.3s ease;
     &:hover {
@@ -230,7 +231,7 @@ img {
     background: transparent;
     transition: 0.3s ease;
     &:hover {
-      color: #F7F7FF;
+      color: $basic-color-gray;
       background: $basic-color-pink;
       transition: 0.3s ease;
     }
@@ -275,8 +276,8 @@ img {
     transition: 0.3s ease;
   }
   &.link--white {
-    color: #F7F7FF;
-    border-bottom: 1px solid #F7F7FF;
+    color: $basic-color-gray;
+    border-bottom: 1px solid $basic-color-gray;
     transition: 0.3s ease;
     &:hover {
       border-bottom: 1px solid transparent;

@@ -39,7 +39,7 @@
   .header {
     .schedule-box,
     .calling-box {
-      margin-left: auto;
+      margin: auto;
     }
   }
   /*--------------------------------------------------------------
@@ -140,8 +140,8 @@
     font-size: 15px;
     line-height: 20px;
     color: $basic-color-black;
-    border-top: 4px solid #F7F7FF;
-    border-bottom: 4px solid #F7F7FF;
+    border-top: 4px solid $basic-color-gray;
+    border-bottom: 4px solid $basic-color-gray;
     background: none;
     visibility: visible;
     opacity: 1;
@@ -198,7 +198,7 @@
   .shipping {
     position: relative;
     display: block;
-    background: #F7F7FF;
+    background: $basic-color-gray;
     &__inner {
       margin-top: 48px;
       display: flex;
@@ -263,6 +263,16 @@
   }
 
   /*--------------------------------------------------------------
+# about-page 720px
+--------------------------------------------------------------*/
+  .description {
+    &__inner {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  /*--------------------------------------------------------------
   # Footer 720px
   --------------------------------------------------------------*/
 
@@ -292,6 +302,15 @@
   }
 
   /*--------------------------------------------------------------
+# About-page 768px
+--------------------------------------------------------------*/
+  .about-us {
+    &__item {
+      width: calc(50% - 60px);
+    }
+  }
+
+  /*--------------------------------------------------------------
   # Footer 768px
   --------------------------------------------------------------*/
 }
@@ -302,11 +321,6 @@
   /*--------------------------------------------------------------
   # Typography 920px
   --------------------------------------------------------------*/
-  h1 {
-    margin: 10px 10px;
-    font-size: 40px;
-    line-height: 64px;
-  }
 
   h4 {
     margin-top: 60px;
@@ -347,7 +361,7 @@
   }
 
   .wrapper {
-    top: 84px;
+    top: 112px;
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 1280px;
@@ -412,8 +426,8 @@
       &:nth-child(2) {
         width: 50%;
         padding-left: 30px;
-        border-right: 3px solid #F7F7FF;
-        border-left: 3px solid #F7F7FF;
+        border-right: 3px solid $basic-color-gray;
+        border-left: 3px solid $basic-color-gray;
       }
     }
   }
@@ -451,6 +465,7 @@
       width: calc(50% - 20px);
     }
   }
+
   /*--------------------------------------------------------------
   # Footer 920px
   --------------------------------------------------------------*/
@@ -729,29 +744,41 @@
     margin-right: 0;
   }
 
-
   .response {
     &__wrap {
       &::before {
         left: -36.5%;
-        width: 144%;
+        width: 140%;
       }
+    }
+    &__schedule {
+      margin-right: 20px;
     }
     &__logo {
       display: block;
     }
   }
 
-
-  .request {
-    &__wrap {
-      .request__item {
-        width: calc(50% - 59px);
+  /*--------------------------------------------------------------
+# About-page 1366px
+--------------------------------------------------------------*/
+  .description {
+    &__item {
+      width: auto;
+      &:not(:last-child) {
+        margin-right: 60px;
       }
     }
   }
 
-
+  .about-us {
+    &__inner {
+      flex-wrap: nowrap;
+    }
+    &__item {
+      width: auto;
+    }
+  }
 
 
 
