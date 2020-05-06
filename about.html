@@ -3,6 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/owl/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/owl/css/owl.theme.default.min.css">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -104,11 +106,74 @@
 
     <section class="advantages">
         <div class="advantages__layout">
-            <div class="container">
-                <h2>почему выбирают нас</h2>
+            <h2>почему выбирают нас</h2>
+            <div class="container flex-box">
+                <div class="advantages__item">
+                    <h5 class="title--pink">надёжность</h5>
+                    <p>12 лет на рынке грузоперевозок – означает, что компания надежная и не пропадет с рынка,
+                        не придётся перестраивать свою схему работы.</p>
+                </div>
+                <div class="advantages__item advantages__item--slider owl-carousel">
+
+                    <figure>
+                        <img src="assets/img/pics/about-reliability1.png" alt="">
+                    </figure>
+
+                    <figure>
+                        <img src="assets/img/pics/about-reliability2.png" alt="">
+                    </figure>
+
+                    <figure>
+                        <img src="assets/img/pics/about-reliability3.png" alt="">
+                    </figure>
+
+                </div>
             </div>
         </div>
 
+        <div class="advantages__layout">
+            <div class="container flex-box">
+                <div class="advantages__item">
+                    <h5 class="title--pink">экономичная доставка до склада</h5>
+                    <p>Грузоперевозка до склада (с самовывозом и самоподвозом) дешевле.
+                        Филиал компании присутствует почти в каждом крупном городе России (128 филиалов, 143 пункта
+                        приема и выдачи грузов).
+                        БЕЗ предоплаты. Бесплатно храним на складе 3 дня
+                    </p>
+                </div>
+                <div class="advantages__item advantages__item--slider owl-carousel">
+                    <figure>
+                        <img src="assets/img/pics/about-economy1.png" alt="">
+                    </figure>
+                    <figure>
+                        <img src="assets/img/pics/about-economy2.png" alt="">
+                    </figure>
+                    <figure>
+                        <img src="assets/img/pics/about-economy3.png" alt="">
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <div class="advantages__layout">
+            <div class="container flex-box">
+                <div class="advantages__item">
+                    <h5 class="title--pink">доставка в срок</h5>
+                    <p>Сроки постоянно сокращаются на основные направления перевозок.</p>
+                </div>
+                <div class="advantages__item advantages__item--slider owl-carousel">
+                    <figure>
+                        <img src="assets/img/pics/about-time1.png" alt="">
+                    </figure>
+                    <figure>
+                        <img src="assets/img/pics/about-time2.png" alt="">
+                    </figure>
+                    <figure>
+                        <img src="assets/img/pics/about-time3.png" alt="">
+                    </figure>
+                </div>
+            </div>
+        </div>
 
     </section>
 
@@ -179,5 +244,9 @@
 
     </div>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="assets/owl/owl.carousel.min.js"></script>
+<script src="assets/js/about.js"></script>
 </body>
 </html>

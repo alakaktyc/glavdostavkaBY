@@ -187,6 +187,11 @@ img {
   justify-content: space-between;
 }
 
+.flex-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .title{
   &--pink {
     color: $basic-color-pink;
