@@ -10,7 +10,7 @@
 </head>
 <body>
 <header class="header">
-    <div class="container flex-wrap header__container">
+    <div class="container flex-wrap container--header">
 
         <div class="logo-box">
             <a class="logo-box__link"><img src="assets/img/logo.svg" alt=""></a>
@@ -20,12 +20,11 @@
         <div class="search-box">
             <form class="search-form" action="">
                 <input type="search" placeholder="Введите текст">
-                <button class="search-form__btn"><img src="assets/img/icons/icon_search.svg" alt=""></button>
+                <button class="search-form__btn"><span></span></button>
             </form>
         </div>
 
         <div class="schedule-box">
-            <img src="assets/img/icons/icon_time.svg" alt="">
             <span class="schedule-box__content">
                 <span class="schedule-box__text">Пн-Пт с 08.30-18.00</span>
                 <span>Время работы контакт-центра</span>
@@ -33,7 +32,6 @@
         </div>
 
         <div class="calling-box">
-            <img src="assets/img/icons/icon_phone.svg" alt="">
             <span class="calling-box__content">
                 <a href="tel:+375173362424" class="calling-box__text">+375 (17) <span
                         class="calling-box__text calling-box__text--big">336-24-24</span></a>
@@ -66,8 +64,6 @@
 <main>
     <h1>перевозки по беларуси</h1>
     <section class="main-slider">
-
-
 
 
             <div class="main-slider__item">
@@ -118,33 +114,32 @@
             </div>
         <div class="wrapper">
             <div class="calculator">
-                <form class="form form--little" action="">
+                <form class="form calculator-widget" action="">
                     <h4>рассчитать перевозку</h4>
 
                     <div class="form__inner">
                         <div class="form__cities">
-                            <label class="form__label form__label--longest">
+                            <label class="form__label">
                                 Город отправления
                                 <input class="form__input" type="text" value="Минск">
                             </label>
-                            <label class="form__label form__label--longest">
+                            <label class="form__label">
                                 Город доставки
                                 <input class="form__input" type="text" value="Минск">
                             </label>
-                            <button class="btn-reverse" type="button"><img src="assets/img/icons/icon_arrows.svg"
-                                                                           alt=""></button>
+                            <button class="btn-reverse" type="button"></button>
                         </div>
 
 
                         <div class="form__cargo">
 
-                            <label class="form__label">
+                            <label class="form__label form__label--smaller">
                                 Вес
                                 <input class="form__input" type="text" value="0.3" maxlength="4">
                                 <span class="form__label-measure">кг</span>
                             </label>
 
-                            <label class="form__label form__label--longer">
+                            <label class="form__label form__label--small">
 
                                 <span class="form__switch">
                                     <span class="switch">Габариты</span> | <span>Объём</span>
@@ -170,7 +165,7 @@
                             </label>
 
 
-                            <label class="form__label">
+                            <label class="form__label form__label--smaller">
                                 Кол-во груза
                                 <span class="btn-arrow btn-arrow--left">-</span>
                                 <input class="form__input form__input--indent" type="number"
@@ -180,8 +175,12 @@
                             </label>
 
                             <div class="controls-cargo">
-                                <button class="controls-cargo__btn controls-cargo__btn--white" type="button">-</button>
-                                <button class="controls-cargo__btn" type="button">+</button>
+                                <label class="controls-cargo__label">
+                                    <input class="controls-cargo__btn controls-cargo__btn--white" type="button" value="-">
+                                </label>
+                                <label class="controls-cargo__label">
+                                    <input class="controls-cargo__btn" type="button" value="+">
+                                </label>
                             </div>
 
                         </div>
@@ -194,10 +193,14 @@
                         Самостоятельно привезу груз на склад
                     </label>
 
-                    <div class="date-box">
+                    <div class="btn-box">
+                        <button class="calculator__btn btn  btn--transparent">рассчитать</button>
+                        <button class="calculator__btn btn ">оформить заявку</button>
+                    </div>
 
+                    <div class="date-box">
                         <div class="date-box__item">
-                            <label class="form__label form__label--longest">
+                            <label class="form__label">
                                 <input class="form__input" type="date" value="2020-05-20">
                                 <span class="date-box__text"> &#8212; дата забора</span>
                             </label>
@@ -208,12 +211,6 @@
                             <span class="date-box__text date-box__text--bold">30.05.2020</span>
                             <span class="date-box__text"> &#8212; дата доставки</span>
                         </div>
-
-                    </div>
-
-                    <div class="btn-box">
-                        <button class="calculator__btn btn  btn--transparent">рассчитать</button>
-                        <button class="calculator__btn btn ">оформить заявку</button>
                     </div>
 
                 </form>
@@ -227,39 +224,38 @@
     <section class="services">
         <h3>Услуги</h3>
         <div class="container flex-wrap">
-            <div class="services__item">
+            <div class="services__item services__item--cargo">
                 <svg class="services__ellipse">
                     <use xlink:href="assets/sprite.svg#ellipse_cargo"></use>
                 </svg>
-                <img src="assets/img/pics/services_group.svg" alt="">
                 <p class="services__title services__title--long">Перевозка сборных грузов</p>
             </div>
-            <div class="services__item">
+            <div class="services__item services__item--pallet">
                 <svg class="services__ellipse">
                     <use xlink:href="assets/sprite.svg#ellipse_pallet"></use>
                 </svg>
-                <img src="assets/img/pics/services_pallet.svg" alt="">
+
                 <p class="services__title">Паллетная доставка</p>
             </div>
-            <div class="services__item">
+            <div class="services__item services__item--car">
                 <svg class="services__ellipse">
                     <use xlink:href="assets/sprite.svg#ellipse_car"></use>
                 </svg>
-                <img src="assets/img/pics/services_car.svg" alt="">
+
                 <p class="services__title">Прямая машина</p>
             </div>
-            <div class="services__item">
+            <div class="services__item services__item--geo">
                 <svg class="services__ellipse">
                     <use xlink:href="assets/sprite.svg#ellipse_geo"></use>
                 </svg>
-                <img src="assets/img/pics/services_shop.svg" alt="">
+
                 <p class="services__title">Интернет-магазинам</p>
             </div>
-            <div class="services__item">
+            <div class="services__item services__item--package">
                 <svg class="services__ellipse">
                     <use xlink:href="assets/sprite.svg#ellipse_cargo"></use>
                 </svg>
-                <img src="assets/img/pics/services_package.svg" alt="">
+
                 <p class="services__title">Упаковка грузов</p>
             </div>
         </div>
@@ -276,7 +272,7 @@
                     <input class="tariffs__input" type="text" value="Минск">
                 </label>
 
-                <button class="btn-reverse--black"><img src="assets/img/icons/icon_arrows-black.svg" alt=""></button>
+                <button class="btn-reverse--black"><!--<img src="assets/img/icons/icon_arrows-black.svg" alt="">--></button>
 
                 <span class="tariffs__label">
                     Город отправления
@@ -391,72 +387,91 @@
         <div class="container">
 
             <div class="news__slider owl-carousel">
+                <article>
+                    <a class="news__link" href="#">
+                        <figure class="news__item">
+                            <img src="assets/img/pics/news_1.png" alt="">
+                            <figcaption>
+                                <span class="news__date">03.03.2020 г.</span>
+                                <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
+                                <p class="news__text">
+                                    Доставка в пункты выдачи для интернет-магазинов. <br>
+                                    Доставка в сетевые магазины по Беларуси. <br>
+                                    Без предоплаты на счет.
+                                </p>
+                                <span class="link">Подробнее</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
 
-                <figure class="news__item">
-                    <img src="assets/img/pics/news_1.png" alt="">
-                    <figcaption>
-                        <p class="news__date">03.03.2020 г.</p>
-                        <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
-                        <p class="news__text">
-                            Доставка в пункты выдачи для интернет-магазинов. <br>
-                            Доставка в сетевые магазины по Беларуси. <br>
-                            Без предоплаты на счет.
-                        </p>
-                        <p><a class="link" href="">Подробнее</a></p>
-                    </figcaption>
-                </figure>
+                <article>
+                    <a class="news__link" href="#">
+                        <figure class="news__item">
+                            <img src="assets/img/pics/news_2.png" alt="">
+                            <figcaption>
+                                <span class="news__date">03.03.2020 г.</span>
+                                <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
+                                <p class="news__text">
+                                    Также как дальнейшее развитие различных форм деятельности играет важную роль в
+                                    формировании укрепления моральных ценностей.
+                                </p>
+                                <span class="link">Подробнее</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
 
-                <figure class="news__item">
-                    <img src="assets/img/pics/news_2.png" alt="">
-                    <figcaption>
-                        <p class="news__date">03.03.2020 г.</p>
-                        <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
-                        <p class="news__text">
-                            Также как дальнейшее развитие различных форм деятельности играет важную роль в
-                            формировании укрепления моральных ценностей.
-                        </p>
-                        <p><a class="link" href="">Подробнее</a></p>
-                    </figcaption>
-                </figure>
+                <article>
+                    <a class="news__link" href="#">
+                        <figure class="news__item">
+                            <img src="assets/img/pics/news_3.png" alt="">
+                            <figcaption>
+                                <span class="news__date">03.03.2020 г.</span>
+                                <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
+                                <p class="news__text">
+                                    Вот вам яркий пример современных тенденций - граница обучения кадров
+                                    позволяет выполнить важные задания по разработке новых предложений.
+                                </p>
+                                <span class="link">Подробнее</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
 
-                <figure class="news__item">
-                    <img src="assets/img/pics/news_3.png" alt="">
-                    <figcaption>
-                        <p class="news__date">03.03.2020 г.</p>
-                        <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
-                        <p class="news__text">
-                            Вот вам яркий пример современных тенденций - граница обучения кадров
-                            позволяет выполнить важные задания по разработке новых предложений.
-                        </p>
-                        <p><a class="link" href="">Подробнее</a></p>
-                    </figcaption>
-                </figure>
+                <article>
+                    <a class="news__link" href="#">
+                        <figure class="news__item">
+                            <img src="assets/img/pics/news_2.png" alt="">
+                            <figcaption>
+                                <span class="news__date">03.03.2020 г.</span>
+                                <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
+                                <p class="news__text">
+                                    Также как дальнейшее развитие различных форм деятельности играет важную роль в
+                                    формировании укрепления моральных ценностей.
+                                </p>
+                                <span class="link">Подробнее</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
 
-                <figure class="news__item">
-                    <img src="assets/img/pics/news_2.png" alt="">
-                    <figcaption>
-                        <p class="news__date">03.03.2020 г.</p>
-                        <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
-                        <p class="news__text">
-                            Также как дальнейшее развитие различных форм деятельности играет важную роль в
-                            формировании укрепления моральных ценностей.
-                        </p>
-                        <p><a class="link" href="">Подробнее</a></p>
-                    </figcaption>
-                </figure>
-
-                <figure class="news__item">
-                    <img src="assets/img/pics/news_2.png" alt="">
-                    <figcaption>
-                        <p class="news__date">03.03.2020 г.</p>
-                        <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
-                        <p class="news__text">
-                            Также как дальнейшее развитие различных форм деятельности играет важную роль в
-                            формировании укрепления моральных ценностей.
-                        </p>
-                        <p><a class="link" href="">Подробнее</a></p>
-                    </figcaption>
-                </figure>
+                <article>
+                    <a class="news__link" href="#">
+                        <figure class="news__item">
+                            <img src="assets/img/pics/news_2.png" alt="">
+                            <figcaption>
+                                <span class="news__date">03.03.2020 г.</span>
+                                <h5>С 10.03 сокращаем сроки доставки по Беларуси!</h5>
+                                <p class="news__text">
+                                    Также как дальнейшее развитие различных форм деятельности играет важную роль в
+                                    формировании укрепления моральных ценностей.
+                                </p>
+                                <span class="link">Подробнее</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
 
 
             </div>
@@ -616,7 +631,7 @@
                                 <input class="form-call__input" type="text" placeholder="Введите, что и куда хотите отправить">
                                 <span>Пример: обувь в Минск</span>
                             </label>
-                            <button class="btn btn--pink">Заказать звонок</button>
+                            <button class="btn btn--small">Заказать звонок</button>
                         </form>
                     </div>
                 </div>

@@ -6,9 +6,11 @@
 main {
   position: relative;
 }
+
 .wrapper {
   position: relative;
 }
+
 .main-slider__item {
   position: relative;
   height: 550px;
@@ -97,6 +99,9 @@ main {
   flex-direction: column;
   align-items: center;
   background: rgba(37, 55, 70, 0.85);
+  .calculator-widget {
+    width: 90%;
+  }
   &-price {
     width: 100%;
     min-height: 60px;
@@ -121,9 +126,6 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
-  &.form--little {
-    width: 90%;
-  }
   &__inner {
     width: calc(100% - 25px);
   }
@@ -139,18 +141,18 @@ main {
   }
   &__label {
     position: relative;
-    width: 140px;
+    width: 100%;
     margin-top: 16px;
     display: flex;
     flex-direction: column;
     font-size: 12px;
     line-height: 20px;
     color: #F7F7FF;
-    &.form__label--longest {
-      width: 100%;
-    }
-    &.form__label--longer {
+    &.form__label--small {
       width: 195px;
+    }
+    &.form__label--smaller {
+      width: 140px;
     }
     &.form__label--black {
       color: $basic-color-black;
@@ -160,7 +162,7 @@ main {
       line-height: 20px;
       color: rgba(247, 247, 255, 0.5);
       &.form__label-info--black {
-        color: rgba(37,55,70, 0.5);
+        color: rgba(37, 55, 70, 0.5);
       }
     }
     &-measure {
@@ -189,6 +191,12 @@ main {
     }
     &.form__input--indent {
       padding: 5px 31px;
+    }
+    &.form__input--square {
+      width: 21px;
+      padding: 2px 0 2px 6px;
+      margin-left: 26px;
+      background: #FFF;
     }
     /*      &::-webkit-calendar-picker-indicator {
             color: transparent;
@@ -256,7 +264,6 @@ main {
     }
   }
 
-
   /*--------------------------------------------------------------
 # big calculator
 --------------------------------------------------------------*/
@@ -284,7 +291,7 @@ main {
     background: #FFF;
   }
   &__package,
-  &__services{
+  &__services {
     display: flex;
     flex-wrap: wrap;
     .checkbox {
@@ -293,31 +300,27 @@ main {
   }
 }
 
-
-
-
-
 .btn-arrow {
-   position: absolute;
-   top: 29px;
-   display: block;
-   width: 0;
-   height: 0;
-   margin: 0 5px;
-   font-size: 0;
-   border: 6px solid transparent;
-   cursor: pointer;
-   &.btn-arrow--right {
-     left: 45px;
-     border-left-color: $basic-color-black;;
-     border-right: 0;
-   }
-   &.btn-arrow--left {
-     left: 12px;
-     border-right-color: $basic-color-black;;
-     border-left: 0;
-   }
- }
+  position: absolute;
+  top: 29px;
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0 5px;
+  font-size: 0;
+  border: 6px solid transparent;
+  cursor: pointer;
+  &.btn-arrow--right {
+    left: 45px;
+    border-left-color: $basic-color-black;;
+    border-right: 0;
+  }
+  &.btn-arrow--left {
+    left: 12px;
+    border-right-color: $basic-color-black;;
+    border-left: 0;
+  }
+}
 
 .date-box {
   display: flex;
@@ -326,7 +329,6 @@ main {
   align-items: baseline;
   padding-bottom: 30px;
   color: #F7F7FF;
-  border-bottom: 4px solid #F7F7FF;
   .form__input {
     width: 150px;
   }
@@ -354,17 +356,19 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  border-bottom: 4px solid #F7F7FF;
 }
-
 
 .btn-reverse {
   position: absolute;
   top: 50%;
-  right: -40px;
+  right: -35px;
+  width: 22px;
+  height: 17px;
   padding: 0;
   border: none;
   outline: none;
-  background: transparent;
+  background: url("../img/icons/icon_arrows.svg") no-repeat center center;
   cursor: pointer;
   &.btn-reverse--black {
     display: none;
@@ -374,7 +378,7 @@ main {
 .controls-cargo {
   position: absolute;
   top: 16px;
-  right: -40px;
+  right: -35px;
   display: flex;
   flex-direction: column;
   &__btn {
@@ -395,7 +399,7 @@ main {
     cursor: pointer;
     transition: 0.3s ease;
     &:hover {
-      border: 2px solid #fff;
+      color: $basic-color-pink;
       background: transparent;
       transition: 0.3s ease;
     }
@@ -403,10 +407,36 @@ main {
       border: 2px solid #F7F7FF;
       background: transparent;
       &:hover {
+        color: #F7F7FF;
         border: 2px solid transparent;
         background: $basic-color-pink;
         transition: 0.3s ease;
       }
+    }
+    &.controls-cargo__btn--black {
+      color: $basic-color-black;
+      border: 2px solid $basic-color-black;
+      background: transparent;
+      &:hover {
+        color: #F7F7FF;
+        border: 2px solid $basic-color-pink;
+        background: $basic-color-pink;
+        transition: 0.3s ease;
+      }
+    }
+  }
+  &__label {
+    display: flex;
+    cursor: pointer;
+  }
+  &__description {
+    display: none;
+    margin-left: 10px;
+    color: $basic-color-black;
+    font-weight: bold;
+    text-transform: uppercase;
+    &.controls-cargo__description--pink {
+      color: $basic-color-pink;
     }
   }
 }
@@ -429,12 +459,56 @@ main {
     border-radius: 5px;
     background: #FFFFFF;
     cursor: pointer;
+    &.services__item--cargo,
+    &.services__item--pallet,
+    &.services__item--car,
+    &.services__item--geo,
+    &.services__item--package {
+      position: relative;
+      &::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: "";
+      }
+    }
+
+    &.services__item--cargo {
+      &::before {
+        background: url("../img/pics/services_group.svg") no-repeat center center;
+      }
+    }
+
+    &.services__item--pallet {
+      &::before {
+        background: url("../img/pics/services_pallet.svg") no-repeat center center;
+      }
+    }
+
+    &.services__item--car {
+      &::before {
+        background: url("../img/pics/services_car.svg") no-repeat center center;
+      }
+    }
+
+    &.services__item--geo {
+      &::before {
+        background: url("../img/pics/services_shop.svg") no-repeat center center;
+      }
+    }
+
+    &.services__item--package {
+      &::before {
+        background: url("../img/pics/services_package.svg") no-repeat center center;
+      }
+    }
     &:hover .services__ellipse {
       transform: skew(-20deg, 20deg);
       transition: 0.3s ease;
     }
   }
   &__title {
+    position: relative;
     max-width: 165px;
     font-weight: bold;
     font-size: 18px;
@@ -442,6 +516,7 @@ main {
     text-align: center;
     text-transform: uppercase;
     color: $basic-color-black;
+    z-index: 3;
     &.services__title--long {
       max-width: 170px;
     }
@@ -455,6 +530,7 @@ main {
     transition: 0.3s ease;
   }
 }
+
 /*--------------------------------------------------------------
 # tariffs *
 --------------------------------------------------------------*/
@@ -493,7 +569,7 @@ main {
     border-radius: 5px;
     outline: none;
     background: #F7F7FF;
-    &.tariffs__input--select{
+    &.tariffs__input--select {
       cursor: pointer;
       &::before {
         position: absolute;
@@ -556,14 +632,16 @@ main {
     margin-top: 15px;
   }
 }
+
 .btn-reverse--black {
+  width: 19px;
+  height: 20px;
   border: none;
   outline: none;
-  background: transparent;
+  background: url("../img/icons/icon_arrows-black.svg") no-repeat center center;
   cursor: pointer;
   transform: rotate(90deg);
 }
-
 
 /*--------------------------------------------------------------
 # news *
@@ -592,13 +670,14 @@ main {
     }
   }
   &__date {
+    display: block;
     margin-top: 26px;
-    margin-bottom: 8px;
+    margin-bottom: 18px;
     font-size: 12px;
     line-height: 20px;
     color: rgba(37, 55, 70, 0.5);
   }
-  &__text{
+  &__text {
     height: 120px;
     margin-top: 0;
     margin-bottom: 10px;
@@ -646,8 +725,6 @@ main {
 .shipping {
   display: none;
 }
-
-
 
 /*--------------------------------------------------------------
 # payment *
@@ -737,7 +814,6 @@ main {
   }
 }
 
-
 /*--------------------------------------------------------------
 # contacts *
 --------------------------------------------------------------*/
@@ -812,6 +888,7 @@ main {
     flex-wrap: wrap;
   }
 }
+
 .form-call {
   margin-bottom: 20px;
   &__label {
@@ -839,7 +916,6 @@ main {
   }
 }
 
-
 /*--------------------------------------------------------------
 # widgets *
 --------------------------------------------------------------*/
@@ -860,7 +936,7 @@ main {
     margin: 10px 0;
     border-radius: 50%;
     box-sizing: border-box;
-    background:  $basic-color-pink;
+    background: $basic-color-pink;
     opacity: 0.3;
     transition: all 0.5s;
     &:hover {
@@ -917,7 +993,6 @@ main {
   }
 }
 
-
 /*--------------------------------------------------------------
 # big calculator *
 --------------------------------------------------------------*/
@@ -925,8 +1000,11 @@ main {
   padding-bottom: 45px;
   background-color: #F7F7FF;
 }
+
 .cargo {
+  position: relative;
   max-width: 1090px;
+  margin-bottom: 44px;
   &__title {
     display: block;
     font-size: 18px;
@@ -959,13 +1037,217 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
   }
+  &__quantity {
+    position: relative;
+    .btn-arrow {
+      top: 4px;
+    }
+  }
+  &__descritpion {
+    min-width: 280px;
+  }
 }
-.request {
+
+.form__parameters {
+  width: 90%;
+}
+
+.response {
+  margin-top: 44px;
   &__inner {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
+  &__item {
+    width: 100%;
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 10px;
+  }
+  &__dots {
+    width: calc(100% - 260px);
+    border-bottom: 1px dotted $basic-color-black;
+  }
+  &__box {
+    padding-bottom: 30px;
+  }
+  &__parameter {
+    font-weight: bold;
+    margin-right: 20px;
+    span {
+      margin-left: 10px;
+      font-weight: normal;
+    }
+  }
+
+  &__total {
+    margin-top: 35px;
+    min-height: 120px;
+  }
+
+  &__wrap {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    &::before {
+      position: absolute;
+      left: -2.5%;
+      width: 105%;
+      height: 100%;
+      background: $basic-color-pink;
+      content: "";
+    }
+  }
+
+
+  &__schedule {
+    position: relative;
+    margin-right: 10px;
+    padding-top: 34px;
+    color: #fff;
+    z-index: 3;
+  }
+
+  &__date {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 3;
+  }
+
+  &__logo {
+    display: none;
+    position: relative;
+    padding-top: 34px;
+    z-index: 3;
+  }
+
+  &__request {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  &__total-price {
+    margin: 21px 0;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 20px;
+    color: $basic-color-pink;
+  }
+
 }
 
 
+.checkbox__prompt{
+  display: none;
+}
+
+
+.request {
+  min-height: 740px;
+  padding-bottom: 50px;
+  background: #F7F7FF;
+  &__inner {
+    margin-top: 17px;
+  }
+  &__item {
+    margin-top: 32px;
+  }
+  &__person {
+    max-width: 338px;
+    display: flex;
+    flex-wrap: wrap;
+    label:first-child {
+      margin-right: 30px;
+    }
+  }
+  &__payer-info {
+    display: flex;
+    justify-content: space-between;
+    label {
+      width: calc(50% - 30px);
+    }
+  }
+  &__btn {
+    margin: 40px auto auto;
+  }
+}
+/*--------------------------------------------------------------
+# about-page *
+--------------------------------------------------------------*/
+.description {
+  position: relative;
+  min-height: 632px;
+  background: url("../img/pics/bg_about.png") no-repeat center;
+  background-size: cover;
+  &::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(37, 55, 70, 0.5);
+    content: "";
+  }
+}
+
+
+.about-us {
+  position: relative;
+  display: block;
+  background: #F7F7FF;
+  &__inner {
+    margin-top: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__text {
+    display: block;
+    padding: 20px 50px;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: $basic-color-black;
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 60px;
+    margin-left: 60px;
+    box-sizing: border-box;
+    border: 2px solid $basic-color-pink;
+    border-radius: 5px;
+    pointer-events: none;
+
+    @for $i from 1 to 10 {
+      &:nth-child(#{$i})::before {
+        position: absolute;
+        top: -30px;
+        left: -30px;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 20px;
+        color: rgba(37, 55, 70, 0.5);
+        border-radius: 50%;
+        background: #FFFFFF;
+        box-shadow: 2px 2px 10px rgba(37, 55, 70, 0.2);
+        content: "0#{$i}";
+      }
+    }
+  }
+
+}
