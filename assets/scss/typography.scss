@@ -79,6 +79,7 @@ html, body {
 }
 
 main {
+  position: relative;
   width: 100%;
   overflow: hidden;
   font-size: 15px;
@@ -230,7 +231,7 @@ img {
       transition: 0.3s ease;
     }
   }
-  &.btn--color-word {
+  &--color-word {
     color: $basic-color-pink;
     border: 2px solid $basic-color-pink;
     background: transparent;
@@ -241,15 +242,15 @@ img {
       transition: 0.3s ease;
     }
   }
-  &.btn--small {
-    padding: 10px 4px;
+  &--small {
+    padding: 10px;
     &:hover {
       color: $basic-color-pink;
       border: 2px solid $basic-color-pink;
       transition: 0.3s ease;
     }
   }
-  &.btn--color-hover:hover {
+  &--color-hover:hover {
     color: $basic-color-pink;
     border: 2px solid $basic-color-pink;
     transition: 0.3s ease;
@@ -280,7 +281,7 @@ img {
     border-bottom: 1px solid transparent;
     transition: 0.3s ease;
   }
-  &.link--white {
+  &--white {
     color: $basic-color-gray;
     border-bottom: 1px solid $basic-color-gray;
     transition: 0.3s ease;
@@ -289,7 +290,7 @@ img {
       transition: 0.3s ease;
     }
   }
-  &.link--pink {
+  &.--pink {
     color: $basic-color-pink;
     border-bottom: 1px solid $basic-color-pink;
     transition: 0.3s ease;

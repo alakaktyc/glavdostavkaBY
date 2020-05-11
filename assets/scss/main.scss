@@ -3,9 +3,6 @@
 /*--------------------------------------------------------------
 # main-slider *
 --------------------------------------------------------------*/
-main {
-  position: relative;
-}
 
 .wrapper {
   position: relative;
@@ -13,7 +10,7 @@ main {
 
 .main-slider__item {
   position: relative;
-  height: 550px;
+  height: 240px;
   .main-slider__control {
     position: absolute;
     bottom: 5%;
@@ -42,6 +39,7 @@ main {
 .slide {
   position: absolute;
   width: 100%;
+  height: 100%;
   color: #fff;
   visibility: hidden;
   opacity: 0;
@@ -50,6 +48,7 @@ main {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
     background: $basic-color-black;
@@ -57,14 +56,16 @@ main {
     content: "";
   }
   img {
+    position: absolute;
     width: 100%;
-    height: 550px;
+    height: 100%;
     object-fit: cover;
   }
   figcaption {
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 2;
     width: 95%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -447,6 +448,7 @@ main {
 .services {
   background: $basic-color-gray;
   min-height: 420px;
+  padding-bottom: 1.5em;
   &__item {
     position: relative;
     width: 90%;
@@ -459,45 +461,33 @@ main {
     border-radius: 5px;
     background: #FFFFFF;
     cursor: pointer;
-    &.services__item--cargo,
-    &.services__item--pallet,
-    &.services__item--car,
-    &.services__item--geo,
-    &.services__item--package {
-      position: relative;
-      &::before {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: "";
-      }
+    &::before {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: "";
     }
-
-    &.services__item--cargo {
+    &--cargo {
       &::before {
         background: url("../img/pics/services_group.svg") no-repeat center center;
       }
     }
-
-    &.services__item--pallet {
+    &--pallet {
       &::before {
         background: url("../img/pics/services_pallet.svg") no-repeat center center;
       }
     }
-
-    &.services__item--car {
+    &--car {
       &::before {
         background: url("../img/pics/services_car.svg") no-repeat center center;
       }
     }
-
-    &.services__item--geo {
+    &--geo {
       &::before {
         background: url("../img/pics/services_shop.svg") no-repeat center center;
       }
     }
-
-    &.services__item--package {
+    &--package {
       &::before {
         background: url("../img/pics/services_package.svg") no-repeat center center;
       }
@@ -536,6 +526,7 @@ main {
 --------------------------------------------------------------*/
 .tariffs {
   min-height: 500px;
+  padding-bottom: 1.5em;
   &__parameters {
     display: flex;
     justify-content: space-between;
@@ -657,6 +648,7 @@ main {
     max-width: 360px;
     min-height: 450px;
     margin: auto;
+    padding-bottom: 15px;
     box-sizing: border-box;
     border-radius: 5px;
     background: #FFFFFF;
@@ -902,16 +894,16 @@ main {
   }
   &__input {
     width: 100%;
-    height: 30px;
     margin: 5px 0;
-    padding-left: 10px;
+    padding: 12px;
     font-size: 15px;
     line-height: 20px;
     color: rgba(37, 55, 70, 0.5);
+    background: $basic-color-gray;
     border: none;
     border-radius: 5px;
     outline: none;
-    background: $basic-color-gray;
+    box-sizing: border-box;
   }
   span {
     padding: 0 0 10px;
