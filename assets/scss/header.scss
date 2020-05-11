@@ -2,28 +2,24 @@
 
 .header {
   margin-top: 20px;
-  .schedule-box,
-  .calling-box {
+  &__contacts-box {
     margin-top: 20px;
     margin-left: 10px;
   }
 }
 
 .logo-box {
+  display: block;
   width: 230px;
   height: 73px;
-  display: block;
 }
 
 .search-box {
-  //padding: 0 10px;
   width: 100%;
   max-width: 360px;
 }
 
 .search-form {
-  //max-width: 345px;
-  //height: 34px;
   margin: auto;
   display: block;
   width: 100%;
@@ -76,24 +72,17 @@
   }
 }
 
-.calling-box {
-  background: url("../img/icons/icon_phone.svg") no-repeat;
-}
-.schedule-box {
-  background: url("../img/icons/icon_time.svg") no-repeat;
-}
-.schedule-box,
-.calling-box {
+.contacts-box {
+  position: relative;
   display: flex;
   align-items: center;
-  padding-left: 20px;
+  padding-left: 30px;
   font-size: 15px;
   line-height: 20px;
-
   &__content {
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
+    margin-left: 5px;
     a {
       cursor: pointer;
     }
@@ -116,6 +105,21 @@
       border-bottom: 1px solid transparent;
       transition: 0.3s ease;
     }
+  }
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 30px;
+    height: 100%;
+    content: '';
+  }
+  &.calling::before {
+    background: url("../img/icons/icon_phone.svg") no-repeat center center;
+  }
+  &.schedule::before {
+    background: url("../img/icons/icon_time.svg") no-repeat center center;
   }
 }
 

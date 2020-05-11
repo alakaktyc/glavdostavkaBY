@@ -49,9 +49,8 @@
   # Header 576px
   --------------------------------------------------------------*/
   .header {
-    .schedule-box,
-    .calling-box {
-      margin: auto;
+    &__contacts-box {
+      margin: 0;
     }
   }
   /*--------------------------------------------------------------
@@ -146,6 +145,7 @@
   .menu-btn {
     display: none;
   }
+
   .navigation-box {
     position: relative;
     height: 70px;
@@ -159,7 +159,7 @@
     visibility: visible;
     opacity: 1;
     .main-menu {
-      max-width: 830px;
+      max-width: 840px;
       margin: auto;
       display: flex;
       justify-content: space-around;
@@ -340,7 +340,8 @@
   --------------------------------------------------------------*/
 }
 
-/*============== for Tablet landscape 1024px ===========================*/
+/*============== for Tablet landscape 920px ===========================*/
+
 @media screen and (min-width: 920px) {
 
   /*--------------------------------------------------------------
@@ -386,11 +387,12 @@
   }
 
   .wrapper {
+    position: absolute;
     top: 112px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    z-index: 6;
     min-width: 1280px;
-    position: absolute;
+    transform: translate(-50%, -50%);
   }
 
   .calculator {
@@ -494,6 +496,13 @@
   /*--------------------------------------------------------------
   # Footer 920px
   --------------------------------------------------------------*/
+
+  .footer {
+    min-height: 10em;
+    &__inner {
+      padding-top: 3em;
+    }
+  }
 }
 
 /*============== for Tablet landscape 1024px ===========================*/
@@ -599,9 +608,9 @@
   # Header 1280px
   --------------------------------------------------------------*/
   .header {
-    .schedule-box,
-    .calling-box {
-      margin-left: 0;
+    &__schedule-box,
+    &__calling-box {
+      margin: 0;
     }
   }
 
@@ -609,10 +618,6 @@
     width: 300px;
     height: 97px;
     display: block;
-  }
-
-  .search-form input[type="search"] {
-    width: 283px;
   }
 
   /*--------------------------------------------------------------
@@ -726,7 +731,7 @@
   # Typography 1366px
   --------------------------------------------------------------*/
   .container {
-    width: 100%;
+    max-width: 1440px;
   }
   /*--------------------------------------------------------------
   # Header 1366px
@@ -844,6 +849,7 @@
   /*--------------------------------------------------------------
   # Header 1440px
   --------------------------------------------------------------*/
+
 
   /*--------------------------------------------------------------
   # Content 1440px
