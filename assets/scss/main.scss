@@ -1311,7 +1311,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    &.advantages__item--slider {
+    &--slider {
+      position: relative;
       max-width: 210px;
     }
     figure {
@@ -1321,6 +1322,39 @@
       align-items: center;
       img {
         border-radius: 5px;
+      }
+    }
+  }
+}
+
+// Слайдер страницы о нас
+.advantages {
+  .owl-carousel {
+    .owl-nav {
+      button.owl-prev,
+      button.owl-next {
+        position: absolute;
+        font-size: 0;
+        display: block;
+        width: 30px;
+        height: 30px;
+        border: 2px solid #A8AFB5;
+        border-radius: 50%;
+        background: url("../img/icons/icon_arrow.svg") no-repeat center;
+        transition: all 0.5s;
+        &:hover {
+          border: 2px solid $basic-color-pink;
+          transition: all 0.5s;
+        }
+      }
+      button.owl-prev {
+        top: 50%;
+        left: -42px;
+      }
+      button.owl-next {
+        top: 50%;
+        right: -42px;
+        transform: rotateZ(180deg);
       }
     }
   }
