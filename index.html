@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="assets/drop/chosen.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/owl/css/owl.carousel.css">
     <link rel="stylesheet" href="assets/owl/css/owl.theme.default.min.css">
@@ -162,7 +163,7 @@
                         Самостоятельно привезу груз на склад
                     </label>
                     <div class="btn-box">
-                        <button class="calculator__btn btn  btn--transparent">рассчитать</button>
+                        <!--<button class="calculator__btn btn  btn&#45;&#45;transparent">рассчитать</button>-->
                         <button class="calculator__btn btn ">оформить заявку</button>
                     </div>
                     <div class="date-box">
@@ -174,13 +175,13 @@
                             </label>
                         </div>
                         <div class="date-box__item">
-                            <span class="date-box__text date-box__text--bold calculator__date-delivery">30.05.2020</span>
+                            <span class="date-box__text date-box__text--bold calculator__date-delivery">00.00.2020</span>
                             <span class="date-box__text"> &#8212; дата доставки</span>
                         </div>
                     </div>
                 </form>
                 <div class="price-box">
-                    <span class="price-box__total">150 BYN с НДС</span>
+                    <span class="price-box__total">0 BYN с НДС</span>
                     <span class="price-box__message hidden">Сообщение</span>
                 </div>
             </div>
@@ -229,17 +230,253 @@
             <div class="tariffs__parameters">
                 <label class="tariffs__label">
                     Город отправления
-                    <input class="tariffs__input" type="text" value="Минск">
+                    <select class="tariffs__select tariffs-download">
+
+                        <option class="tariffs__option">Минск</option>
+                        <option class="tariffs__option">Брест</option>
+                        <option class="tariffs__option">Витебск</option>
+                        <option class="tariffs__option">Гродно</option>
+                        <option class="tariffs__option">Гомель</option>
+                        <option class="tariffs__option">Могилев</option>
+
+                        <option class="tariffs__option">Барановичи</option>
+                        <option class="tariffs__option">Барань</option>
+                        <option class="tariffs__option">Белоозерск</option>
+                        <option class="tariffs__option">Береза</option>
+                        <option class="tariffs__option">Березино</option>
+                        <option class="tariffs__option">Березовка</option>
+                        <option class="tariffs__option">Бобруйск</option>
+                        <option class="tariffs__option">Борисов</option>
+                        <option class="tariffs__option">Браслав</option>
+                        <option class="tariffs__option">Буда-Кошелево</option>
+                        <option class="tariffs__option">Быхов</option>
+                        <option class="tariffs__option">Василевичи</option>
+                        <option class="tariffs__option">Верхнедвинск</option>
+                        <option class="tariffs__option">Ветка</option>
+                        <option class="tariffs__option">Вилейка</option>
+                        <option class="tariffs__option">Волковыск</option>
+                        <option class="tariffs__option">Воложин</option>
+                        <option class="tariffs__option">Высокое</option>
+                        <option class="tariffs__option">Ганцевичи</option>
+                        <option class="tariffs__option">Глубокое</option>
+                        <option class="tariffs__option">Горки</option>
+                        <option class="tariffs__option">Городок</option>
+                        <option class="tariffs__option">Давид-городок</option>
+                        <option class="tariffs__option">Дзержинск</option>
+                        <option class="tariffs__option">Добруш</option>
+                        <option class="tariffs__option">Докшицы</option>
+                        <option class="tariffs__option">Дрогичин</option>
+                        <option class="tariffs__option">Дубровно</option>
+                        <option class="tariffs__option">Дятлово</option>
+                        <option class="tariffs__option">Ельск</option>
+                        <option class="tariffs__option">Жабинка</option>
+                        <option class="tariffs__option">Житковичи</option>
+                        <option class="tariffs__option">Жлобин</option>
+                        <option class="tariffs__option">Жодино</option>
+                        <option class="tariffs__option">Заславль</option>
+                        <option class="tariffs__option">Иваново</option>
+                        <option class="tariffs__option">Ивацевичи</option>
+                        <option class="tariffs__option">Ивье</option>
+                        <option class="tariffs__option">Калинковичи</option>
+                        <option class="tariffs__option">Каменец</option>
+                        <option class="tariffs__option">Кировск</option>
+                        <option class="tariffs__option">Клецк</option>
+                        <option class="tariffs__option">Климовичи</option>
+                        <option class="tariffs__option">Кличев</option>
+                        <option class="tariffs__option">Кобрин</option>
+                        <option class="tariffs__option">Копыль</option>
+                        <option class="tariffs__option">Коссово</option>
+                        <option class="tariffs__option">Костюковичи</option>
+                        <option class="tariffs__option">Кричев</option>
+                        <option class="tariffs__option">Крупки</option>
+                        <option class="tariffs__option">Лепель</option>
+                        <option class="tariffs__option">Лида</option>
+                        <option class="tariffs__option">Логойск</option>
+                        <option class="tariffs__option">Лунинец</option>
+                        <option class="tariffs__option">Любань</option>
+                        <option class="tariffs__option">Ляховичи</option>
+                        <option class="tariffs__option">Малорита</option>
+                        <option class="tariffs__option">Марьина Горка</option>
+                        <option class="tariffs__option">Микашевичи</option>
+                        <option class="tariffs__option">Миоры</option>
+                        <option class="tariffs__option">Мозырь</option>
+                        <option class="tariffs__option">Молодечно</option>
+                        <option class="tariffs__option">Мосты</option>
+                        <option class="tariffs__option">Мстиславль</option>
+                        <option class="tariffs__option">Мядель</option>
+                        <option class="tariffs__option">Наровля</option>
+                        <option class="tariffs__option">Несвиж</option>
+                        <option class="tariffs__option">Новогрудок</option>
+                        <option class="tariffs__option">Новолукомль</option>
+                        <option class="tariffs__option">Новополоцк</option>
+                        <option class="tariffs__option">Орша</option>
+                        <option class="tariffs__option">Осиповичи</option>
+                        <option class="tariffs__option">Островец</option>
+                        <option class="tariffs__option">Ошмяны</option>
+                        <option class="tariffs__option">Петриков</option>
+                        <option class="tariffs__option">Пинск</option>
+                        <option class="tariffs__option">Полоцк</option>
+                        <option class="tariffs__option">Поставы</option>
+                        <option class="tariffs__option">Пружаны</option>
+                        <option class="tariffs__option">Речица</option>
+                        <option class="tariffs__option">Рогачев</option>
+                        <option class="tariffs__option">Светлогорск</option>
+                        <option class="tariffs__option">Свислочь</option>
+                        <option class="tariffs__option">Сенно</option>
+                        <option class="tariffs__option">Скидель</option>
+                        <option class="tariffs__option">Славгород</option>
+                        <option class="tariffs__option">Слоним</option>
+                        <option class="tariffs__option">Слуцк</option>
+                        <option class="tariffs__option">Смолевичи</option>
+                        <option class="tariffs__option">Сморгонь</option>
+                        <option class="tariffs__option">Солигорск</option>
+                        <option class="tariffs__option">Старые Дороги</option>
+                        <option class="tariffs__option">Столбцы</option>
+                        <option class="tariffs__option">Столин</option>
+                        <option class="tariffs__option">Толочин</option>
+                        <option class="tariffs__option">Туров</option>
+                        <option class="tariffs__option">Узда</option>
+                        <option class="tariffs__option">Фаниполь</option>
+                        <option class="tariffs__option">Хойники</option>
+                        <option class="tariffs__option">Чаусы</option>
+                        <option class="tariffs__option">Чашники</option>
+                        <option class="tariffs__option">Червень</option>
+                        <option class="tariffs__option">Чериков</option>
+                        <option class="tariffs__option">Чечерск</option>
+                        <option class="tariffs__option">Шклов</option>
+                        <option class="tariffs__option">Щучин</option>
+
+                    </select>
                 </label>
                 <button class="btn-reverse--black"><!--<img src="assets/img/icons/icon_arrows-black.svg" alt="">--></button>
-                <span class="tariffs__label">
+                <label class="tariffs__label">
                     Город отправления
-                    <span class="tariffs__input tariffs__input--select">Минск</span>
-                </span>
-                <span class="tariffs__label">
+                    <select class="tariffs__select tariffs-delivery">
+            <option class="tariffs__option">Минск</option>
+            <option class="tariffs__option">Брест</option>
+            <option class="tariffs__option">Витебск</option>
+            <option class="tariffs__option">Гродно</option>
+            <option class="tariffs__option">Гомель</option>
+            <option class="tariffs__option">Могилев</option>
+
+            <option class="tariffs__option">Барановичи</option>
+            <option class="tariffs__option">Барань</option>
+            <option class="tariffs__option">Белоозерск</option>
+            <option class="tariffs__option">Береза</option>
+            <option class="tariffs__option">Березино</option>
+            <option class="tariffs__option">Березовка</option>
+            <option class="tariffs__option">Бобруйск</option>
+            <option class="tariffs__option">Борисов</option>
+            <option class="tariffs__option">Браслав</option>
+            <option class="tariffs__option">Буда-Кошелево</option>
+            <option class="tariffs__option">Быхов</option>
+            <option class="tariffs__option">Василевичи</option>
+            <option class="tariffs__option">Верхнедвинск</option>
+            <option class="tariffs__option">Ветка</option>
+            <option class="tariffs__option">Вилейка</option>
+            <option class="tariffs__option">Волковыск</option>
+            <option class="tariffs__option">Воложин</option>
+            <option class="tariffs__option">Высокое</option>
+            <option class="tariffs__option">Ганцевичи</option>
+            <option class="tariffs__option">Глубокое</option>
+            <option class="tariffs__option">Горки</option>
+            <option class="tariffs__option">Городок</option>
+            <option class="tariffs__option">Давид-городок</option>
+            <option class="tariffs__option">Дзержинск</option>
+            <option class="tariffs__option">Добруш</option>
+            <option class="tariffs__option">Докшицы</option>
+            <option class="tariffs__option">Дрогичин</option>
+            <option class="tariffs__option">Дубровно</option>
+            <option class="tariffs__option">Дятлово</option>
+            <option class="tariffs__option">Ельск</option>
+            <option class="tariffs__option">Жабинка</option>
+            <option class="tariffs__option">Житковичи</option>
+            <option class="tariffs__option">Жлобин</option>
+            <option class="tariffs__option">Жодино</option>
+            <option class="tariffs__option">Заславль</option>
+            <option class="tariffs__option">Иваново</option>
+            <option class="tariffs__option">Ивацевичи</option>
+            <option class="tariffs__option">Ивье</option>
+            <option class="tariffs__option">Калинковичи</option>
+            <option class="tariffs__option">Каменец</option>
+            <option class="tariffs__option">Кировск</option>
+            <option class="tariffs__option">Клецк</option>
+            <option class="tariffs__option">Климовичи</option>
+            <option class="tariffs__option">Кличев</option>
+            <option class="tariffs__option">Кобрин</option>
+            <option class="tariffs__option">Копыль</option>
+            <option class="tariffs__option">Коссово</option>
+            <option class="tariffs__option">Костюковичи</option>
+            <option class="tariffs__option">Кричев</option>
+            <option class="tariffs__option">Крупки</option>
+            <option class="tariffs__option">Лепель</option>
+            <option class="tariffs__option">Лида</option>
+            <option class="tariffs__option">Логойск</option>
+            <option class="tariffs__option">Лунинец</option>
+            <option class="tariffs__option">Любань</option>
+            <option class="tariffs__option">Ляховичи</option>
+            <option class="tariffs__option">Малорита</option>
+            <option class="tariffs__option">Марьина Горка</option>
+            <option class="tariffs__option">Микашевичи</option>
+            <option class="tariffs__option">Миоры</option>
+            <option class="tariffs__option">Мозырь</option>
+            <option class="tariffs__option">Молодечно</option>
+            <option class="tariffs__option">Мосты</option>
+            <option class="tariffs__option">Мстиславль</option>
+            <option class="tariffs__option">Мядель</option>
+            <option class="tariffs__option">Наровля</option>
+            <option class="tariffs__option">Несвиж</option>
+            <option class="tariffs__option">Новогрудок</option>
+            <option class="tariffs__option">Новолукомль</option>
+            <option class="tariffs__option">Новополоцк</option>
+            <option class="tariffs__option">Орша</option>
+            <option class="tariffs__option">Осиповичи</option>
+            <option class="tariffs__option">Островец</option>
+            <option class="tariffs__option">Ошмяны</option>
+            <option class="tariffs__option">Петриков</option>
+            <option class="tariffs__option">Пинск</option>
+            <option class="tariffs__option">Полоцк</option>
+            <option class="tariffs__option">Поставы</option>
+            <option class="tariffs__option">Пружаны</option>
+            <option class="tariffs__option">Речица</option>
+            <option class="tariffs__option">Рогачев</option>
+            <option class="tariffs__option">Светлогорск</option>
+            <option class="tariffs__option">Свислочь</option>
+            <option class="tariffs__option">Сенно</option>
+            <option class="tariffs__option">Скидель</option>
+            <option class="tariffs__option">Славгород</option>
+            <option class="tariffs__option">Слоним</option>
+            <option class="tariffs__option">Слуцк</option>
+            <option class="tariffs__option">Смолевичи</option>
+            <option class="tariffs__option">Сморгонь</option>
+            <option class="tariffs__option">Солигорск</option>
+            <option class="tariffs__option">Старые Дороги</option>
+            <option class="tariffs__option">Столбцы</option>
+            <option class="tariffs__option">Столин</option>
+            <option class="tariffs__option">Толочин</option>
+            <option class="tariffs__option">Туров</option>
+            <option class="tariffs__option">Узда</option>
+            <option class="tariffs__option">Фаниполь</option>
+            <option class="tariffs__option">Хойники</option>
+            <option class="tariffs__option">Чаусы</option>
+            <option class="tariffs__option">Чашники</option>
+            <option class="tariffs__option">Червень</option>
+            <option class="tariffs__option">Чериков</option>
+            <option class="tariffs__option">Чечерск</option>
+            <option class="tariffs__option">Шклов</option>
+            <option class="tariffs__option">Щучин</option>
+        </select>
+                </label>
+
+                <label class="tariffs__label">
                     Тип услуги
-                    <span class="tariffs__input tariffs__input--select">Сборный груз</span>
-                </span>
+                    <select class="tariffs__select tariffs-type">
+                        <option class="tariffs__option">Сборный груз</option>
+                        <option class="tariffs__option">Палетная доставка</option>
+                        <option class="tariffs__option">Упаковка</option>
+                    </select>
+                </label>
+
                 <button class="btn btn--transparent btn--color-word">узнать тариф</button>
             </div>
             <p>Цены указаны на услугу <span class="bold">«Перевозка сборных грузов»</span>  из/в Минск <span class="bold">от подъезда — к подъезду.</span>  Без действующих скидок.</p>
@@ -663,6 +900,7 @@
 <script src="assets/owl/owl.carousel.min.js"></script>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=368e4890-6c0c-4a05-a5c1-2b03faf3f0df"></script>
 <script src="assets/js/provider.js"></script>
+<script src="assets/drop/chosen.jquery.min.js"></script>
 <script src="assets/js/datepicker.min.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

@@ -266,7 +266,7 @@ function parseCost(array) {
         });
         request.send(formData);
 
-    } 
+    }
 }
 
 
@@ -486,6 +486,33 @@ $(document).ready(function () {
         }
     );
 
+});
+
+let changeDownloadCity = '';
+let changeDeliveryCity = '';
+let changeTariffsType = '';
+$(document).ready(function(){
+
+    $(".tariffs__select").chosen({
+        width: '100%',
+        no_results_text: "Ничего не найдено!"
+    });
+
+    $(".tariffs-download").chosen().change(function(){
+        changeDownloadCity = $(this).val();
+        console.log(changeDownloadCity);
+    });
+
+
+    $(".tariffs-delivery").chosen().change(function(){
+        changeDeliveryCity = $(this).val();
+        console.log(changeDeliveryCity);
+    });
+
+    $(".tariffs-type").chosen().change(function(){
+        changeTariffsType = $(this).val();
+        console.log(changeTariffsType);
+    });
 });
 
 
