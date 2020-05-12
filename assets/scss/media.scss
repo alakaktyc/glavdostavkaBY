@@ -57,6 +57,11 @@
   # Content 576px
   --------------------------------------------------------------*/
 
+  .search-box {
+    max-width: 310px;
+    margin-right: 50px;
+  }
+
   /*--------------------------------------------------------------
   # Footer 576px
   --------------------------------------------------------------*/
@@ -187,11 +192,32 @@
   .form {
     &__item {
       width: calc(100% / 2 - 20px);
+      &--cargo {
+        display: block;
+        width: 100%;
+      }
+    }
+    &__parameters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 95%;
+    }
+  }
+
+  .cargo {
+    &__item {
+      &--full {
+        //width: 100%;
+      }
+    }
+    &__description {
+      width: 100%;
     }
   }
 
   .btn-reverse {
-    &.btn-reverse--black {
+    &--black {
       display: block;
       top: 40px;
       left: 50%;
@@ -388,7 +414,7 @@
 
   .wrapper {
     position: absolute;
-    top: 112px;
+    top: 0;
     left: 50%;
     z-index: 6;
     min-width: 1280px;
@@ -406,15 +432,19 @@
 
   .form {
     &__label {
-      &.form__label--smaller {
+      &--smaller {
         width: 75px;
+      }
+      &--payer {
+        color: $basic-color-black;
+        width: 48%;
       }
     }
     &__input {
-      &.form__input--indent {
+      &--indent {
         padding: 5px 20px;
       }
-      &.form__input--square {
+      &--square {
         width: 21px;
         padding: 2px 0 2px 6px;
         margin-left: 14px;
@@ -483,9 +513,6 @@
   /*--------------------------------------------------------------
 # big calculator 920px
 --------------------------------------------------------------*/
-  .cargo__description {
-    width: 300px;
-  }
 
   .response {
     &__item {
@@ -505,7 +532,7 @@
   }
 }
 
-/*============== for Tablet landscape 1024px ===========================*/
+/*============== for Tablet landscape 1152px ===========================*/
 @media screen and (min-width: 1152px) {
 
   /*--------------------------------------------------------------
@@ -553,23 +580,32 @@
     width: 440px;
   }
 
-  .checkbox:hover .checkbox__prompt {
-    position: absolute;
-    bottom: 40px;
-    min-width: 697px;
-    height: 159px;
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    box-shadow: 2px 2px 10px rgba(37, 55, 70, 0.2);
-    z-index: 3;
-    &::after {
-      content: '';
-      position: absolute;
-      left: 60px;
-      bottom: -40px;
-      border: 20px solid transparent;
-      border-top: 20px solid #fff;
+  .checkbox {
+    &:hover .checkbox__prompt {
+      bottom: 40px;
+      width: 320px;
+      padding: 10px 15px;
+      background-color: #fff;
+      box-shadow: 2px 2px 10px rgba(37, 55, 70, 0.2);
+      opacity: 1;
+      z-index: 3;
+      transition: opacity 0.7s;
+      figure {
+        float: left;
+        width: 100px;
+        margin: 10px;
+      }
+      p {
+        margin: 0;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        left: 60px;
+        bottom: -40px;
+        border: 20px solid transparent;
+        border-top: 20px solid #fff;
+      }
     }
   }
 
@@ -702,11 +738,20 @@
   # big calculator 1280px
   --------------------------------------------------------------*/
 
-  .controls-cargo {
-    &.controls-cargo--page {
-      top: auto;
-      bottom: 10px;
+  .form {
+    &__item {
+      &--cargo {
+        width: 100%;
+      }
     }
+    &__parameters {
+      width: 85%;
+    }
+  }
+
+  .controls-cargo {
+    top: 10px;
+    right: -18%;
   }
 
   .controls-cargo__description {
@@ -716,6 +761,14 @@
   .cargo__description {
     width: 360px;
     margin-right: 160px;
+  }
+
+  .response {
+    padding-bottom: 2em;
+      &__request {
+      width: 20%;
+      align-items: flex-end;
+    }
   }
 
   /*--------------------------------------------------------------
@@ -754,6 +807,9 @@
   .form {
     &__item {
       width: calc(100% / 2 - 60px);
+      &--cargo {
+        width: 100%;
+      }
     }
   }
   .contacts {
