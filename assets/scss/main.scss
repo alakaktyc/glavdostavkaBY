@@ -3,9 +3,6 @@
 /*--------------------------------------------------------------
 # main-slider *
 --------------------------------------------------------------*/
-main {
-  position: relative;
-}
 
 .wrapper {
   position: relative;
@@ -13,7 +10,7 @@ main {
 
 .main-slider__item {
   position: relative;
-  height: 550px;
+  height: 240px;
   .main-slider__control {
     position: absolute;
     bottom: 5%;
@@ -42,14 +39,21 @@ main {
 .slide {
   position: absolute;
   width: 100%;
+  height: 100%;
   color: #fff;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 0.6s, opacity 0.6s linear;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s 0.6s, opacity 0.6s linear;
+  }
   &::before {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
     background: $basic-color-black;
@@ -57,14 +61,16 @@ main {
     content: "";
   }
   img {
+    position: absolute;
     width: 100%;
-    height: 550px;
+    height: 100%;
     object-fit: cover;
   }
   figcaption {
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 2;
     width: 95%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -102,23 +108,31 @@ main {
   .calculator-widget {
     width: 90%;
   }
-  &-price {
-    width: 100%;
-    min-height: 60px;
-    margin-bottom: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  &__btn.btn {
+    margin: 15px 0;
+  }
+}
+
+.price-box {
+  width: 100%;
+  min-height: 60px;
+  margin-bottom: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  color: $basic-color-pink;
+  background: $basic-color-gray;
+  &__total {
     font-weight: bold;
     font-size: 30px;
     line-height: 20px;
     text-align: center;
     text-transform: uppercase;
-    color: $basic-color-pink;
-    background: $basic-color-gray;
   }
-  &__btn.btn {
-    margin: 15px 0;
+  &__message {
+    font-size: 12px;
+    display: none;
   }
 }
 
@@ -176,6 +190,7 @@ main {
     }
   }
   &__input {
+    width: 100%;
     height: 30px;
     padding: 5px 10px;
     font-size: 15px;
@@ -310,6 +325,7 @@ main {
   font-size: 0;
   border: 6px solid transparent;
   cursor: pointer;
+  z-index: 2;
   &.btn-arrow--right {
     left: 45px;
     border-left-color: $basic-color-black;;
@@ -447,6 +463,7 @@ main {
 .services {
   background: $basic-color-gray;
   min-height: 420px;
+  padding-bottom: 1.5em;
   &__item {
     position: relative;
     width: 90%;
@@ -459,45 +476,33 @@ main {
     border-radius: 5px;
     background: #FFFFFF;
     cursor: pointer;
-    &.services__item--cargo,
-    &.services__item--pallet,
-    &.services__item--car,
-    &.services__item--geo,
-    &.services__item--package {
-      position: relative;
-      &::before {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: "";
-      }
+    &::before {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: "";
     }
-
-    &.services__item--cargo {
+    &--cargo {
       &::before {
         background: url("../img/pics/services_group.svg") no-repeat center center;
       }
     }
-
-    &.services__item--pallet {
+    &--pallet {
       &::before {
         background: url("../img/pics/services_pallet.svg") no-repeat center center;
       }
     }
-
-    &.services__item--car {
+    &--car {
       &::before {
         background: url("../img/pics/services_car.svg") no-repeat center center;
       }
     }
-
-    &.services__item--geo {
+    &--geo {
       &::before {
         background: url("../img/pics/services_shop.svg") no-repeat center center;
       }
     }
-
-    &.services__item--package {
+    &--package {
       &::before {
         background: url("../img/pics/services_package.svg") no-repeat center center;
       }
@@ -536,6 +541,7 @@ main {
 --------------------------------------------------------------*/
 .tariffs {
   min-height: 500px;
+  padding-bottom: 1.5em;
   &__parameters {
     display: flex;
     justify-content: space-between;
@@ -657,6 +663,7 @@ main {
     max-width: 360px;
     min-height: 450px;
     margin: auto;
+    padding-bottom: 15px;
     box-sizing: border-box;
     border-radius: 5px;
     background: #FFFFFF;
@@ -902,16 +909,16 @@ main {
   }
   &__input {
     width: 100%;
-    height: 30px;
     margin: 5px 0;
-    padding-left: 10px;
+    padding: 12px;
     font-size: 15px;
     line-height: 20px;
     color: rgba(37, 55, 70, 0.5);
+    background: $basic-color-gray;
     border: none;
     border-radius: 5px;
     outline: none;
-    background: $basic-color-gray;
+    box-sizing: border-box;
   }
   span {
     padding: 0 0 10px;
@@ -1314,7 +1321,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    &.advantages__item--slider {
+    &--slider {
+      position: relative;
       max-width: 210px;
     }
     figure {
@@ -1324,6 +1332,39 @@ main {
       align-items: center;
       img {
         border-radius: 5px;
+      }
+    }
+  }
+}
+
+// Слайдер страницы о нас
+.advantages {
+  .owl-carousel {
+    .owl-nav {
+      button.owl-prev,
+      button.owl-next {
+        position: absolute;
+        font-size: 0;
+        display: block;
+        width: 30px;
+        height: 30px;
+        border: 2px solid #A8AFB5;
+        border-radius: 50%;
+        background: url("../img/icons/icon_arrow.svg") no-repeat center;
+        transition: all 0.5s;
+        &:hover {
+          border: 2px solid $basic-color-pink;
+          transition: all 0.5s;
+        }
+      }
+      button.owl-prev {
+        top: 50%;
+        left: -42px;
+      }
+      button.owl-next {
+        top: 50%;
+        right: -42px;
+        transform: rotateZ(180deg);
       }
     }
   }
