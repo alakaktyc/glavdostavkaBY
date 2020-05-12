@@ -73,13 +73,17 @@ html, body {
   height: 100%;
   min-width: 100%;
   min-height: 100%;
+  color: $basic-color-black;
   font-family: 'Effra', 'Arial', sans-serif;
   scroll-behavior: smooth;
 }
 
 main {
+  position: relative;
   width: 100%;
   overflow: hidden;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 h1,
@@ -98,21 +102,22 @@ h6 {
 
 h1 {
   margin: 24px 10px;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 40px;
+  line-height: 64px;
   color: $basic-color-black;
 }
 
 h2 {
+  margin-top: 0;
   padding-top: 43px;
   font-size: 30px;
-  line-height: 20px;
+  line-height: 27px;
   color: $basic-color-black;
 }
 
 h3 {
   position: relative;
-  margin: 0 0 14px;
+  margin: 0 0 1em;
   padding: 44px 0 10px;
   font-size: 40px;
   line-height: 64px;
@@ -132,7 +137,7 @@ h3 {
 h4 {
   font-size: 20px;
   line-height: 20px;
-  color: #F7F7FF;
+  color: $basic-color-gray;
 }
 
 h5 {
@@ -168,6 +173,12 @@ img {
   width: 95%;
   max-width: 1280px;
   margin: 0 auto;
+  &.container--header:nth-child(n) {
+    margin: auto;
+    &:not(:first-child) {
+      padding-top: 10px;
+    }
+  }
 }
 
 .flex-wrap {
@@ -177,7 +188,21 @@ img {
   justify-content: space-between;
 }
 
+.flex-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title{
+  &--pink {
+    color: $basic-color-pink;
+  }
+  &--white {
+    color: #fff;
+  }
+}
 .btn {
+  display: block;
   padding: 10px 24px;
   font-weight: bold;
   font-size: 15px;
@@ -197,7 +222,7 @@ img {
     transition: 0.3s ease;
   }
   &.btn--transparent {
-    border: 2px solid #F7F7FF;
+    border: 2px solid $basic-color-gray;
     background: transparent;
     transition: 0.3s ease;
     &:hover {
@@ -206,22 +231,38 @@ img {
       transition: 0.3s ease;
     }
   }
-  &.btn--color-word {
+  &--color-word {
     color: $basic-color-pink;
     border: 2px solid $basic-color-pink;
     background: transparent;
     transition: 0.3s ease;
     &:hover {
-      color: #F7F7FF;
+      color: $basic-color-gray;
       background: $basic-color-pink;
       transition: 0.3s ease;
     }
   }
-  &.btn--pink {
-    padding: 10px 4px;
+  &--small {
+    padding: 10px;
     &:hover {
       color: $basic-color-pink;
       border: 2px solid $basic-color-pink;
+      transition: 0.3s ease;
+    }
+  }
+  &--color-hover:hover {
+    color: $basic-color-pink;
+    border: 2px solid $basic-color-pink;
+    transition: 0.3s ease;
+  }
+  &.btn--white {
+    color: $basic-color-pink;
+    border: 2px solid $basic-color-pink;
+    background: transparent;
+    transition: 0.3s ease;
+    &:hover {
+      color: #fff;
+      background: $basic-color-pink;
       transition: 0.3s ease;
     }
   }
@@ -231,7 +272,7 @@ img {
   width: fit-content;
   display: block;
   font-size: 15px;
-  line-height: 20px;
+  line-height: 1;
   color: #253746;
   border-bottom: 1px solid #253746;
   transition: 0.3s ease;
@@ -240,16 +281,16 @@ img {
     border-bottom: 1px solid transparent;
     transition: 0.3s ease;
   }
-  &.link--white {
-    color: #F7F7FF;
-    border-bottom: 1px solid #F7F7FF;
+  &--white {
+    color: $basic-color-gray;
+    border-bottom: 1px solid $basic-color-gray;
     transition: 0.3s ease;
     &:hover {
       border-bottom: 1px solid transparent;
       transition: 0.3s ease;
     }
   }
-  &.link--pink {
+  &.--pink {
     color: $basic-color-pink;
     border-bottom: 1px solid $basic-color-pink;
     transition: 0.3s ease;
@@ -261,10 +302,24 @@ img {
   }
 }
 
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: #fbfbfb url('//cdnjs.cloudflare.com/ajax/libs/file-uploader/3.7.0/processing.gif') no-repeat center center;
+  overflow: visible;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.6s, opacity 0.6s linear;
+}
+
 .active {
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 0.6s linear;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: opacity 0.6s linear !important;
 }
 
 .bold {
@@ -287,6 +342,7 @@ input[type=number] {
 
 /*------------------------------Кастомный checkbox----------------------- */
 .checkbox {
+  position: relative;
   box-sizing: border-box;
   width: fit-content;
   margin-top: 10px;
@@ -420,6 +476,7 @@ input[type=number] {
     opacity: 1;
   }
 }
+
 
 
 /*------------------------------прелоадер----------------------- */

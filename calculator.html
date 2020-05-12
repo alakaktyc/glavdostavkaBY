@@ -7,58 +7,54 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<header class="header">
-    <div class="container flex-wrap header__container">
+  <header class="header">
+      <div class="container flex-wrap container--header">
+        <a class="logo-box header__logo-box">
+          <img src="assets/img/logo.svg" alt="">
+        </a>
+          <div class="search-box">
+              <form class="search-form" action="">
+                <label class="search-form__label">
+                  <input class="search-form__input" type="search" placeholder="Введите текст">
+                  <button class="search-form__btn"></button>
+                </label>
+              </form>
+          </div>
 
-        <div class="logo-box">
-            <a class="logo-box__link"><img src="assets/img/logo.svg" alt=""></a>
-        </div>
+          <div class="contacts-box header__contacts-box schedule">
+              <span class="contacts-box__content">
+                  <span class="contacts-box__text">Пн-Пт с 08.30-18.00</span>
+                  <span>Время работы контакт-центра</span>
+              </span>
+          </div>
 
+          <div class="contacts-box header__contacts-box calling">
+              <span class="contacts-box__content">
+                  <a href="tel:+375173362424" class="contacts-box__text">+375 (17) <span
+                          class="contacts-box__text contacts-box__text--big">336-24-24</span></a>
+                  <a class="contacts-box__link">Заказать звонок</a>
+              </span>
+          </div>
+      </div>
 
-        <div class="search-box">
-            <form class="search-form" action="">
-                <input type="search" placeholder="Введите текст">
-                <button class="search-form__btn"><img src="assets/img/icons/icon_search.svg" alt=""></button>
-            </form>
-        </div>
+      <div class="menu-btn">
+          <input type="checkbox"/>
+          <span class="line--first"></span>
+          <span class="line--second"></span>
+          <span class="line--third"></span>
+      </div>
 
-        <div class="schedule-box">
-            <img src="assets/img/icons/icon_time.svg" alt="">
-            <span class="schedule-box__content">
-                    <span class="schedule-box__text">Пн-Пт с 08.30-18.00</span>
-                    <span>Время работы контакт-центра</span>
-                </span>
-        </div>
-
-        <div class="calling-box">
-            <img src="assets/img/icons/icon_phone.svg" alt="">
-            <span class="calling-box__content">
-                    <a href="tel:+375173362424" class="calling-box__text">+375 (17) <span
-                            class="calling-box__text calling-box__text--big">336-24-24</span></a>
-                    <a class="calling-box__link">Заказать звонок</a>
-                </span>
-        </div>
-    </div>
-
-    <div class="menu-btn">
-        <input type="checkbox"/>
-        <span class="line--first"></span>
-        <span class="line--second"></span>
-        <span class="line--third"></span>
-    </div>
-
-    <nav class="navigation-box">
-        <ul class="main-menu main-menu_top">
-            <li><a href="">услуги</a></li>
-            <li><a href="">тарифы</a></li>
-            <li><a href="">акции</a></li>
-            <li><a href="">документы</a></li>
-            <li><a href="">способы оплаты</a></li>
-            <li><a href="">контакты</a></li>
-        </ul>
-    </nav>
-
-</header>
+      <nav class="navigation-box">
+          <ul class="main-menu main-menu_top">
+              <li><a href="">услуги</a></li>
+              <li><a href="">тарифы</a></li>
+              <li><a href="">акции</a></li>
+              <li><a href="">документы</a></li>
+              <li><a href="">способы оплаты</a></li>
+              <li><a href="">контакты</a></li>
+          </ul>
+      </nav>
+  </header>
 <main>
     <h1>Расчёт стоимости и оформление заявки</h1>
 
@@ -71,7 +67,7 @@
                 <div class="form__wrap">
                     <div class="form__item">
 
-                        <label class="form__label form__label--longest form__label--black">
+                        <label class="form__label form__label--black">
                             Город отправления
                             <input class="form__input form__input--white" type="text" value="Минск">
                         </label>
@@ -88,7 +84,7 @@
                             Самостоятельно привезу груз на склад
                         </label>
 
-                        <label class="form__label form__label--longest form__label--black">
+                        <label class="form__label form__label--black">
                             Склад отправления
                             <input class="form__input form__input--white" type="text" value="г. Минск, Промышленная, 1">
                         </label>
@@ -96,7 +92,7 @@
                         <a class="form__link link link--pink" href="">Посмотреть место на карте</a>
 
                         <div class="date-box__item">
-                            <label class="form__label form__label--longest form__label--black">
+                            <label class="form__label form__label--black">
                                 Дата забора груза
                                 <input class="form__input form__input--white" type="date" value="2020-05-20">
                             </label>
@@ -104,10 +100,10 @@
                         <p class="form__attention">*Заявки на забор груза на следующий день оформляются до 17:00.</p>
                     </div>
 
-                    <button class="btn-reverse btn-reverse--black" type="button"><img src="assets/img/icons/icon_arrows-black.svg" alt=""></button>
+                    <button class="btn-reverse btn-reverse--black" type="button"></button>
 
                     <div class="form__item">
-                        <label class="form__label form__label--longest form__label--black">
+                        <label class="form__label form__label--black">
                             Город доставки
                             <input class="form__input form__input--white" type="text" value="Минск">
                         </label>
@@ -123,7 +119,7 @@
                             Самостоятельно заберу груз со склада
                         </label>
 
-                        <label class="form__label form__label--longest form__label--black">
+                        <label class="form__label form__label--black">
                             Склад прибытия
                             <input class="form__input form__input--white" type="text" value="г. Минск, Промышленная, 1">
                         </label>
@@ -144,11 +140,11 @@
 
                         <div class="cargo__inner">
                             <div class="cargo__item">
-                                <label class="form__label form__label--black form__label--row">
+                                <label class="form__label--smaller form__label--black form__label--row">
                                     <span>Кол-во мест</span>
-                                    <span>
+                                    <span class="cargo__quantity">
                                         <span class="btn-arrow btn-arrow--left">-</span>
-                                        <input class="form__input form__input--indent" type="number" value="1">
+                                        <input class="form__input form__input--square" type="number" value="1">
                                         <span class="btn-arrow btn-arrow--right">+</span>
                                     </span>
 
@@ -156,13 +152,13 @@
                             </div>
 
                             <div class="cargo__item">
-                                <label class="form__label form__label--black">
+                                <label class="form__label form__label--smaller form__label--black">
                                     Вес
                                     <input class="form__input form__input--white" type="text" value="0.3" maxlength="4">
                                     <span class="form__label-measure">кг</span>
                                 </label>
 
-                                <label class="form__label form__label--longer form__label--black">
+                                <label class="form__label form__label--small form__label--black">
                                     Габариты
                                     <span class="form__inputs-row form__inputs-row--white">
                                         <input class="form__input form__input--white" type="text" value="0.3" maxlength="4">
@@ -175,7 +171,7 @@
                                     <span class="form__label-measure">м</span>
                                 </label>
 
-                                <label class="form__label form__label--black">
+                                <label class="form__label form__label--smaller form__label--black">
                                     Объём
                                     <input class="form__input form__input--white" type="text" value="0.8" maxlength="4">
                                     <span class="form__label-measure">м<sup>3</sup></span>
@@ -183,28 +179,104 @@
 
                             </div>
                             <div class="cargo__item">
-                                <label class="form__label form__label--longest form__label--black">
+                                <label class="form__label form__label--black">
                                     Описание груза
-                                    <input class="form__input form__input--white" type="text" placeholder="Введите текст">
+                                    <input class="cargo__description form__input form__input--white" type="text" placeholder="Введите текст">
+                                </label>
+                            </div>
+
+                            <div class="controls-cargo controls-cargo--page">
+                                <label class="controls-cargo__label">
+                                    <input class="controls-cargo__btn controls-cargo__btn--black" type="button" value="-">
+                                    <span class="controls-cargo__description">удалить груз</span>
+                                </label>
+                                <label class="controls-cargo__label">
+                                    <input class="controls-cargo__btn" type="button" value="+">
+                                    <span class="controls-cargo__description controls-cargo__description--pink">добавить груз</span>
                                 </label>
                             </div>
 
                         </div>
 
-
                     </div>
+                    <div class="cargo">
+                        <span class="cargo__title">груз 2</span>
 
+                        <div class="cargo__inner">
+                            <div class="cargo__item">
+                                <label class="form__label--smaller form__label--black form__label--row">
+                                    <span>Кол-во мест</span>
+                                    <span class="cargo__quantity">
+                                        <span class="btn-arrow btn-arrow--left">-</span>
+                                        <input class="form__input form__input--square" type="number" value="1">
+                                        <span class="btn-arrow btn-arrow--right">+</span>
+                                    </span>
+
+                                </label>
+                            </div>
+
+                            <div class="cargo__item">
+                                <label class="form__label form__label--smaller form__label--black">
+                                    Вес
+                                    <input class="form__input form__input--white" type="text" value="0.3" maxlength="4">
+                                    <span class="form__label-measure">кг</span>
+                                </label>
+
+                                <label class="form__label form__label--small form__label--black">
+                                    Габариты
+                                    <span class="form__inputs-row form__inputs-row--white">
+                                        <input class="form__input form__input--white" type="text" value="0.3" maxlength="4">
+                                        <span>x</span>
+                                        <input class="form__input form__input--white" type="text" value="0.3" maxlength="4">
+                                        <span>x</span>
+                                        <input class="form__input form__input--white" type="text" value="0.3" maxlength="4">
+                                    </span>
+                                    <span class="form__label-info form__label-info--black">Длина х Ширина х Высота</span>
+                                    <span class="form__label-measure">м</span>
+                                </label>
+
+                                <label class="form__label form__label--smaller form__label--black">
+                                    Объём
+                                    <input class="form__input form__input--white" type="text" value="0.8" maxlength="4">
+                                    <span class="form__label-measure">м<sup>3</sup></span>
+                                </label>
+
+                            </div>
+                            <div class="cargo__item">
+                                <label class="form__label form__label--black">
+                                    Описание груза
+                                    <input class="cargo__description form__input form__input--white" type="text" placeholder="Введите текст">
+                                </label>
+                            </div>
+
+                            <div class="controls-cargo controls-cargo--page">
+                                <label class="controls-cargo__label">
+                                    <input class="controls-cargo__btn controls-cargo__btn--black" type="button" value="-">
+                                    <span class="controls-cargo__description">удалить груз</span>
+                                </label>
+                                <label class="controls-cargo__label">
+                                    <input class="controls-cargo__btn" type="button" value="+">
+                                    <span class="controls-cargo__description controls-cargo__description--pink">добавить груз</span>
+                                </label>
+                            </div>
+
+                        </div>
 
                 </div>
 
 
-
+                </div>
                 <h5>Дополнительная упаковка</h5>
                 <div class="form__package">
                     <label class="checkbox">
                         <input type="checkbox">
                         <span></span>
                         Упаковка в коробку (630*320*340 мм)
+                        <span class="checkbox__prompt">
+                            <img src="assets/img/prompt/check_box.svg" alt="">
+                            Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br><br>
+                            Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br><br>
+                            Размеры коробки — 630*320*340 мм.</span>
                     </label>
 
                     <label class="checkbox">
@@ -320,16 +392,227 @@
         </div>
 
     </section>
-    <section class="request">
+    <section class="response">
         <div class="container">
-            <div class="request__inner">
-                <div class="request__item">
+            <div class="response__inner">
+
+                <div class="response__item">
                     <h5>парамерты груза</h5>
+                    <span class="cargo__title">груз 1</span>
+                    <div class="response__box">
+                        <span class="response__parameter">Количесвто:<span>1</span></span>
+                        <span class="response__parameter">Вес:<span>0.3 кг</span></span>
+                        <span class="response__parameter">Габариты:<span>0.3х0.3х0.3 м</span></span>
+                        <span class="response__parameter">Объём:<span>0.3 м<sup>3</sup></span></span>
+                        <span class="response__parameter">Описание груза:<span>Текст, который ввел заказчик</span></span>
+                    </div>
+                    <span class="cargo__title">груз 2</span>
+                    <div class="response__box">
+                        <span class="response__parameter">Количесвто:<span>1</span></span>
+                        <span class="response__parameter">Вес:<span>0.3 кг</span></span>
+                        <span class="response__parameter">Габариты:<span>0.3х0.3х0.3 м</span></span>
+                        <span class="response__parameter">Объём:<span>0.3 м<sup>3</sup></span></span>
+                        <span class="response__parameter">Описание груза:<span>Текст, который ввел заказчик</span></span>
+                    </div>
                 </div>
-                <div class="request__item">
+
+                <div class="response__item">
                     <h5>Выбранные услуги</h5>
+                    <div class="response__services">
+                        <div class="response__price"><span>Жёсткая упаковка (ЖУ)</span><span class="response__dots"></span><span>600,00 BYN</span></div>
+                        <div class="response__price response__price--opacity"><span>Наценка за негабарит</span><span class="response__dots"></span><span>240,00 BYN</span></div>
+                        <div class="response__price"><span>Паллета до 1м</span><span class="response__dots"></span><span>25,00 BYN</span></div>
+                        <div class="response__price"><span>Предоставление поддона</span><span class="response__dots"></span><span>5,00 BYN</span></div>
+                        <div class="response__price"><span>Возврат документов</span><span class="response__dots"></span><span>0,00 BYN</span></div>
+                        <div class="response__price response__price--bold"><span>Итого</span><span class="response__dots"></span><span>870,00 BYN</span></div>
+                    </div>
                 </div>
             </div>
+
+
+        </div>
+        <div class="response__total">
+            <div class="container flex-wrap">
+                <div class="response__wrap">
+
+                    <div class="response__schedule">
+                        <h5 class="title--white">Ориентировочный график перевозки</h5>
+                        <div class="response__date">
+                            <div class="date-box__item">
+                                <span class="date-box__text date-box__text--bold">20.05.2020</span>
+                                <span class="date-box__text"> &#8212; отправление груза</span>
+                            </div>
+
+                            <div class="date-box__item">
+                                <span class="date-box__text date-box__text--bold">30.05.2020</span>
+                                <span class="date-box__text"> &#8212; прибытие груза</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="response__schedule">
+                        <h5 class="title--white">График обслуживания в городе доставки</h5>
+                        <span>г.Минск — Пн Вт Ср Чт Пт Сб</span>
+                    </div>
+                    <div class="response__logo">
+                        <img src="assets/img/logo-white.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="response__request">
+                    <span class="response__total-price">870,00 BYN</span>
+                    <button class="btn btn--white">к оформлению заявки</button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="request">
+        <h2>оформление заявки</h2>
+        <div class="container">
+            <div class="request__inner">
+
+                <div class="request__item">
+                    <h5 class="title--pink">данные плательщика</h5>
+
+                    <div class="request__person">
+                        <label class="radiobutton">
+                            <input type="radio" name="payer" checked>
+                            <span></span>
+                            Физическое лицо
+                        </label>
+                        <label class="radiobutton">
+                            <input type="radio" name="payer" checked>
+                            <span></span>
+                            Юридическое лицо
+                        </label>
+                    </div>
+
+                    <div class="request__payer-info">
+                        <label class="form__label form__label--black">
+                            Плательщик
+                            <input class="form__input form__input--white" type="text" value="KN 12345567, Минский РОВД, 02.01.18. Беларусь, г. Минск, ул. Брилевская 155-301">
+                            <span class="form__label-info form__label-info--black">Паспортные данные (серия, номер, кем и когда выдан), адрес прописки по паспорту</span>
+                        </label>
+                        <label class="form__label form__label--black">
+                            Комментарий к отправке
+                            <input class="form__input form__input--white" type="text" placeholder="Введите текст">
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="request__wrap">
+                    <div class="request__item">
+                        <h5 class="title--pink">данные отправителя</h5>
+
+                        <div class="request__person">
+                            <label class="radiobutton">
+                                <input type="radio" name="sender" checked>
+                                <span></span>
+                                Физическое лицо
+                            </label>
+                            <label class="radiobutton">
+                                <input type="radio" name="sender" checked>
+                                <span></span>
+                                Юридическое лицо
+                            </label>
+                        </div>
+
+                        <label class="form__label form__label--black">
+                            Отправитель
+                            <input class="form__input form__input--white" type="text" value="KN 12345567, Минский РОВД, 02.01.18. Беларусь, г. Минск, ул. Брилевская 155-301">
+                            <span class="form__label-info form__label-info--black">Паспортные данные (серия, номер, кем и когда выдан), адрес прописки по паспорту</span>
+                        </label>
+
+
+                        <div class="request__info">
+                            <label class="request__label form__label form__label--black">
+                                Время работы
+                                <input class="form__input form__input--white" type="text" placeholder="Введите текст">
+                            </label>
+                            <label class="request__label request__label--small form__label form__label--black">
+                                Контактное лицо
+                                <input class="form__input form__input--white" type="text" placeholder="Имя">
+                            </label>
+                            <label class="request__label request__label--small form__label form__label--black">
+                                Номер телефона
+                                <input class="form__input form__input--white" type="text" placeholder="+375">
+                            </label>
+                        </div>
+
+
+                        <label class="form__label form__label--black">
+                            Адрес отправки груза
+                            <input class="form__input form__input--white" type="text" value="г. Минск, ул. Грушевская 152-201">
+                        </label>
+
+                        <label class="form__label form__label--black">
+                            Комментарий к отправке
+                            <input class="form__input form__input--white" type="text" placeholder="Введите текст">
+                        </label>
+
+                    </div>
+
+
+                    <div class="request__item">
+                        <h5 class="title--pink">данные получателя</h5>
+
+                        <div class="request__person">
+                            <label class="radiobutton">
+                                <input type="radio" name="recipient" checked>
+                                <span></span>
+                                Физическое лицо
+                            </label>
+                            <label class="radiobutton">
+                                <input type="radio" name="recipient" checked>
+                                <span></span>
+                                Юридическое лицо
+                            </label>
+                        </div>
+
+                        <label class="form__label form__label--black">
+                            Получатель
+                            <input class="form__input form__input--white" type="text" value="KN 12345567, Минский РОВД, 02.01.18. Беларусь, г. Минск, ул. Брилевская 155-301">
+                            <span class="form__label-info form__label-info--black">Паспортные данные (серия, номер, кем и когда выдан), адрес прописки по паспорту</span>
+                        </label>
+
+
+                        <div class="request__info">
+                            <label class="request__label form__label form__label--black">
+                                Время работы
+                                <input class="form__input form__input--white" type="text" placeholder="Введите текст">
+                            </label>
+                            <label class="request__label request__label--small form__label form__label--black">
+                                Контактное лицо
+                                <input class="form__input form__input--white" type="text" placeholder="Имя">
+                            </label>
+                            <label class="request__label request__label--small form__label form__label--black">
+                                Номер телефона
+                                <input class="form__input form__input--white" type="text" placeholder="+375">
+                            </label>
+                        </div>
+
+
+                        <label class="form__label form__label--black">
+                            Адрес отправки груза
+                            <input class="form__input form__input--white" type="text" value="г. Минск, ул. Грушевская 152-201">
+                        </label>
+
+                        <label class="form__label form__label--black">
+                            Комментарий к отправке
+                            <input class="form__input form__input--white" type="text" placeholder="Введите текст">
+                        </label>
+                    </div>
+                </div>
+                <button class="request__btn btn btn--color-hover">оформить заявку</button>
+            </div>
+
+
+
+
 
 
         </div>
@@ -338,9 +621,7 @@
 </main>
 <footer class="footer">
     <div class="container">
-
         <div class="footer__inner">
-
             <div class="footer__item">
                 <ul class="footer__list">
                     <li><a class="link link--white" href="">Вакансии</a></li>
@@ -349,7 +630,6 @@
                     <li><a class="link link--white" href="">Условия перевозок</a></li>
                 </ul>
             </div>
-
             <div class="footer__item social">
                 <ul class="social__list">
                     <li>
@@ -388,17 +668,16 @@
                         </a>
                     </li>
                 </ul>
-
             </div>
             <div class="footer__item">
-                    <span class="footer__text">
-                        2008-2020 © Транспортная компания «ГлавДоставка» — С любовью!
-                    </span>
+                <span class="footer__text">
+                    2008-2020 © Транспортная компания «ГлавДоставка» — С любовью!
+                </span>
+                <span class="footer__copy">
+                  Дизайн и разработка — <a href="#">R-studio</a>
+                </span>
             </div>
-
         </div>
-
-
     </div>
 </footer>
 </body>

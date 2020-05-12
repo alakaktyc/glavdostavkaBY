@@ -3,15 +3,14 @@
 /*--------------------------------------------------------------
 # main-slider *
 --------------------------------------------------------------*/
-main {
-  position: relative;
-}
+
 .wrapper {
   position: relative;
 }
+
 .main-slider__item {
   position: relative;
-  height: 550px;
+  height: 240px;
   .main-slider__control {
     position: absolute;
     bottom: 5%;
@@ -40,14 +39,21 @@ main {
 .slide {
   position: absolute;
   width: 100%;
+  height: 100%;
   color: #fff;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 0.6s, opacity 0.6s linear;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s 0.6s, opacity 0.6s linear;
+  }
   &::before {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
     background: $basic-color-black;
@@ -55,14 +61,16 @@ main {
     content: "";
   }
   img {
+    position: absolute;
     width: 100%;
-    height: 550px;
+    height: 100%;
     object-fit: cover;
   }
   figcaption {
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 2;
     width: 95%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -97,23 +105,34 @@ main {
   flex-direction: column;
   align-items: center;
   background: rgba(37, 55, 70, 0.85);
-  &-price {
-    width: 100%;
-    min-height: 60px;
-    margin-bottom: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .calculator-widget {
+    width: 90%;
+  }
+  &__btn.btn {
+    margin: 15px 0;
+  }
+}
+
+.price-box {
+  width: 100%;
+  min-height: 60px;
+  margin-bottom: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  color: $basic-color-pink;
+  background: $basic-color-gray;
+  &__total {
     font-weight: bold;
     font-size: 30px;
     line-height: 20px;
     text-align: center;
     text-transform: uppercase;
-    color: $basic-color-pink;
-    background: #F7F7FF;
   }
-  &__btn.btn {
-    margin: 15px 0;
+  &__message {
+    font-size: 12px;
+    display: none;
   }
 }
 
@@ -121,9 +140,6 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
-  &.form--little {
-    width: 90%;
-  }
   &__inner {
     width: calc(100% - 25px);
   }
@@ -139,18 +155,18 @@ main {
   }
   &__label {
     position: relative;
-    width: 140px;
+    width: 100%;
     margin-top: 16px;
     display: flex;
     flex-direction: column;
     font-size: 12px;
     line-height: 20px;
-    color: #F7F7FF;
-    &.form__label--longest {
-      width: 100%;
-    }
-    &.form__label--longer {
+    color: $basic-color-gray;
+    &.form__label--small {
       width: 195px;
+    }
+    &.form__label--smaller {
+      width: 140px;
     }
     &.form__label--black {
       color: $basic-color-black;
@@ -160,7 +176,7 @@ main {
       line-height: 20px;
       color: rgba(247, 247, 255, 0.5);
       &.form__label-info--black {
-        color: rgba(37,55,70, 0.5);
+        color: rgba(37, 55, 70, 0.5);
       }
     }
     &-measure {
@@ -174,6 +190,7 @@ main {
     }
   }
   &__input {
+    width: 100%;
     height: 30px;
     padding: 5px 10px;
     font-size: 15px;
@@ -182,13 +199,19 @@ main {
     box-sizing: border-box;
     border: none;
     border-radius: 5px;
-    background: #F7F7FF;
+    background: $basic-color-gray;
     outline: none;
     &.form__input--white {
       background-color: #FFF;
     }
     &.form__input--indent {
       padding: 5px 31px;
+    }
+    &.form__input--square {
+      width: 21px;
+      padding: 2px 0 2px 6px;
+      margin-left: 26px;
+      background: #FFF;
     }
     /*      &::-webkit-calendar-picker-indicator {
             color: transparent;
@@ -200,7 +223,7 @@ main {
   &__inputs-row {
     display: flex;
     border-radius: 5px;
-    background: #F7F7FF;
+    background: $basic-color-gray;
     input {
       width: 30%;
       padding-left: 0;
@@ -242,7 +265,7 @@ main {
     margin: 13px 0 0;
     font-size: 15px;
     line-height: 20px;
-    color: #F7F7FF;
+    color: $basic-color-gray;
     input[type="checkbox"]:checked + span:before,
     input[type="checkbox"]:not(:checked) + span:before {
       border: 2px solid #fff;
@@ -255,7 +278,6 @@ main {
       border-bottom: 3px solid #fff;
     }
   }
-
 
   /*--------------------------------------------------------------
 # big calculator
@@ -284,7 +306,7 @@ main {
     background: #FFF;
   }
   &__package,
-  &__services{
+  &__services {
     display: flex;
     flex-wrap: wrap;
     .checkbox {
@@ -293,31 +315,28 @@ main {
   }
 }
 
-
-
-
-
 .btn-arrow {
-   position: absolute;
-   top: 29px;
-   display: block;
-   width: 0;
-   height: 0;
-   margin: 0 5px;
-   font-size: 0;
-   border: 6px solid transparent;
-   cursor: pointer;
-   &.btn-arrow--right {
-     left: 45px;
-     border-left-color: $basic-color-black;;
-     border-right: 0;
-   }
-   &.btn-arrow--left {
-     left: 12px;
-     border-right-color: $basic-color-black;;
-     border-left: 0;
-   }
- }
+  position: absolute;
+  top: 29px;
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0 5px;
+  font-size: 0;
+  border: 6px solid transparent;
+  cursor: pointer;
+  z-index: 2;
+  &.btn-arrow--right {
+    left: 45px;
+    border-left-color: $basic-color-black;;
+    border-right: 0;
+  }
+  &.btn-arrow--left {
+    left: 12px;
+    border-right-color: $basic-color-black;;
+    border-left: 0;
+  }
+}
 
 .date-box {
   display: flex;
@@ -325,8 +344,7 @@ main {
   justify-content: space-between;
   align-items: baseline;
   padding-bottom: 30px;
-  color: #F7F7FF;
-  border-bottom: 4px solid #F7F7FF;
+  color: $basic-color-gray;
   .form__input {
     width: 150px;
   }
@@ -354,17 +372,19 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  border-bottom: 4px solid $basic-color-gray;
 }
-
 
 .btn-reverse {
   position: absolute;
   top: 50%;
-  right: -40px;
+  right: -35px;
+  width: 22px;
+  height: 17px;
   padding: 0;
   border: none;
   outline: none;
-  background: transparent;
+  background: url("../img/icons/icon_arrows.svg") no-repeat center center;
   cursor: pointer;
   &.btn-reverse--black {
     display: none;
@@ -374,7 +394,7 @@ main {
 .controls-cargo {
   position: absolute;
   top: 16px;
-  right: -40px;
+  right: -35px;
   display: flex;
   flex-direction: column;
   &__btn {
@@ -386,7 +406,7 @@ main {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    color: #F7F7FF;
+    color: $basic-color-gray;
     box-sizing: border-box;
     border: 2px solid $basic-color-pink;
     border-radius: 5px;
@@ -395,18 +415,44 @@ main {
     cursor: pointer;
     transition: 0.3s ease;
     &:hover {
-      border: 2px solid #fff;
+      color: $basic-color-pink;
       background: transparent;
       transition: 0.3s ease;
     }
     &.controls-cargo__btn--white {
-      border: 2px solid #F7F7FF;
+      border: 2px solid $basic-color-gray;
       background: transparent;
       &:hover {
+        color: $basic-color-gray;
         border: 2px solid transparent;
         background: $basic-color-pink;
         transition: 0.3s ease;
       }
+    }
+    &.controls-cargo__btn--black {
+      color: $basic-color-black;
+      border: 2px solid $basic-color-black;
+      background: transparent;
+      &:hover {
+        color: $basic-color-gray;
+        border: 2px solid $basic-color-pink;
+        background: $basic-color-pink;
+        transition: 0.3s ease;
+      }
+    }
+  }
+  &__label {
+    display: flex;
+    cursor: pointer;
+  }
+  &__description {
+    display: none;
+    margin-left: 10px;
+    color: $basic-color-black;
+    font-weight: bold;
+    text-transform: uppercase;
+    &.controls-cargo__description--pink {
+      color: $basic-color-pink;
     }
   }
 }
@@ -415,8 +461,9 @@ main {
 # services *
 --------------------------------------------------------------*/
 .services {
-  background: #F7F7FF;
+  background: $basic-color-gray;
   min-height: 420px;
+  padding-bottom: 1.5em;
   &__item {
     position: relative;
     width: 90%;
@@ -429,12 +476,44 @@ main {
     border-radius: 5px;
     background: #FFFFFF;
     cursor: pointer;
+    &::before {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: "";
+    }
+    &--cargo {
+      &::before {
+        background: url("../img/pics/services_group.svg") no-repeat center center;
+      }
+    }
+    &--pallet {
+      &::before {
+        background: url("../img/pics/services_pallet.svg") no-repeat center center;
+      }
+    }
+    &--car {
+      &::before {
+        background: url("../img/pics/services_car.svg") no-repeat center center;
+      }
+    }
+    &--geo {
+      &::before {
+        background: url("../img/pics/services_shop.svg") no-repeat center center;
+      }
+    }
+    &--package {
+      &::before {
+        background: url("../img/pics/services_package.svg") no-repeat center center;
+      }
+    }
     &:hover .services__ellipse {
       transform: skew(-20deg, 20deg);
       transition: 0.3s ease;
     }
   }
   &__title {
+    position: relative;
     max-width: 165px;
     font-weight: bold;
     font-size: 18px;
@@ -442,6 +521,7 @@ main {
     text-align: center;
     text-transform: uppercase;
     color: $basic-color-black;
+    z-index: 3;
     &.services__title--long {
       max-width: 170px;
     }
@@ -455,11 +535,13 @@ main {
     transition: 0.3s ease;
   }
 }
+
 /*--------------------------------------------------------------
 # tariffs *
 --------------------------------------------------------------*/
 .tariffs {
   min-height: 500px;
+  padding-bottom: 1.5em;
   &__parameters {
     display: flex;
     justify-content: space-between;
@@ -492,8 +574,8 @@ main {
     border: none;
     border-radius: 5px;
     outline: none;
-    background: #F7F7FF;
-    &.tariffs__input--select{
+    background: $basic-color-gray;
+    &.tariffs__input--select {
       cursor: pointer;
       &::before {
         position: absolute;
@@ -556,25 +638,32 @@ main {
     margin-top: 15px;
   }
 }
+
 .btn-reverse--black {
+  width: 19px;
+  height: 20px;
   border: none;
   outline: none;
-  background: transparent;
+  background: url("../img/icons/icon_arrows-black.svg") no-repeat center center;
   cursor: pointer;
   transform: rotate(90deg);
 }
-
 
 /*--------------------------------------------------------------
 # news *
 --------------------------------------------------------------*/
 .news {
   min-height: 670px;
-  background: #F7F7FF;
+  background: $basic-color-gray;
+  &__slider {
+    max-width: 1120px;
+    margin: auto;
+  }
   &__item {
     max-width: 360px;
     min-height: 450px;
     margin: auto;
+    padding-bottom: 15px;
     box-sizing: border-box;
     border-radius: 5px;
     background: #FFFFFF;
@@ -592,13 +681,14 @@ main {
     }
   }
   &__date {
+    display: block;
     margin-top: 26px;
-    margin-bottom: 8px;
+    margin-bottom: 18px;
     font-size: 12px;
     line-height: 20px;
     color: rgba(37, 55, 70, 0.5);
   }
-  &__text{
+  &__text {
     height: 120px;
     margin-top: 0;
     margin-bottom: 10px;
@@ -647,8 +737,6 @@ main {
   display: none;
 }
 
-
-
 /*--------------------------------------------------------------
 # payment *
 --------------------------------------------------------------*/
@@ -666,7 +754,7 @@ main {
     padding: 10px;
     box-sizing: border-box;
     background: transparent;
-    border: 3px solid #F7F7FF;
+    border: 3px solid $basic-color-gray;
     border-radius: 5px;
     &:hover:nth-child(n)::before {
       opacity: 1;
@@ -737,14 +825,13 @@ main {
   }
 }
 
-
 /*--------------------------------------------------------------
 # contacts *
 --------------------------------------------------------------*/
 
 .contacts {
   min-height: 390px;
-  background: #F7F7FF;
+  background: $basic-color-gray;
   &__inner {
     display: flex;
     flex-wrap: wrap;
@@ -812,6 +899,7 @@ main {
     flex-wrap: wrap;
   }
 }
+
 .form-call {
   margin-bottom: 20px;
   &__label {
@@ -821,16 +909,16 @@ main {
   }
   &__input {
     width: 100%;
-    height: 30px;
     margin: 5px 0;
-    padding-left: 10px;
+    padding: 12px;
     font-size: 15px;
     line-height: 20px;
     color: rgba(37, 55, 70, 0.5);
+    background: $basic-color-gray;
     border: none;
     border-radius: 5px;
     outline: none;
-    background: #F7F7FF;
+    box-sizing: border-box;
   }
   span {
     padding: 0 0 10px;
@@ -838,7 +926,6 @@ main {
     line-height: 20px;
   }
 }
-
 
 /*--------------------------------------------------------------
 # widgets *
@@ -860,7 +947,7 @@ main {
     margin: 10px 0;
     border-radius: 50%;
     box-sizing: border-box;
-    background:  $basic-color-pink;
+    background: $basic-color-pink;
     opacity: 0.3;
     transition: all 0.5s;
     &:hover {
@@ -917,16 +1004,18 @@ main {
   }
 }
 
-
 /*--------------------------------------------------------------
 # big calculator *
 --------------------------------------------------------------*/
 .all-parameters {
   padding-bottom: 45px;
-  background-color: #F7F7FF;
+  background-color: $basic-color-gray;
 }
+
 .cargo {
+  position: relative;
   max-width: 1090px;
+  margin-bottom: 44px;
   &__title {
     display: block;
     font-size: 18px;
@@ -959,13 +1048,324 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
   }
+  &__quantity {
+    position: relative;
+    .btn-arrow {
+      top: 4px;
+    }
+  }
+  &__descritpion {
+    min-width: 280px;
+  }
 }
-.request {
+
+.form__parameters {
+  width: 90%;
+}
+
+.response {
+  margin-top: 44px;
   &__inner {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
+  &__item {
+    width: 100%;
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 10px;
+    &.response__price--bold {
+      font-weight: bold;
+    }
+    &.response__price--opacity {
+      color: #BDBDBD;
+    }
+  }
+  &__dots {
+    width: calc(100% - 260px);
+    border-bottom: 1px dotted $basic-color-black;
+  }
+  &__box {
+    padding-bottom: 30px;
+  }
+  &__parameter {
+    font-weight: bold;
+    margin-right: 20px;
+    span {
+      margin-left: 10px;
+      font-weight: normal;
+    }
+  }
+
+  &__total {
+    margin-top: 35px;
+    min-height: 120px;
+  }
+
+  &__wrap {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    &::before {
+      position: absolute;
+      left: -2.5%;
+      width: 105%;
+      height: 100%;
+      background: $basic-color-pink;
+      content: "";
+    }
+  }
+
+  &__schedule {
+    position: relative;
+    margin-right: 10px;
+    padding-top: 34px;
+    color: #fff;
+    z-index: 3;
+  }
+
+  &__date {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 3;
+  }
+
+  &__logo {
+    display: none;
+    position: relative;
+    padding-top: 34px;
+    z-index: 3;
+  }
+
+  &__request {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  &__total-price {
+    margin: 21px 0;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 20px;
+    color: $basic-color-pink;
+  }
+
 }
 
+.checkbox__prompt {
+  display: none;
+}
 
+.request {
+  min-height: 740px;
+  padding-bottom: 50px;
+  background: $basic-color-gray;
+  &__inner {
+    margin-top: 17px;
+  }
+  &__item {
+    margin-top: 32px;
+  }
+  &__person {
+    max-width: 338px;
+    display: flex;
+    flex-wrap: wrap;
+    label:first-child {
+      margin-right: 30px;
+    }
+  }
+  &__payer-info {
+    display: flex;
+    justify-content: space-between;
+    label {
+      width: calc(50% - 30px);
+    }
+  }
+  &__btn {
+    margin: 40px auto auto;
+  }
+}
+
+/*--------------------------------------------------------------
+# about-page *
+--------------------------------------------------------------*/
+.description {
+  position: relative;
+  min-height: 632px;
+  color: #fff;
+  background: url("../img/pics/bg_about.png") no-repeat center;
+  background-size: cover;
+  &::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(37, 55, 70, 0.5);
+    content: "";
+  }
+
+  &__inner {
+    height: 632px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    /*    flex-wrap: wrap;*/
+
+  }
+
+  &__item {
+    position: relative;
+    height: 110px;
+    max-width: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+    /*    &:not(:last-child) {
+          margin-right: 60px;
+        }*/
+  }
+  &__title {
+    font-size: 40px;
+    line-height: 64px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  &__text {
+    color: $basic-color-gray;
+  }
+}
+
+.about-us {
+  position: relative;
+  display: block;
+  &__inner {
+    margin-top: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__text {
+    display: block;
+    padding: 20px 25px;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: $basic-color-black;
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 60px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border: 2px solid $basic-color-pink;
+    border-radius: 5px;
+
+    @for $i from 1 to 10 {
+      &:nth-child(#{$i})::before {
+        position: absolute;
+        top: -30px;
+        left: -30px;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 20px;
+        color: rgba(37, 55, 70, 0.5);
+        border-radius: 50%;
+        background: #FFFFFF;
+        box-shadow: 2px 2px 10px rgba(37, 55, 70, 0.2);
+        content: "0#{$i}";
+      }
+    }
+  }
+}
+
+.advantages {
+  h2 {
+    padding-bottom: 0;
+  }
+  &__layout {
+    padding-bottom: 40px;
+    &:nth-child(odd) {
+      background: $basic-color-gray;
+    }
+    /*    &:nth-child(even) {
+          .flex-box {
+            flex-direction: row-reverse;
+          }
+        }*/
+    .flex-box {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &--slider {
+      position: relative;
+      max-width: 210px;
+    }
+    figure {
+      min-width: 210px;
+      min-height: 210px;
+      display: flex;
+      align-items: center;
+      img {
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+// Слайдер страницы о нас
+.advantages {
+  .owl-carousel {
+    .owl-nav {
+      button.owl-prev,
+      button.owl-next {
+        position: absolute;
+        font-size: 0;
+        display: block;
+        width: 30px;
+        height: 30px;
+        border: 2px solid #A8AFB5;
+        border-radius: 50%;
+        background: url("../img/icons/icon_arrow.svg") no-repeat center;
+        transition: all 0.5s;
+        &:hover {
+          border: 2px solid $basic-color-pink;
+          transition: all 0.5s;
+        }
+      }
+      button.owl-prev {
+        top: 50%;
+        left: -42px;
+      }
+      button.owl-next {
+        top: 50%;
+        right: -42px;
+        transform: rotateZ(180deg);
+      }
+    }
+  }
+}

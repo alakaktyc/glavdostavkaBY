@@ -20,6 +20,18 @@
       width: calc(100% / 2 - 10px);
     }
   }
+
+  /*--------------------------------------------------------------
+  # about-page 480px
+  --------------------------------------------------------------*/
+  .advantages {
+    &__item {
+      &.advantages__item--slider {
+        max-width: 430px;
+      }
+    }
+  }
+
   /*--------------------------------------------------------------
   # Footer 480px
   --------------------------------------------------------------*/
@@ -37,9 +49,8 @@
   # Header 576px
   --------------------------------------------------------------*/
   .header {
-    .schedule-box,
-    .calling-box {
-      margin-left: auto;
+    &__contacts-box {
+      margin: 0;
     }
   }
   /*--------------------------------------------------------------
@@ -55,6 +66,7 @@
       min-width: 491px;
       li {
         width: auto;
+        padding-bottom: 0;
       }
     }
     &__item {
@@ -91,6 +103,32 @@
   }
 
   /*--------------------------------------------------------------
+  # Big calculator 640px
+  --------------------------------------------------------------*/
+
+  .response {
+    &__wrap {
+      &::before {
+        border-bottom-right-radius: 60px;
+        border-top-right-radius: 60px;
+      }
+    }
+  }
+
+  .request {
+    &__info {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__label {
+      width: 250px;
+      &.request__label--small {
+        width: 160px;
+      }
+    }
+  }
+
+  /*--------------------------------------------------------------
   # Footer 640px
   --------------------------------------------------------------*/
 
@@ -107,6 +145,7 @@
   .menu-btn {
     display: none;
   }
+
   .navigation-box {
     position: relative;
     height: 70px;
@@ -114,13 +153,13 @@
     font-size: 15px;
     line-height: 20px;
     color: $basic-color-black;
-    border-top: 4px solid #F7F7FF;
-    border-bottom: 4px solid #F7F7FF;
+    border-top: 4px solid $basic-color-gray;
+    border-bottom: 4px solid $basic-color-gray;
     background: none;
     visibility: visible;
     opacity: 1;
     .main-menu {
-      max-width: 830px;
+      max-width: 840px;
       margin: auto;
       display: flex;
       justify-content: space-around;
@@ -141,6 +180,10 @@
   /*--------------------------------------------------------------
   # Content 720px
   --------------------------------------------------------------*/
+
+  .main-slider__item {
+    height: 550px;
+  }
   .form {
     &__item {
       width: calc(100% / 2 - 20px);
@@ -172,7 +215,7 @@
   .shipping {
     position: relative;
     display: block;
-    background: #F7F7FF;
+    background: $basic-color-gray;
     &__inner {
       margin-top: 48px;
       display: flex;
@@ -237,6 +280,24 @@
   }
 
   /*--------------------------------------------------------------
+# about-page 720px
+--------------------------------------------------------------*/
+  .description {
+    &__inner {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  .advantages {
+    &__item {
+      &.advantages__item--slider {
+        max-width: 650px;
+      }
+    }
+  }
+
+  /*--------------------------------------------------------------
   # Footer 720px
   --------------------------------------------------------------*/
 
@@ -266,20 +327,31 @@
   }
 
   /*--------------------------------------------------------------
+# About-page 768px
+--------------------------------------------------------------*/
+  .about-us {
+    &__item {
+      width: calc(50% - 60px);
+    }
+  }
+
+  /*--------------------------------------------------------------
   # Footer 768px
   --------------------------------------------------------------*/
 }
 
-/*============== for Tablet landscape 1024px ===========================*/
+/*============== for Tablet landscape 920px ===========================*/
+
 @media screen and (min-width: 920px) {
 
   /*--------------------------------------------------------------
   # Typography 920px
   --------------------------------------------------------------*/
-  h1 {
-    margin: 10px 10px;
-    font-size: 40px;
-    line-height: 64px;
+
+  h4 {
+    margin-top: 60px;
+    font-size: 30px;
+    line-height: 20px;
   }
   /*--------------------------------------------------------------
   # Header 920px
@@ -315,11 +387,12 @@
   }
 
   .wrapper {
-    top: 84px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 1280px;
     position: absolute;
+    top: 112px;
+    left: 50%;
+    z-index: 6;
+    min-width: 1280px;
+    transform: translate(-50%, -50%);
   }
 
   .calculator {
@@ -333,10 +406,20 @@
 
   .form {
     &__label {
-      width: 75px;
+      &.form__label--smaller {
+        width: 75px;
+      }
     }
-    &__input.form__input--indent {
-      padding: 5px 20px;
+    &__input {
+      &.form__input--indent {
+        padding: 5px 20px;
+      }
+      &.form__input--square {
+        width: 21px;
+        padding: 2px 0 2px 6px;
+        margin-left: 14px;
+        background: #FFF;
+      }
     }
   }
 
@@ -370,8 +453,8 @@
       &:nth-child(2) {
         width: 50%;
         padding-left: 30px;
-        border-right: 3px solid #F7F7FF;
-        border-left: 3px solid #F7F7FF;
+        border-right: 3px solid $basic-color-gray;
+        border-left: 3px solid $basic-color-gray;
       }
     }
   }
@@ -398,8 +481,28 @@
   }
 
   /*--------------------------------------------------------------
+# big calculator 920px
+--------------------------------------------------------------*/
+  .cargo__description {
+    width: 300px;
+  }
+
+  .response {
+    &__item {
+      width: calc(50% - 20px);
+    }
+  }
+
+  /*--------------------------------------------------------------
   # Footer 920px
   --------------------------------------------------------------*/
+
+  .footer {
+    min-height: 10em;
+    &__inner {
+      padding-top: 3em;
+    }
+  }
 }
 
 /*============== for Tablet landscape 1024px ===========================*/
@@ -408,18 +511,19 @@
   /*--------------------------------------------------------------
   # Typography 1152px
   --------------------------------------------------------------*/
-
-  /*--------------------------------------------------------------
-  # Header 1152px
-  --------------------------------------------------------------*/
-  .header {
-    margin-top: 40px;
-    &__container div {
+  .container {
+    &.container--header:nth-child(n) {
       margin: auto;
       &:not(:first-child) {
         padding-top: 0;
       }
     }
+  }
+  /*--------------------------------------------------------------
+  # Header 1152px
+  --------------------------------------------------------------*/
+  .header {
+    margin-top: 40px;
   }
 
   /*--------------------------------------------------------------
@@ -441,6 +545,49 @@
       width: calc(100% / 4 - 10px);
     }
   }
+
+  /*--------------------------------------------------------------
+# big calculator 1152px
+--------------------------------------------------------------*/
+  .cargo__description {
+    width: 440px;
+  }
+
+  .checkbox:hover .checkbox__prompt {
+    position: absolute;
+    bottom: 40px;
+    min-width: 697px;
+    height: 159px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px rgba(37, 55, 70, 0.2);
+    z-index: 3;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 60px;
+      bottom: -40px;
+      border: 20px solid transparent;
+      border-top: 20px solid #fff;
+    }
+  }
+
+  .request {
+    &__wrap {
+      display: flex;
+      justify-content: space-between;
+      .request__item {
+        width: calc(50% - 30px);
+      }
+    }
+  }
+  .response {
+    &__wrap {
+      margin-right: 23px;
+    }
+  }
+
   /*--------------------------------------------------------------
   # Footer 1152px
   --------------------------------------------------------------*/
@@ -452,6 +599,7 @@
   /*--------------------------------------------------------------
   # Typography 1280px
   --------------------------------------------------------------*/
+
   .flex-wrap {
     justify-content: space-between;
   }
@@ -460,12 +608,9 @@
   # Header 1280px
   --------------------------------------------------------------*/
   .header {
-    &__container div {
+    &__schedule-box,
+    &__calling-box {
       margin: 0;
-    }
-    .schedule-box,
-    .calling-box {
-      margin-left: 0;
     }
   }
 
@@ -473,10 +618,6 @@
     width: 300px;
     height: 97px;
     display: block;
-  }
-
-  .search-form input[type="search"] {
-    width: 283px;
   }
 
   /*--------------------------------------------------------------
@@ -510,11 +651,24 @@
     right: 0;
   }
 
+  .services,
+  .tariffs,
+  .news,
+  .contacts {
+    .container {
+      margin-top: 33px;
+    }
+  }
+
   .services {
     &__item {
       margin: 0;
       width: 240px;
     }
+  }
+
+  .news__text {
+    height: 75px;
   }
 
   .payment {
@@ -545,8 +699,34 @@
   }
 
   /*--------------------------------------------------------------
+  # big calculator 1280px
+  --------------------------------------------------------------*/
+
+  .controls-cargo {
+    &.controls-cargo--page {
+      top: auto;
+      bottom: 10px;
+    }
+  }
+
+  .controls-cargo__description {
+    display: block;
+  }
+
+  .cargo__description {
+    width: 360px;
+    margin-right: 160px;
+  }
+
+  /*--------------------------------------------------------------
   # Footer 1280px
   --------------------------------------------------------------*/
+
+  .footer {
+    &__copy {
+      text-align: left;
+    }
+  }
 
 }
 
@@ -557,7 +737,7 @@
   # Typography 1366px
   --------------------------------------------------------------*/
   .container {
-    width: 100%;
+    max-width: 1440px;
   }
   /*--------------------------------------------------------------
   # Header 1366px
@@ -586,6 +766,76 @@
   }
 
   /*--------------------------------------------------------------
+    # big calculator 1366px
+    --------------------------------------------------------------*/
+
+  .controls-cargo {
+    &.controls-cargo--page {
+      right: -180px;
+    }
+  }
+
+  .cargo__description {
+    width: 460px;
+    margin-right: 0;
+  }
+
+  .response {
+    &__wrap {
+      &::before {
+        left: -36.5%;
+        width: 140%;
+      }
+    }
+    &__schedule {
+      margin-right: 20px;
+    }
+    &__logo {
+      display: block;
+    }
+  }
+
+  /*--------------------------------------------------------------
+# About-page 1366px
+--------------------------------------------------------------*/
+  .description {
+    &__item {
+      width: auto;
+      &:not(:last-child) {
+        margin-right: 60px;
+      }
+    }
+  }
+
+  .about-us {
+    &__inner {
+      flex-wrap: nowrap;
+    }
+    &__item {
+      width: auto;
+    }
+  }
+
+  .advantages {
+    &__item {
+      align-items: flex-start;
+      &.advantages__item--indent {
+        margin-right: 65px;
+      }
+    }
+    &__layout {
+      &:nth-child(even) {
+        .flex-box {
+          flex-direction: row-reverse;
+        }
+      }
+      .flex-box {
+        flex-direction: row;
+      }
+    }
+  }
+
+  /*--------------------------------------------------------------
   # Footer 1366px
   --------------------------------------------------------------*/
 
@@ -605,6 +855,7 @@
   /*--------------------------------------------------------------
   # Header 1440px
   --------------------------------------------------------------*/
+
 
   /*--------------------------------------------------------------
   # Content 1440px

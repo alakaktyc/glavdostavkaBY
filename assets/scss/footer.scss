@@ -11,6 +11,7 @@
   }
   &__item {
     margin-top: 20px;
+    text-align: center;
   }
   &__list {
     display: flex;
@@ -18,12 +19,28 @@
     justify-content: space-between;
     li {
       width: 50%;
+      padding-bottom: 10px;
+    }
+    a {
+      margin: auto;
     }
   }
   &__text {
     font-size: 15px;
     line-height: 20px;
-    color: #F7F7FF;
+    color: $basic-color-gray;
+  }
+  &__copy {
+    display: block;
+    width: 100%;
+    margin: 0.4em 0;
+    color: $basic-color-gray;
+    font-size: 0.7em;
+    font-weight: lighter;
+    a {
+      border-bottom: 1px solid $basic-color-gray;
+
+    }
   }
 
 }
@@ -36,9 +53,9 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    border: 2px solid #F7F7FF;
+    border: 2px solid $basic-color-gray;
     border-radius: 50%;
-    background: #F7F7FF;
+    background: $basic-color-gray;
     fill: #253746;
     transition: 0.3s ease;
     &:hover {
