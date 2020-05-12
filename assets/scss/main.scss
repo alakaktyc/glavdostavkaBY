@@ -121,18 +121,18 @@
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+  text-align: center;
   color: $basic-color-pink;
   background: $basic-color-gray;
   &__total {
     font-weight: bold;
     font-size: 30px;
     line-height: 20px;
-    text-align: center;
     text-transform: uppercase;
   }
   &__message {
+    padding: 0 10px;
     font-size: 12px;
-    display: none;
   }
 }
 

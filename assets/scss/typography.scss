@@ -322,6 +322,16 @@ img {
   transition: opacity 0.6s linear !important;
 }
 
+.preloader--active {
+  visibility: visible !important;
+  opacity: 0.6 !important;
+  transition: opacity 0.6s linear !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
 .bold {
   font-weight: bold;
 }

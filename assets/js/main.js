@@ -266,10 +266,7 @@ function parseCost(array) {
         });
         request.send(formData);
 
-    } else {
-        message.classList.remove('hidden');
-        message.innerHTML = '';
-    }
+    } 
 }
 
 
@@ -321,11 +318,11 @@ minusPlace.addEventListener('click', calcCost);
 let preloaderEl = document.querySelector('.preloader');
 
 function startPreloader() {
-    preloaderEl.classList.add('active');
+    preloaderEl.classList.add('preloader--active');
 }
 
 function closePreloader() {
-    preloaderEl.classList.remove('active');
+    preloaderEl.classList.remove('preloader--active');
 }
 
 //мобильное меню
