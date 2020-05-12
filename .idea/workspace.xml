@@ -20,14 +20,17 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="475" column="64" selection-start-line="475" selection-start-column="64" selection-end-line="475" selection-end-column="64" />
+            <state relative-caret-position="223">
+              <caret line="835" column="14" lean-forward="true" selection-start-line="835" selection-start-column="14" selection-end-line="835" selection-end-column="14" />
               <folding>
                 <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#section#1;n#main#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#select#0;n#label#0;n#div#0;n#div#0;n#section#2;n#main#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#select#0;n#span#0;n#div#0;n#div#0;n#section#2;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#table#0;n#div#1;n#div#0;n#section#2;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#table#1;n#div#1;n#div#0;n#section#2;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#table#2;n#div#1;n#div#0;n#section#2;n#main#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#section#3;n#main#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#section#4;n#main#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#section#5;n#main#0;n#body#0;n#html#0;n#!!top" />
@@ -43,8 +46,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="508" column="40" lean-forward="true" selection-start-line="508" selection-start-column="40" selection-end-line="508" selection-end-column="40" />
+            <state relative-caret-position="641">
+              <caret line="629" column="10" selection-start-line="629" selection-start-column="10" selection-end-line="629" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -52,8 +55,8 @@
       <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/scss/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="121" column="32" selection-start-line="121" selection-start-column="32" selection-end-line="121" selection-end-column="32" />
+            <state relative-caret-position="-1036">
+              <caret line="539" column="5" selection-start-line="539" selection-start-column="2" selection-end-line="539" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -89,7 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>h1</find>
       <find>po</find>
       <find>720</find>
       <find>box</find>
@@ -114,9 +116,10 @@
       <find>menu</find>
       <find>datep</find>
       <find>preload</find>
-      <find>act</find>
       <find>calcula</find>
       <find>call</find>
+      <find>act</find>
+      <find>tar</find>
       <find>mess</find>
       <find>рассч</find>
     </findStrings>
@@ -257,12 +260,12 @@
       <workItem from="1588747812405" duration="25750000" />
       <workItem from="1588781012479" duration="871000" />
       <workItem from="1588834532489" duration="1751000" />
-      <workItem from="1589279063676" duration="8509000" />
+      <workItem from="1589279063676" duration="9805000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235154000" />
+    <option name="totallyTimeSpent" value="236450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -530,21 +533,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/scss/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="121" column="32" selection-start-line="121" selection-start-column="32" selection-end-line="121" selection-end-column="32" />
+        <state relative-caret-position="-1036">
+          <caret line="539" column="5" selection-start-line="539" selection-start-column="2" selection-end-line="539" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="475" column="64" selection-start-line="475" selection-start-column="64" selection-end-line="475" selection-end-column="64" />
+        <state relative-caret-position="223">
+          <caret line="835" column="14" lean-forward="true" selection-start-line="835" selection-start-column="14" selection-end-line="835" selection-end-column="14" />
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#section#1;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#select#0;n#label#0;n#div#0;n#div#0;n#section#2;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#select#0;n#span#0;n#div#0;n#div#0;n#section#2;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#table#0;n#div#1;n#div#0;n#section#2;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#table#1;n#div#1;n#div#0;n#section#2;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#table#2;n#div#1;n#div#0;n#section#2;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#section#3;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#section#4;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#section#5;n#main#0;n#body#0;n#html#0;n#!!top" />
@@ -558,8 +564,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="508" column="40" lean-forward="true" selection-start-line="508" selection-start-column="40" selection-end-line="508" selection-end-column="40" />
+        <state relative-caret-position="641">
+          <caret line="629" column="10" selection-start-line="629" selection-start-column="10" selection-end-line="629" selection-end-column="10" />
         </state>
       </provider>
     </entry>

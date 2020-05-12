@@ -477,7 +477,7 @@
                     </select>
                 </label>
 
-                <button class="btn btn--transparent btn--color-word">узнать тариф</button>
+                <button class="tariffs__btn btn btn--transparent btn--color-word">узнать тариф</button>
             </div>
             <p>Цены указаны на услугу <span class="bold">«Перевозка сборных грузов»</span>  из/в Минск <span class="bold">от подъезда — к подъезду.</span>  Без действующих скидок.</p>
             <div class="tariffs__table">
@@ -560,7 +560,125 @@
                     </tr>
                     </tbody>
                 </table>
+
+                <table class="tariffs__pallet" cellspacing="0">
+                    <tbody>
+
+                    <tr>
+                        <td class="tariffs__table-head">количество паллет (шт.)</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tariffs__table-head">цена (бел. руб.)</td>
+                        <td class="tariffs__pallet-price"></td>
+                        <td class="tariffs__pallet-price"></td>
+                        <td class="tariffs__pallet-price"></td>
+                        <td class="tariffs__pallet-price"></td>
+                        <td class="tariffs__pallet-price"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <table class="tariffs__pack" cellspacing="0">
+                    <tbody>
+
+                    <tr>
+                        <td class="tariffs__table-head">Услуга</td>
+                        <td>Ед. измерения</td>
+                        <td>Тариф за ед. измерения (бел. руб с НДС)</td>
+                        <td>Мин. стоимость услуги (бел. руб. с НДС)</td>
+                    </tr>
+
+                    <tr>
+                        <td class="tariffs__table-head">Упаковка в коробку</td>
+                        <td>шт.</td>
+                        <td>4.00</td>
+                        <td>4.00</td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="tariffs__table-head">Скрепить стреппинг-лентой</td>
+                        <td>м<sup>3</sup></td>
+                        <td>1.00</td>
+                        <td>1.00</td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="tariffs__table-head">Упаковка в мешок с пломбой, 95 х 55 см</td>
+                        <td>шт.</td>
+                        <td>4.00</td>
+                        <td>4.00</td>
+
+                    </tr>
+                    <tr>
+                        <td class="tariffs__table-head">Упаковка в стретч-пленку</td>
+                        <td>м<sup>3</sup></td>
+                        <td>6.00</td>
+                        <td>3.00</td>
+
+                    </tr>
+                    <tr>
+                        <td class="tariffs__table-head">Упаковка в сейф-пакет</td>
+                        <td>шт.</td>
+                        <td>7.00</td>
+                        <td>7.00</td>
+
+                    </tr>
+                    <tr>
+                        <td class="tariffs__table-head">Паллетизация, паллета до 1 м</td>
+                        <td>шт.</td>
+                        <td>15.00</td>
+                        <td>15.00</td>
+
+                    </tr>
+                    <tr>
+                        <td class="tariffs__table-head">Паллетизация, паллета до 2 м</td>
+                        <td>шт.</td>
+                        <td>19.00</td>
+                        <td>19.00</td>
+
+                    </tr>
+                    <tr>
+                        <td class="tariffs__table-head">Предоставление поддона</td>
+                        <td>шт.</td>
+                        <td>8.00</td>
+                        <td>8.00</td>
+
+                    </tr>
+                    <tr>
+                        <td class="tariffs__table-head">Обрешётка груза (жёсткая упаковка) *</td>
+                        <td>м<sup>3</sup></td>
+                        <td>35.00</td>
+                        <td>22.00</td>
+
+                    </tr>
+                    <tr>
+                        <td class="tariffs__table-head">Упаковка в паллетный борт</td>
+                        <td>м<sup>3</sup></td>
+                        <td>22.00</td>
+                        <td>14.00</td>
+
+                    </tr>
+                    <tr>
+                        <td class="tariffs__table-head">Упаковка в воздушно-пузырьковую плёнку</td>
+                        <td>м<sup>3</sup></td>
+                        <td>6.00</td>
+                        <td>4.00</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+
             </div>
+
             <div class="tariffs__links-box">
                 <a class="tariffs__link link" href="#">Запросить индивидуальное предложение</a>
                 <a class="tariffs__link link" href="#">Скачать полный прайс-лист по сборным грузам</a>
@@ -897,6 +1015,7 @@
 <div class="preloader"></div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="assets/js/xlsx.full.min.js"></script>
 <script src="assets/owl/owl.carousel.min.js"></script>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=368e4890-6c0c-4a05-a5c1-2b03faf3f0df"></script>
 <script src="assets/js/provider.js"></script>

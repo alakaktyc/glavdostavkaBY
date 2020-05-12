@@ -515,5 +515,119 @@ $(document).ready(function(){
     });
 });
 
+function getPrices(foo) {
+    const oReq = new XMLHttpRequest();
+    oReq.open("GET", 'assets/xlsx/pr.xlsx', true);
+    oReq.responseType = "arraybuffer";
+    oReq.addEventListener('load', () => {
+        let arraybuffer = oReq.response;
+        /* convert data to binary string */
+        let data = new Uint8Array(arraybuffer);
+        let arr = [];
+        for (let i = 0; i !== data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+        let bstr = arr.join("");
+        /* Call XLSX */
+        let workbook = XLSX.read(bstr, {type: "binary"});
+        /* DO SOMETHING WITH workbook HERE */
+        let first_sheet_name = workbook.SheetNames[0];
+        let palletSheet = workbook.SheetNames[2];
+        let packSheet = workbook.SheetNames[1];
+        /* Get worksheet */
+        let cargo = workbook.Sheets[first_sheet_name];
+        let pallet = workbook.Sheets[palletSheet];
+        let pack = workbook.Sheets[packSheet];
+        //let locationArr = XLSX.utils.sheet_to_json(worksheet,{raw:true});
+        let pricesArr = [XLSX.utils.sheet_to_json(cargo, {
+            header: ['Departure', 'Destination', 'price_1',
+                'price_2', 'price_3', 'price_4', 'price_5', 'price_6', 'price_7', 'price_8', 'price_9', 'price_10',
+                'price_11', 'price_12', 'price_13', 'price_14', 'price_15', 'price_16',
+                'price_17', 'price_18', 'price_19', 'price_20', 'price_21', 'price_22'], raw: false
+        }),
+            XLSX.utils.sheet_to_json(pallet, {
+                header: ['city', 'pallet_1',
+                    'pallet_2', 'pallet_3', 'pallet_4', 'pallet_5'], raw: false
+            }),
+            XLSX.utils.sheet_to_json(pack, {
+                header: ['city', 'pallet_1',
+                    'pallet_2', 'pallet_3', 'pallet_4', 'pallet_5'], raw: false
+            })];
+
+        foo(pricesArr);
+    });
+    oReq.addEventListener('error', () => {
+        console.log('error');
+    });
+
+    oReq.send();
+}
+
+function parseXlsxToTable(array) {
+    const rowPrice = array[0];
+    const rowPallet = array[1];
+
+    const tableCargo = document.querySelector('.tariffs__cargo');
+    const tablePallet = document.querySelector('.tariffs__pallet');
+    const tablePack = document.querySelector('.tariffs__pack');
 
 
+    const tdCargo = document.querySelectorAll('.tariffs__price');
+    const tdPallet = document.querySelectorAll('.tariffs__pallet-price');
+
+
+    const selectedDeparture = changeDownloadCity;
+    const selectedDestination = changeDeliveryCity;
+    const selectedServiceType = changeTariffsType;
+
+
+    if (selectedServiceType === 'Сборный груз') {
+        tableCargo.classList.add('visible');
+        tablePack.classList.remove('visible');
+        tablePallet.classList.remove('visible');
+        for (let i = 3; i < rowPrice.length; ++i) {
+            if (rowPrice[i].Departure === selectedDeparture && rowPrice[i].Destination === selectedDestination) {
+                let priceLine = Object.values(rowPrice[i]);
+                for (let j = 0; j < tdCargo.length; j++) {
+                    tdCargo[j].textContent = priceLine[j + 2]
+                }
+            }
+        }
+    } else if (selectedServiceType === 'Палетная доставка') {
+        tableCargo.classList.remove('visible');
+        tablePack.classList.remove('visible');
+        tablePallet.classList.add('visible');
+        for (let i = 0; i < rowPallet.length; ++i) {
+            if (rowPallet[i].city === selectedDeparture) {
+                //console.log(rowPallet[i].city === selectedDeparture);
+                let priceLine = Object.values(rowPallet[i]);
+                for (let j = 0; j < tdPallet.length; j++) {
+                    tdPallet[j].textContent = priceLine[j + 1]
+                }
+            }
+        }
+    } else if (selectedServiceType === 'Упаковка') {
+        tableCargo.classList.remove('visible');
+        tablePack.classList.add('visible');
+        tablePallet.classList.remove('visible');
+    }
+}
+
+
+let arrayPrices = [];
+const calcTable = document.querySelector('.tariffs__btn');
+calcTable.addEventListener('click', function (event) {
+    event.preventDefault();
+    startPreloader();
+
+    if (arrayPrices.length === 0) {
+        getPrices(pricesArr => {
+            closePreloader();
+            arrayPrices = pricesArr;
+            parseXlsxToTable(arrayPrices)
+        });
+    } else {
+        setTimeout(closePreloader, 500);
+        parseXlsxToTable(arrayPrices);
+        //closePreloader();
+    }
+
+});
