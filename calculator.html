@@ -55,54 +55,88 @@
           </ul>
       </nav>
   </header>
-<main>
+<main class="calculator-page">
     <h1>Расчёт стоимости и оформление заявки</h1>
 
     <section class="all-parameters">
         <div class="container">
             <h2>Направление перевозки</h2>
-
             <form class="form" action="">
-
                 <div class="form__wrap">
-                    <div class="form__item">
-
+                  <div class="form__item">
+                    <fieldset>
+                    <label class="form__label form__label--black">
+                        Город отправления
+                        <input class="form__input form__input--white" type="text" value="Минск">
+                    </label>
+                    <label class="radiobutton">
+                        <input type="radio" name="departure" checked>
+                        <span></span>
+                        Забрать груз у отправителя
+                    </label>
+                    <label class="radiobutton">
+                        <input type="radio" name="departure">
+                        <span></span>
+                        Самостоятельно привезу груз на склад
+                    </label>
+                    <label class="form__label form__label--black">
+                        Склад отправления
+                        <input class="form__input form__input--white" type="text" value="г. Минск, Промышленная, 1">
+                    </label>
+                    <a class="form__link link link--pink" href="">Посмотреть место на карте</a>
+                    <div class="date-box__item">
                         <label class="form__label form__label--black">
-                            Город отправления
-                            <input class="form__input form__input--white" type="text" value="Минск">
+                            Дата забора груза
+                            <input class="form__input form__input--white" type="date" value="2020-05-20">
                         </label>
-
-                        <label class="radiobutton">
-                            <input type="radio" name="departure" checked>
-                            <span></span>
-                            Забрать груз у отправителя
-                        </label>
-
-                        <label class="radiobutton">
-                            <input type="radio" name="departure">
-                            <span></span>
-                            Самостоятельно привезу груз на склад
-                        </label>
-
-                        <label class="form__label form__label--black">
-                            Склад отправления
-                            <input class="form__input form__input--white" type="text" value="г. Минск, Промышленная, 1">
-                        </label>
-
-                        <a class="form__link link link--pink" href="">Посмотреть место на карте</a>
-
-                        <div class="date-box__item">
-                            <label class="form__label form__label--black">
-                                Дата забора груза
-                                <input class="form__input form__input--white" type="date" value="2020-05-20">
-                            </label>
-                        </div>
-                        <p class="form__attention">*Заявки на забор груза на следующий день оформляются до 17:00.</p>
                     </div>
-
-                    <button class="btn-reverse btn-reverse--black" type="button"></button>
+                    <p class="form__attention">*Заявки на забор груза на следующий день оформляются до 17:00.</p>
+                  </fieldset>
+                  <fieldset>
+                          <h2>дополнительные услуги</h2>
+                          <div class="form__services">
+                              <label class="checkbox">
+                                  <input type="checkbox">
+                                  <span></span>
+                                  Услуга грузчик
+                              </label>
+                              <label class="checkbox">
+                                  <input type="checkbox">
+                                  <span></span>
+                                  Возврат документов (бесплатно)
+                              </label>
+                              <label class="checkbox">
+                                  <input type="checkbox">
+                                  <span></span>
+                                  Выгрузка/погрузка водителем
+                              </label>
+                              <label class="checkbox">
+                                  <input type="checkbox">
+                                  <span></span>
+                                  Доставка к определенному времени
+                              </label>
+                              <label class="checkbox">
+                                  <input type="checkbox">
+                                  <span></span>
+                                  Доставка в вечернее время и выходные
+                              </label>
+                              <label class="checkbox">
+                                  <input type="checkbox">
+                                  <span></span>
+                                  Дополнительная точка (в пределах города)
+                              </label>
+                              <label class="checkbox">
+                                  <input type="checkbox">
+                                  <span></span>
+                                  Растентовка
+                              </label>
+                          </div>
+                        </fieldset>
+                  </div>
+                  <button class="btn-reverse btn-reverse--black" type="button"></button>
 
                     <div class="form__item">
+                      <fieldset>
                         <label class="form__label form__label--black">
                             Город доставки
                             <input class="form__input form__input--white" type="text" value="Минск">
@@ -125,19 +159,55 @@
                         </label>
 
                         <a class=" form__link link link--pink" href="">Посмотреть место на карте</a>
+                      </fieldset>
+                      <fieldset>
+                        <h2>дополнительные услуги</h2>
+                        <div class="form__services">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Услуга грузчик
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Возврат документов (бесплатно)
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Выгрузка/погрузка водителем
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Доставка к определенному времени
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Доставка в вечернее время и выходные
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Дополнительная точка (в пределах города)
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Растентовка
+                            </label>
+                        </div>
+                      </fieldset>
                     </div>
                 </div>
-
-
-
 
                 <h2>Параметры груза</h2>
-
                 <div class="form__parameters">
-
-                    <div class="cargo">
+                    <div class="form__item form__item--cargo cargo">
+                      <fieldset>
                         <span class="cargo__title">груз 1</span>
-
                         <div class="cargo__inner">
                             <div class="cargo__item">
                                 <label class="form__label--smaller form__label--black form__label--row">
@@ -150,14 +220,12 @@
 
                                 </label>
                             </div>
-
                             <div class="cargo__item">
                                 <label class="form__label form__label--smaller form__label--black">
                                     Вес
                                     <input class="form__input form__input--white" type="text" value="0.3" maxlength="4">
                                     <span class="form__label-measure">кг</span>
                                 </label>
-
                                 <label class="form__label form__label--small form__label--black">
                                     Габариты
                                     <span class="form__inputs-row form__inputs-row--white">
@@ -170,21 +238,18 @@
                                     <span class="form__label-info form__label-info--black">Длина х Ширина х Высота</span>
                                     <span class="form__label-measure">м</span>
                                 </label>
-
                                 <label class="form__label form__label--smaller form__label--black">
                                     Объём
                                     <input class="form__input form__input--white" type="text" value="0.8" maxlength="4">
                                     <span class="form__label-measure">м<sup>3</sup></span>
                                 </label>
-
                             </div>
-                            <div class="cargo__item">
+                            <div class="cargo__item cargo__item--full">
                                 <label class="form__label form__label--black">
                                     Описание груза
                                     <input class="cargo__description form__input form__input--white" type="text" placeholder="Введите текст">
                                 </label>
                             </div>
-
                             <div class="controls-cargo controls-cargo--page">
                                 <label class="controls-cargo__label">
                                     <input class="controls-cargo__btn controls-cargo__btn--black" type="button" value="-">
@@ -195,13 +260,197 @@
                                     <span class="controls-cargo__description controls-cargo__description--pink">добавить груз</span>
                                 </label>
                             </div>
-
                         </div>
-
+                      </fieldset>
+                      <fieldset>
+                        <h5>Дополнительная упаковка</h5>
+                        <div class="form__package">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Упаковка в коробку (630*320*340 мм)
+                                <article class="checkbox__prompt">
+                                  <figure>
+                                    <img src="assets/img/prompt/check_box.svg" alt="">
+                                  </figure>
+                                  <p>
+                                    Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br>
+                                    Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br>
+                                    Размеры коробки — <strong>630*320*340</strong> мм.
+                                  </p>
+                                </article>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Скрепить стреппинг-лентой
+                                <article class="checkbox__prompt">
+                                  <figure>
+                                    <img src="assets/img/prompt/check_box.svg" alt="">
+                                  </figure>
+                                  <p>
+                                    Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br>
+                                    Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br>
+                                    Размеры коробки — <strong>630*320*340</strong> мм.
+                                  </p>
+                                </article>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Упаковка в мешок с пломбой, 95 х 55 см
+                                <article class="checkbox__prompt">
+                                  <figure>
+                                    <img src="assets/img/prompt/check_box.svg" alt="">
+                                  </figure>
+                                  <p>
+                                    Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br>
+                                    Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br>
+                                    Размеры коробки — <strong>630*320*340</strong> мм.
+                                  </p>
+                                </article>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Упаковка в стретч-пленку
+                                <article class="checkbox__prompt">
+                                  <figure>
+                                    <img src="assets/img/prompt/check_box.svg" alt="">
+                                  </figure>
+                                  <p>
+                                    Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br>
+                                    Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br>
+                                    Размеры коробки — <strong>630*320*340</strong> мм.
+                                  </p>
+                                </article>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Упаковка в стретч-пленку
+                                <article class="checkbox__prompt">
+                                  <figure>
+                                    <img src="assets/img/prompt/check_box.svg" alt="">
+                                  </figure>
+                                  <p>
+                                    Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br>
+                                    Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br>
+                                    Размеры коробки — <strong>630*320*340</strong> мм.
+                                  </p>
+                                </article>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Упаковка в сейф-пакет
+                                <article class="checkbox__prompt">
+                                  <figure>
+                                    <img src="assets/img/prompt/check_box.svg" alt="">
+                                  </figure>
+                                  <p>
+                                    Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br>
+                                    Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br>
+                                    Размеры коробки — <strong>630*320*340</strong> мм.
+                                  </p>
+                                </article>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Паллетизация, паллета до 1 м
+                                <article class="checkbox__prompt">
+                                  <figure>
+                                    <img src="assets/img/prompt/check_box.svg" alt="">
+                                  </figure>
+                                  <p>
+                                    Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br>
+                                    Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br>
+                                    Размеры коробки — <strong>630*320*340</strong> мм.
+                                  </p>
+                                </article>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Паллетизация, паллета до 2 м
+                                <article class="checkbox__prompt">
+                                  <figure>
+                                    <img src="assets/img/prompt/check_box.svg" alt="">
+                                  </figure>
+                                  <p>
+                                    Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br>
+                                    Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br>
+                                    Размеры коробки — <strong>630*320*340</strong> мм.
+                                  </p>
+                                </article>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Предоставление поддона
+                                <article class="checkbox__prompt">
+                                  <figure>
+                                    <img src="assets/img/prompt/check_box.svg" alt="">
+                                  </figure>
+                                  <p>
+                                    Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br>
+                                    Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br>
+                                    Размеры коробки — <strong>630*320*340</strong> мм.
+                                  </p>
+                                </article>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Обрешётка груза (жёсткая упаковка)
+                                <article class="checkbox__prompt">
+                                  <figure>
+                                    <img src="assets/img/prompt/check_box.svg" alt="">
+                                  </figure>
+                                  <p>
+                                    Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br>
+                                    Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br>
+                                    Размеры коробки — <strong>630*320*340</strong> мм.
+                                  </p>
+                                </article>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Упаковка в паллетный борт
+                                <article class="checkbox__prompt">
+                                  <figure>
+                                    <img src="assets/img/prompt/check_box.svg" alt="">
+                                  </figure>
+                                  <p>
+                                    Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br>
+                                    Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br>
+                                    Размеры коробки — <strong>630*320*340</strong> мм.
+                                  </p>
+                                </article>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Упаковка в воздушно-пузырьковую плёнку
+                                <article class="checkbox__prompt">
+                                  <figure>
+                                    <img src="assets/img/prompt/check_box.svg" alt="">
+                                  </figure>
+                                  <p>
+                                    Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br>
+                                    Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br>
+                                    Размеры коробки — <strong>630*320*340</strong> мм.
+                                  </p>
+                                </article>
+                            </label>
+                        </div>
+                      </fieldset>
                     </div>
-                    <div class="cargo">
+                    <div class="form__item form__item--cargo cargo">
+                      <fieldset>
                         <span class="cargo__title">груз 2</span>
-
                         <div class="cargo__inner">
                             <div class="cargo__item">
                                 <label class="form__label--smaller form__label--black form__label--row">
@@ -214,14 +463,12 @@
 
                                 </label>
                             </div>
-
                             <div class="cargo__item">
                                 <label class="form__label form__label--smaller form__label--black">
                                     Вес
                                     <input class="form__input form__input--white" type="text" value="0.3" maxlength="4">
                                     <span class="form__label-measure">кг</span>
                                 </label>
-
                                 <label class="form__label form__label--small form__label--black">
                                     Габариты
                                     <span class="form__inputs-row form__inputs-row--white">
@@ -234,21 +481,18 @@
                                     <span class="form__label-info form__label-info--black">Длина х Ширина х Высота</span>
                                     <span class="form__label-measure">м</span>
                                 </label>
-
                                 <label class="form__label form__label--smaller form__label--black">
                                     Объём
                                     <input class="form__input form__input--white" type="text" value="0.8" maxlength="4">
                                     <span class="form__label-measure">м<sup>3</sup></span>
                                 </label>
-
                             </div>
-                            <div class="cargo__item">
+                            <div class="cargo__item cargo__item--full">
                                 <label class="form__label form__label--black">
                                     Описание груза
                                     <input class="cargo__description form__input form__input--white" type="text" placeholder="Введите текст">
                                 </label>
                             </div>
-
                             <div class="controls-cargo controls-cargo--page">
                                 <label class="controls-cargo__label">
                                     <input class="controls-cargo__btn controls-cargo__btn--black" type="button" value="-">
@@ -259,132 +503,85 @@
                                     <span class="controls-cargo__description controls-cargo__description--pink">добавить груз</span>
                                 </label>
                             </div>
-
                         </div>
+                      </fieldset>
+                      <fieldset>
+                        <h5>Дополнительная упаковка</h5>
+                        <div class="form__package">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Упаковка в коробку (630*320*340 мм)
+                                <span class="checkbox__prompt">
+                                    <img src="assets/img/prompt/check_box.svg" alt="">
+                                    Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br><br>
+                                    Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br><br>
+                                    Размеры коробки — 630*320*340 мм.</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Скрепить стреппинг-лентой
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Упаковка в мешок с пломбой, 95 х 55 см
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Упаковка в стретч-пленку
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Упаковка в стретч-пленку
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Упаковка в сейф-пакет
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Паллетизация, паллета до 1 м
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Паллетизация, паллета до 2 м
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Предоставление поддона
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Обрешётка груза (жёсткая упаковка)
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Упаковка в паллетный борт
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span></span>
+                                Упаковка в воздушно-пузырьковую плёнку
+                            </label>
+                        </div>
+                      </fieldset>
+                    </div>
 
                 </div>
 
 
                 </div>
-                <h5>Дополнительная упаковка</h5>
-                <div class="form__package">
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Упаковка в коробку (630*320*340 мм)
-                        <span class="checkbox__prompt">
-                            <img src="assets/img/prompt/check_box.svg" alt="">
-                            Картонная коробка имеет откидную крышку и отверстие ручки для переноски.<br><br>
-                            Вместительная, прочная и легкая коробка — отличный выбор для перевозки личных вещей, товаров и материалов.<br><br>
-                            Размеры коробки — 630*320*340 мм.</span>
-                    </label>
 
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Скрепить стреппинг-лентой
-                    </label>
-
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Упаковка в мешок с пломбой, 95 х 55 см
-                    </label>
-
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Упаковка в стретч-пленку
-                    </label>
-
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Упаковка в стретч-пленку
-                    </label>
-
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Упаковка в сейф-пакет
-                    </label>
-
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Паллетизация, паллета до 1 м
-                    </label>
-
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Паллетизация, паллета до 2 м
-                    </label>
-
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Предоставление поддона
-                    </label>
-
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Обрешётка груза (жёсткая упаковка)
-                    </label>
-
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Упаковка в паллетный борт
-                    </label>
-
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Упаковка в воздушно-пузырьковую плёнку
-                    </label>
-                </div>
-
-
-                <h2>дополнительные услуги</h2>
-                <div class="form__services">
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Услуга грузчик
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Возврат документов (бесплатно)
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Выгрузка/погрузка водителем
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Доставка к определенному времени
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Доставка в вечернее время и выходные
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Дополнительная точка (в пределах города)
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        <span></span>
-                        Растентовка
-                    </label>
-                </div>
 
             </form>
 
@@ -398,16 +595,16 @@
 
                 <div class="response__item">
                     <h5>парамерты груза</h5>
-                    <span class="cargo__title">груз 1</span>
                     <div class="response__box">
+                      <span class="cargo__title">груз 1</span>
                         <span class="response__parameter">Количесвто:<span>1</span></span>
                         <span class="response__parameter">Вес:<span>0.3 кг</span></span>
                         <span class="response__parameter">Габариты:<span>0.3х0.3х0.3 м</span></span>
                         <span class="response__parameter">Объём:<span>0.3 м<sup>3</sup></span></span>
                         <span class="response__parameter">Описание груза:<span>Текст, который ввел заказчик</span></span>
                     </div>
-                    <span class="cargo__title">груз 2</span>
                     <div class="response__box">
+                      <span class="cargo__title">груз 2</span>
                         <span class="response__parameter">Количесвто:<span>1</span></span>
                         <span class="response__parameter">Вес:<span>0.3 кг</span></span>
                         <span class="response__parameter">Габариты:<span>0.3х0.3х0.3 м</span></span>
@@ -434,7 +631,6 @@
         <div class="response__total">
             <div class="container flex-wrap">
                 <div class="response__wrap">
-
                     <div class="response__schedule">
                         <h5 class="title--white">Ориентировочный график перевозки</h5>
                         <div class="response__date">
@@ -452,7 +648,7 @@
 
                     <div class="response__schedule">
                         <h5 class="title--white">График обслуживания в городе доставки</h5>
-                        <span>г.Минск — Пн Вт Ср Чт Пт Сб</span>
+                        <span>г.Минск &#8212; Пн Вт Ср Чт Пт Сб</span>
                     </div>
                     <div class="response__logo">
                         <img src="assets/img/logo-white.svg" alt="">
@@ -491,12 +687,12 @@
                     </div>
 
                     <div class="request__payer-info">
-                        <label class="form__label form__label--black">
+                        <label class="form__label form__label--payer">
                             Плательщик
                             <input class="form__input form__input--white" type="text" value="KN 12345567, Минский РОВД, 02.01.18. Беларусь, г. Минск, ул. Брилевская 155-301">
                             <span class="form__label-info form__label-info--black">Паспортные данные (серия, номер, кем и когда выдан), адрес прописки по паспорту</span>
                         </label>
-                        <label class="form__label form__label--black">
+                        <label class="form__label form__label--payer">
                             Комментарий к отправке
                             <input class="form__input form__input--white" type="text" placeholder="Введите текст">
                         </label>
@@ -521,7 +717,7 @@
                             </label>
                         </div>
 
-                        <label class="form__label form__label--black">
+                        <label class="form__label form__label--payer">
                             Отправитель
                             <input class="form__input form__input--white" type="text" value="KN 12345567, Минский РОВД, 02.01.18. Беларусь, г. Минск, ул. Брилевская 155-301">
                             <span class="form__label-info form__label-info--black">Паспортные данные (серия, номер, кем и когда выдан), адрес прописки по паспорту</span>
@@ -529,27 +725,27 @@
 
 
                         <div class="request__info">
-                            <label class="request__label form__label form__label--black">
+                            <label class="request__label form__label form__label--payer">
                                 Время работы
                                 <input class="form__input form__input--white" type="text" placeholder="Введите текст">
                             </label>
-                            <label class="request__label request__label--small form__label form__label--black">
+                            <label class="request__label request__label--small form__label form__label--payer">
                                 Контактное лицо
                                 <input class="form__input form__input--white" type="text" placeholder="Имя">
                             </label>
-                            <label class="request__label request__label--small form__label form__label--black">
+                            <label class="request__label request__label--small form__label form__label--payer">
                                 Номер телефона
                                 <input class="form__input form__input--white" type="text" placeholder="+375">
                             </label>
                         </div>
 
 
-                        <label class="form__label form__label--black">
+                        <label class="form__label form__label--payer">
                             Адрес отправки груза
                             <input class="form__input form__input--white" type="text" value="г. Минск, ул. Грушевская 152-201">
                         </label>
 
-                        <label class="form__label form__label--black">
+                        <label class="form__label form__label--payer">
                             Комментарий к отправке
                             <input class="form__input form__input--white" type="text" placeholder="Введите текст">
                         </label>
@@ -573,7 +769,7 @@
                             </label>
                         </div>
 
-                        <label class="form__label form__label--black">
+                        <label class="form__label form__label--payer">
                             Получатель
                             <input class="form__input form__input--white" type="text" value="KN 12345567, Минский РОВД, 02.01.18. Беларусь, г. Минск, ул. Брилевская 155-301">
                             <span class="form__label-info form__label-info--black">Паспортные данные (серия, номер, кем и когда выдан), адрес прописки по паспорту</span>
@@ -581,27 +777,27 @@
 
 
                         <div class="request__info">
-                            <label class="request__label form__label form__label--black">
+                            <label class="request__label form__label form__label--payer">
                                 Время работы
                                 <input class="form__input form__input--white" type="text" placeholder="Введите текст">
                             </label>
-                            <label class="request__label request__label--small form__label form__label--black">
+                            <label class="request__label request__label--small form__label form__label--payer">
                                 Контактное лицо
                                 <input class="form__input form__input--white" type="text" placeholder="Имя">
                             </label>
-                            <label class="request__label request__label--small form__label form__label--black">
+                            <label class="request__label request__label--small form__label form__label--payer">
                                 Номер телефона
                                 <input class="form__input form__input--white" type="text" placeholder="+375">
                             </label>
                         </div>
 
 
-                        <label class="form__label form__label--black">
+                        <label class="form__label form__label--payer">
                             Адрес отправки груза
                             <input class="form__input form__input--white" type="text" value="г. Минск, ул. Грушевская 152-201">
                         </label>
 
-                        <label class="form__label form__label--black">
+                        <label class="form__label form__label--payer">
                             Комментарий к отправке
                             <input class="form__input form__input--white" type="text" placeholder="Введите текст">
                         </label>

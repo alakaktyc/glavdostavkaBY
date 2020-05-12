@@ -35,7 +35,7 @@
 }
 
 @font-face {
-  font-family: 'Effra';
+  font-family: 'Effra-Bold';
   src: url('../fonts/Effra-Bold.eot');
   src: local('../fonts/Effra Bold'), local('Effra-Bold'),
   url('../fonts/Effra-Bold.eot?#iefix') format('embedded-opentype'),
@@ -47,7 +47,7 @@
 }
 
 @font-face {
-  font-family: 'Effra';
+  font-family: 'Effra-Medium';
   src: url('../fonts/Effra-Medium.eot');
   src: local('../fonts/Effra Medium'), local('Effra-Medium'),
   url('../fonts/Effra-Medium.eot?#iefix') format('embedded-opentype'),
@@ -74,7 +74,7 @@ html, body {
   min-width: 100%;
   min-height: 100%;
   color: $basic-color-black;
-  font-family: 'Effra', 'Arial', sans-serif;
+  font-family: 'Effra-Medium', 'Arial', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -93,7 +93,7 @@ h4,
 h5,
 h6 {
   font-size: 1em;
-  font-family: 'Effra', 'Arial', sans-serif;
+  font-family: 'Effra-Bold', 'Arial', sans-serif;
   font-weight: bold;
   font-style: normal;
   text-align: center;
@@ -101,17 +101,17 @@ h6 {
 }
 
 h1 {
-  margin: 24px 10px;
-  font-size: 40px;
-  line-height: 64px;
+  margin: 1em 10px;
+  font-size: 2em;
+  line-height: 1.5em;
   color: $basic-color-black;
 }
 
 h2 {
   margin-top: 0;
-  padding-top: 43px;
-  font-size: 30px;
-  line-height: 27px;
+  padding-top: 1.5em;
+  font-size: 1.5em;
+  line-height: 1em;
   color: $basic-color-black;
 }
 

@@ -31,15 +31,18 @@
     color: $basic-color-gray;
   }
   &__copy {
+    position: absolute;
     display: block;
     width: 100%;
     margin: 0.4em 0;
-    color: $basic-color-gray;
+    color: #777;
     font-size: 0.7em;
     font-weight: lighter;
     a {
-      border-bottom: 1px solid $basic-color-gray;
-
+      border-bottom: 1px dotted #777;
+      &:hover {
+        border-bottom: 1px solid #999;
+      }
     }
   }
 
