@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/owl/css/owl.carousel.css">
     <link rel="stylesheet" href="assets/owl/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/datepicker.min.css">
     <title>Title</title>
 </head>
 <body>
@@ -101,20 +102,20 @@
                     <h4>рассчитать перевозку</h4>
                     <div class="form__inner">
                         <div class="form__cities">
-                            <label class="form__label">
+                            <label class="form__label" for="cityFrom">
                                 Город отправления
-                                <input class="form__input" type="text" value="Минск">
                             </label>
-                            <label class="form__label">
+                            <input id="cityFrom" class="form__input js-calculate" type="text" placeholder="Например, Минск">
+                            <label class="form__label" for="cityTo">
                                 Город доставки
-                                <input class="form__input" type="text" value="Минск">
                             </label>
-                            <button class="btn-reverse" type="button"></button>
+                            <input id="cityTo" class="form__input  js-calculate" type="text" placeholder="Например, Витебск">
+                            <button class="btn-reverse calculator__swap" type="button"></button>
                         </div>
                         <div class="form__cargo">
                             <label class="form__label form__label--smaller">
                                 Вес
-                                <input class="form__input" type="text" value="0.3" maxlength="4">
+                                <input class="form__input js-calculate" name="weight" type="text" placeholder="0.0" maxlength="4">
                                 <span class="form__label-measure">кг</span>
                             </label>
                             <label class="form__label form__label--small">
@@ -123,24 +124,24 @@
                                 </span>
                                 <span class="form__sizes form__sizes--visible">
                                     <span class="form__inputs-row">
-                                        <input class="form__input" type="text" value="0.3" maxlength="4">
+                                        <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
                                         <span>x</span>
-                                        <input class="form__input" type="text" value="0.3" maxlength="4">
+                                        <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
                                         <span>x</span>
-                                        <input class="form__input" type="text" value="0.3" maxlength="4">
+                                        <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
                                     </span>
                                     <span class="form__label-info">Длина х Ширина х Высота</span>
                                     <span class="form__label-measure">м</span>
                                 </span>
                                 <span class="form__sizes">
-                                    <input class="form__input" type="text" value="0.8" maxlength="4">
+                                    <input class="form__input js-calculate" name="volume" type="text" placeholder="0.0" maxlength="4">
                                     <span class="form__label-measure">м<sup>3</sup></span>
                                 </span>
                             </label>
                             <label class="form__label form__label--smaller">
                                 Кол-во груза
                                 <span class="btn-arrow btn-arrow--left">-</span>
-                                <input class="form__input form__input--indent" type="number"
+                                <input class="form__input form__input--indent calculator__dimensions-quantity" type="number" step="1"
                                        value="1">
                                 <span class="btn-arrow btn-arrow--right">+</span>
                                 <span class="form__label-measure">шт</span>
@@ -156,7 +157,7 @@
                         </div>
                     </div>
                     <label class="form-main__checkbox checkbox">
-                        <input type="checkbox">
+                        <input class="calculator__сustomer-delivery" type="checkbox">
                         <span></span>
                         Самостоятельно привезу груз на склад
                     </label>
@@ -167,20 +168,25 @@
                     <div class="date-box">
                         <div class="date-box__item">
                             <label class="form__label">
-                                <input class="form__input" type="date" value="2020-05-20">
+                                <input type='text' class="form__input datepicker-here calculator__date-download" maxlength="0"/>
+                                <!--<input class="form__input" type="date" value="2020-05-20">-->
                                 <span class="date-box__text"> &#8212; дата забора</span>
                             </label>
                         </div>
                         <div class="date-box__item">
-                            <span class="date-box__text date-box__text--bold">30.05.2020</span>
+                            <span class="date-box__text date-box__text--bold calculator__date-delivery">30.05.2020</span>
                             <span class="date-box__text"> &#8212; дата доставки</span>
                         </div>
                     </div>
                 </form>
-                <div class="calculator-price">150 BYN с НДС</div>
+                <div class="price-box">
+                    <span class="price-box__total">150 BYN с НДС</span>
+                    <span class="price-box__message">ттт</span>
+                </div>
             </div>
         </div>
     </section>
+
     <section class="services">
         <h3>Услуги</h3>
         <div class="container flex-wrap">
@@ -216,6 +222,7 @@
             </div>
         </div>
     </section>
+
     <section class="tariffs">
         <h3>тарифы</h3>
         <div class="container">
@@ -323,6 +330,7 @@
             </div>
         </div>
     </section>
+
     <section class="news">
         <h3>Новости</h3>
         <div class="container">
@@ -649,8 +657,13 @@
     <li class="widgets-btn__icon top"><a href="#"></a></li>
 </ul>
 
+<div class="preloader"></div>
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="assets/owl/owl.carousel.min.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=368e4890-6c0c-4a05-a5c1-2b03faf3f0df"></script>
+<script src="assets/js/provider.js"></script>
+<script src="assets/js/datepicker.min.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

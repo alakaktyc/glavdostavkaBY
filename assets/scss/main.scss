@@ -108,23 +108,31 @@
   .calculator-widget {
     width: 90%;
   }
-  &-price {
-    width: 100%;
-    min-height: 60px;
-    margin-bottom: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  &__btn.btn {
+    margin: 15px 0;
+  }
+}
+
+.price-box {
+  width: 100%;
+  min-height: 60px;
+  margin-bottom: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  color: $basic-color-pink;
+  background: $basic-color-gray;
+  &__total {
     font-weight: bold;
     font-size: 30px;
     line-height: 20px;
     text-align: center;
     text-transform: uppercase;
-    color: $basic-color-pink;
-    background: $basic-color-gray;
   }
-  &__btn.btn {
-    margin: 15px 0;
+  &__message {
+    font-size: 12px;
+    display: none;
   }
 }
 
@@ -182,6 +190,7 @@
     }
   }
   &__input {
+    width: 100%;
     height: 30px;
     padding: 5px 10px;
     font-size: 15px;
@@ -316,6 +325,7 @@
   font-size: 0;
   border: 6px solid transparent;
   cursor: pointer;
+  z-index: 2;
   &.btn-arrow--right {
     left: 45px;
     border-left-color: $basic-color-black;;
