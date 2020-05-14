@@ -1,6 +1,7 @@
 //calculator
 const formCalculate = document.querySelector('.calculator-widget');
 let arrayLocation = [];
+
 function getLocal(cb) {
     const oReq = new XMLHttpRequest();
     oReq.open("GET", 'assets/json/loc.json', true);
@@ -21,10 +22,12 @@ let cityTo = document.querySelector('#cityTo');
 function replaceCity() {
     this.value = this.value.replace(/[^а-яА-Я., ]/, '');
 }
+
 cityFrom.addEventListener('input', replaceCity);
 cityTo.addEventListener('input', replaceCity);
 
 ymaps.ready(autocomplete);
+
 function autocomplete() {
     cityFrom = new ymaps.SuggestView('cityFrom', {provider: provider, results: 5});
     cityTo = new ymaps.SuggestView('cityTo', {provider: provider, results: 5});
@@ -48,24 +51,144 @@ swapCity.addEventListener('click', function (event) {
     cityToVal.value = temp;
 });
 
-const quantityPlace = document.querySelector('.calculator__dimensions-quantity');
+
+//добавление груза
+const cargoBox = document.querySelector('.form__cargo-box');
+let numbers = 0;
+
+let switchParameter = document.querySelectorAll('.js-switcher');
 
 
-const plusPlace = document.querySelector('.btn-arrow--right');
-const minusPlace = document.querySelector('.btn-arrow--left');
-plusPlace.addEventListener('click', function () {
-    if (!quantityPlace.hasAttribute('disabled')) {
-        quantityPlace.value++
+
+let weightInput = document.querySelectorAll('input[name="weight"]');
+
+let inputsNumber = document.querySelectorAll('.js-number');
+
+
+function addCargo() {
+    const template = document.querySelector('#sample').content;
+    let copyHTML = document.importNode(template, true);
+    cargoBox.appendChild(copyHTML);
+}
+
+cargoBox.addEventListener('click', function (event) {
+    let target = event.target;
+    if (target.classList.contains('controls-cargo__btn-plus')) {
+        addCargo();
+        switchParameter = document.querySelectorAll('.js-switcher');
+        quantity = document.querySelectorAll('.quantity');
+        quantityNum = document.querySelectorAll('.calculator__dimensions-quantity');
+        weightInput = document.querySelectorAll('input[name="weight"]');
+        inputsNumber = document.querySelectorAll('.js-number');
+        getNumbersElement();
     }
-});
-minusPlace.addEventListener('click', function () {
-    if (!quantityPlace.hasAttribute('disabled')) {
-        if (quantityPlace.value > 1) {
-            quantityPlace.value--
+
+    let formCargo = document.querySelectorAll('.form__cargo');
+    for (let i = 0; i < formCargo.length; i++) {
+        formCargo = document.querySelectorAll('.form__cargo');
+        formCargo[i].addEventListener('click', function (event) {
+            let target = event.target;
+            formCargo = document.querySelectorAll('.form__cargo');
+            if (target.classList.contains('controls-cargo__btn-minus') && formCargo.length > 1) {
+                this.remove();
+                switchParameter = document.querySelectorAll('.js-switcher');
+                quantity = document.querySelectorAll('.quantity');
+                quantityNum = document.querySelectorAll('.calculator__dimensions-quantity');
+                weightInput = document.querySelectorAll('input[name="weight"]');
+                inputsNumber = document.querySelectorAll('.js-number');
+                getNumbersElement();
+            }
+
+        })
+
+    }
+
+    if (target.classList.contains('btn-arrow--right')) {
+        quantityNum[numbers].value++;
+    }
+
+    if (target.classList.contains('btn-arrow--left')) {
+        if (quantityNum[numbers].value > 1) {
+            quantityNum[numbers].value--;
+        }
+
+    }
+
+
+    switchParameter = document.querySelectorAll('.js-switcher');
+    if (target.textContent === 'Объём') {
+        switchToVolume();
+    }
+    if (target.textContent === 'Габариты') {
+        switchToDimensions();
+    }
+
+    if (target.classList.contains('js-number')) {
+        for (let i = 0; i < inputsNumber.length; i++) {
+            inputsNumber[i].addEventListener('input', replaceToNum)
         }
     }
+
+
+
+
 });
 
+for (let i = 0; i < weightInput.length; i++) {
+    weightInput[i].addEventListener('input', replaceToNum);
+}
+
+
+function replaceToNum() {
+    this.value = this.value.replace(/,/, '.').replace(/[^.\d]+/g, "").replace(/^([^\.]*\.)|\./g, '$1');
+}
+
+function switchToVolume() {
+    for (let i = 0; i < switchParameter.length; i++) {
+        switchParameter[i].addEventListener('click', function () {
+            let parameter = this.querySelectorAll('.form__switch span');
+            let formParameters = this.querySelectorAll('.form__sizes');
+            parameter[1].classList.add('switch');
+            parameter[0].classList.remove('switch');
+            formParameters[1].classList.add('form__sizes--visible');
+            formParameters[0].classList.remove('form__sizes--visible');
+
+        });
+    }
+}
+
+function switchToDimensions() {
+    for (let i = 0; i < switchParameter.length; i++) {
+        switchParameter[i].addEventListener('click', function () {
+            let parameter = this.querySelectorAll('.form__switch span');
+            let formParameters = this.querySelectorAll('.form__sizes');
+            parameter[0].classList.add('switch');
+            parameter[1].classList.remove('switch');
+            formParameters[0].classList.add('form__sizes--visible');
+            formParameters[1].classList.remove('form__sizes--visible');
+        });
+    }
+}
+
+
+let quantity = document.querySelectorAll('.quantity');
+let quantityNum = document.querySelectorAll('.calculator__dimensions-quantity');
+
+function getNumbersElement() {
+    for (let i = 0; i < quantity.length; i++) {
+        quantity[i].addEventListener('click', function (event) {
+            quantity = document.querySelectorAll('.quantity');
+            let current = event.currentTarget;
+            let n = quantity.length;
+            while (n--) {
+                if (quantity[n] === current) {
+                    numbers = n;
+                    break
+                }
+            }
+        });
+    }
+}
 
 
 const dimensions = document.querySelectorAll('input[name="dimensions"]');
@@ -93,16 +216,15 @@ volumeInput.addEventListener('input', function () {
     dimensions[2].value = 0;
 });
 
-function replaceToNum() {
-    this.value = this.value.replace(/,/, '.').replace(/[^.\d]+/g, "").replace(/^([^\.]*\.)|\./g, '$1');
-}
 
-const weightInput = document.querySelector('input[name="weight"]');
+
+
 const volumeDimInputs = document.querySelectorAll('.module__data--switching input');
 for (let i = 0; i < volumeDimInputs.length; ++i) {
     volumeDimInputs[i].addEventListener('input', replaceToNum)
 }
-weightInput.addEventListener('input', replaceToNum);
+
+
 
 //очистка полей
 const inputsFormCalc = formCalculate.querySelectorAll('.js-calculate');
@@ -132,8 +254,34 @@ let message = document.querySelector('.price-box__message');
 let customerDelivery = document.querySelector('.calculator__сustomer-delivery');
 
 let dateDownload = document.querySelector('.calculator__date-download');
-let dateDelivery =document.querySelector('.calculator__date-delivery');
+let dateDelivery = document.querySelector('.calculator__date-delivery');
 
+let enabledDays = [];
+dates();
+let myDatepicker = $('.datepicker-here').datepicker().data('datepicker');
+
+function dates() {
+    $('.datepicker-here').datepicker({
+        minDate: new Date(),
+        position: "top left",
+        dateFormat: 'dd-mm-yyyy',
+        onRenderCell: function (date, cellType) {
+            if (cellType == 'day') {
+                let cd = getDates(date),
+                    isDisabled = enabledDays.indexOf(cd) == -1;
+                //console.log(isDisabled);
+                return {
+                    disabled: isDisabled
+                }
+            }
+        },
+        onSelect: function (formattedDate) {
+            console.log(formattedDate);
+            myDatepicker.hide();
+            parseCost(array);
+        }
+    });
+}
 
 
 function parseCost(array) {
@@ -207,35 +355,37 @@ function parseCost(array) {
             if ((request.readyState === 4) && (request.status === 200)) {
                 let parseRequest = JSON.parse(request.responseText);
                 console.log(parseRequest);
-                let enabledDays = [];
+                enabledDays = [];
                 for (let i = 0; i < parseRequest.DeliverySchedule.length; ++i) {
                     //console.log(JSON.parse(request.responseText).DeliverySchedule[i].Date_delivery);
                     enabledDays.push(parseRequest.DeliverySchedule[i].Date_delivery)
                     //console.log(enabledDays);
                 }
+                dates();
+                /*
+                                let myDatepicker = $('.datepicker-here').datepicker().data('datepicker');
+                                $('.datepicker-here').datepicker({
+                                    minDate: new Date(),
+                                    position: "top left",
+                                    dateFormat: 'dd-mm-yyyy',
+                                    onRenderCell: function (date, cellType) {
+                                        if (cellType == 'day') {
+                                            let cd = getDates(date),
+                                                isDisabled = enabledDays.indexOf(cd) == -1;
+                                            //console.log(isDisabled);
+                                            return {
+                                                disabled: isDisabled
+                                            }
+                                        }
+                                    },
+                                    onSelect: function (formattedDate) {
+                                        console.log(formattedDate);
+                                        myDatepicker.hide();
+                                        parseCost(array);
+                                    }
+                                });
 
-                let myDatepicker = $('.datepicker-here').datepicker().data('datepicker');
-                $('.datepicker-here').datepicker({
-                    minDate: new Date(),
-                    position: "top left",
-                    dateFormat: 'dd-mm-yyyy',
-                    onRenderCell: function (date, cellType) {
-                        if (cellType == 'day') {
-                            let cd = getDates(date),
-                                isDisabled = enabledDays.indexOf(cd) == -1;
-                            //console.log(isDisabled);
-                            return {
-                                disabled: isDisabled
-                            }
-                        }
-                    },
-                    onSelect: function (formattedDate) {
-                        console.log(formattedDate);
-                        myDatepicker.hide();
-                        parseCost(array);
-                    }
-                });
-
+                */
 
                 if (typeof parseRequest.Warning_Customer === "object" && parseRequest.Cost_Delivery !== undefined) {
                     cost.classList.remove('hidden');
@@ -286,7 +436,6 @@ function calcCost() {
 }
 
 
-
 //autocalculate
 formCalculate.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -298,20 +447,18 @@ volumeInput.addEventListener('input', calcCost);
 for (let i = 0; i < dimensions.length; ++i) {
     dimensions[i].addEventListener('input', calcCost)
 }
-weightInput.addEventListener('input', calcCost);
+//weightInput.addEventListener('input', calcCost);
 
 volumeInput.addEventListener('click', calcCost);
 for (let i = 0; i < dimensions.length; ++i) {
     dimensions[i].addEventListener('click', calcCost)
 }
-weightInput.addEventListener('click', calcCost);
+//weightInput.addEventListener('click', calcCost);
 
 
 customerDelivery.addEventListener('click', calcCost);
-plusPlace.addEventListener('click', calcCost);
-minusPlace.addEventListener('click', calcCost);
-
-
+//plusPlace.addEventListener('click', calcCost);
+//minusPlace.addEventListener('click', calcCost);
 
 
 //preloader
@@ -330,28 +477,6 @@ const btnMenu = document.querySelector('.menu-btn');
 btnMenu.addEventListener('click', function () {
     const mobileMenu = document.querySelector('.navigation-box');
     mobileMenu.classList.toggle('active')
-});
-
-//переключатель объём/габариты
-const switchParameter = document.querySelector('.form__switch');
-switchParameter.addEventListener('click', function (event) {
-    let parameter = document.querySelectorAll('.form__switch span');
-    let formParameters = document.querySelectorAll('.form__sizes');
-    let turnParam = event.target;
-    if (turnParam.textContent === 'Габариты') {
-        parameter[0].classList.add('switch');
-        parameter[1].classList.remove('switch');
-        formParameters[0].classList.add('form__sizes--visible');
-        formParameters[1].classList.remove('form__sizes--visible');
-        console.log(turnParam.textContent)
-    }
-    if (turnParam.textContent === 'Объём') {
-        parameter[1].classList.add('switch');
-        parameter[0].classList.remove('switch');
-        formParameters[1].classList.add('form__sizes--visible');
-        formParameters[0].classList.remove('form__sizes--visible');
-        console.log(turnParam.textContent)
-    }
 });
 
 //Виджеты
@@ -491,25 +616,25 @@ $(document).ready(function () {
 let changeDownloadCity = '';
 let changeDeliveryCity = '';
 let changeTariffsType = '';
-$(document).ready(function(){
+$(document).ready(function () {
 
     $(".tariffs__select").chosen({
         width: '100%',
         no_results_text: "Ничего не найдено!"
     });
 
-    $(".tariffs-download").chosen().change(function(){
+    $(".tariffs-download").chosen().change(function () {
         changeDownloadCity = $(this).val();
         console.log(changeDownloadCity);
     });
 
 
-    $(".tariffs-delivery").chosen().change(function(){
+    $(".tariffs-delivery").chosen().change(function () {
         changeDeliveryCity = $(this).val();
         console.log(changeDeliveryCity);
     });
 
-    $(".tariffs-type").chosen().change(function(){
+    $(".tariffs-type").chosen().change(function () {
         changeTariffsType = $(this).val();
         console.log(changeTariffsType);
     });
@@ -625,8 +750,8 @@ calcTable.addEventListener('click', function (event) {
             parseXlsxToTable(arrayPrices)
         });
     } else {
-        setTimeout(closePreloader, 500);
-        parseXlsxToTable(arrayPrices);
+        setTimeout(closePreloader, 1000);
+        setTimeout(parseXlsxToTable(arrayPrices), 500);
         //closePreloader();
     }
 
