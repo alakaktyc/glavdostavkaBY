@@ -21,8 +21,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="809">
-              <caret line="1071" column="10" selection-start-line="1071" selection-start-column="10" selection-end-line="1071" selection-end-column="10" />
+            <state relative-caret-position="196">
+              <caret line="1033" lean-forward="true" selection-start-line="1033" selection-end-line="1033" />
               <folding>
                 <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
@@ -49,8 +49,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="138" column="1" lean-forward="true" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="1" />
+            <state relative-caret-position="-508">
+              <caret line="315" column="8" selection-start-line="315" selection-start-column="8" selection-end-line="315" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -58,7 +58,7 @@
       <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/scss/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
+            <state relative-caret-position="12188">
               <caret line="554" column="23" selection-start-line="554" selection-start-column="23" selection-end-line="554" selection-end-column="23" />
             </state>
           </provider>
@@ -95,7 +95,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>owl</find>
       <find>sear</find>
       <find>btn-re</find>
       <find>city</find>
@@ -123,8 +122,9 @@
       <find>arrow</find>
       <find>switch</find>
       <find>we</find>
-      <find>js-ca</find>
       <find>js-cal</find>
+      <find>js-sw</find>
+      <find>js-ca</find>
     </findStrings>
     <replaceStrings>
       <replace>$ba</replace>
@@ -256,20 +256,21 @@
       <workItem from="1589358994825" duration="18131000" />
       <workItem from="1589439932314" duration="2448000" />
       <workItem from="1589442490217" duration="17891000" />
+      <workItem from="1589525410930" duration="10401000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="279156000" />
+    <option name="totallyTimeSpent" value="289557000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -282,6 +283,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,15 +529,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/scss/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
+        <state relative-caret-position="12188">
           <caret line="554" column="23" selection-start-line="554" selection-start-column="23" selection-end-line="554" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="809">
-          <caret line="1071" column="10" selection-start-line="1071" selection-start-column="10" selection-end-line="1071" selection-end-column="10" />
+        <state relative-caret-position="196">
+          <caret line="1033" lean-forward="true" selection-start-line="1033" selection-end-line="1033" />
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
@@ -560,8 +562,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="138" column="1" lean-forward="true" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="1" />
+        <state relative-caret-position="-508">
+          <caret line="315" column="8" selection-start-line="315" selection-start-column="8" selection-end-line="315" selection-end-column="8" />
         </state>
       </provider>
     </entry>

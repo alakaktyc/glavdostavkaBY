@@ -59,10 +59,13 @@ let numbers = 0;
 let switchParameter = document.querySelectorAll('.js-switcher');
 
 
-
 let weightInput = document.querySelectorAll('input[name="weight"]');
 
 let inputsNumber = document.querySelectorAll('.js-number');
+
+
+let inputsFormCalc = formCalculate.querySelectorAll('.js-calculate');
+
 
 
 function addCargo() {
@@ -80,6 +83,7 @@ cargoBox.addEventListener('click', function (event) {
         quantityNum = document.querySelectorAll('.calculator__dimensions-quantity');
         weightInput = document.querySelectorAll('input[name="weight"]');
         inputsNumber = document.querySelectorAll('.js-number');
+        inputsFormCalc = formCalculate.querySelectorAll('.js-calculate');
         getNumbersElement();
     }
 
@@ -96,12 +100,14 @@ cargoBox.addEventListener('click', function (event) {
                 quantityNum = document.querySelectorAll('.calculator__dimensions-quantity');
                 weightInput = document.querySelectorAll('input[name="weight"]');
                 inputsNumber = document.querySelectorAll('.js-number');
+                inputsFormCalc = formCalculate.querySelectorAll('.js-calculate');
                 getNumbersElement();
             }
 
         })
 
     }
+
 
     if (target.classList.contains('btn-arrow--right')) {
         quantityNum[numbers].value++;
@@ -115,21 +121,32 @@ cargoBox.addEventListener('click', function (event) {
     }
 
 
-    switchParameter = document.querySelectorAll('.js-switcher');
+//переключатель габаритов и объёма
+
     if (target.textContent === 'Объём') {
         switchToVolume();
+        target.click();
     }
     if (target.textContent === 'Габариты') {
         switchToDimensions();
+        target.click();
     }
 
+//запись цифрами и замена запятой на точку
     if (target.classList.contains('js-number')) {
         for (let i = 0; i < inputsNumber.length; i++) {
             inputsNumber[i].addEventListener('input', replaceToNum)
         }
     }
 
-
+//очистка полей
+    if (target.classList.contains('js-calculate')) {
+        for (let i = 0; i < inputsFormCalc.length; ++i) {
+            inputsFormCalc[i].addEventListener('focus', function () {
+                this.value = '';
+            })
+        }
+    }
 
 
 });
@@ -152,7 +169,6 @@ function switchToVolume() {
             parameter[0].classList.remove('switch');
             formParameters[1].classList.add('form__sizes--visible');
             formParameters[0].classList.remove('form__sizes--visible');
-
         });
     }
 }
@@ -195,9 +211,6 @@ const dimensions = document.querySelectorAll('input[name="dimensions"]');
 const volumeInput = document.querySelector('input[name="volume"]');
 for (let i = 0; i < dimensions.length; i++) {
     dimensions[i].addEventListener('focus', function () {
-        if (dimensions[i].value === '') {
-            volumeInput.value = 0
-        }
     });
     dimensions[i].addEventListener('focus', function () {
         volumeInput.value = dimensions[0].value * dimensions[1].value * dimensions[2].value;
@@ -210,29 +223,12 @@ for (let i = 0; i < dimensions.length; i++) {
     });
 }
 
-volumeInput.addEventListener('input', function () {
-    dimensions[0].value = 0;
-    dimensions[1].value = 0;
-    dimensions[2].value = 0;
-});
-
-
-
 
 const volumeDimInputs = document.querySelectorAll('.module__data--switching input');
 for (let i = 0; i < volumeDimInputs.length; ++i) {
     volumeDimInputs[i].addEventListener('input', replaceToNum)
 }
 
-
-
-//очистка полей
-const inputsFormCalc = formCalculate.querySelectorAll('.js-calculate');
-for (let i = 0; i < inputsFormCalc.length; ++i) {
-    inputsFormCalc[i].addEventListener('focus', function () {
-        this.value = '';
-    })
-}
 
 //правильный формат даты
 function getDates(date) {
@@ -315,8 +311,11 @@ function parseCost(array) {
         formData.append('Destination', codeTo);
         formData.append('Dimensions_one_place', true);
         formData.append('Oversized', false);
-        formData.append('Number_Packages', quantityPlace.value);
         formData.append('Customer_delivery', customerDelivery.checked);
+
+        
+        formData.append('Number_Packages', quantityPlace.value);
+
 
 
         if (weightInput.value === '') {
@@ -362,30 +361,6 @@ function parseCost(array) {
                     //console.log(enabledDays);
                 }
                 dates();
-                /*
-                                let myDatepicker = $('.datepicker-here').datepicker().data('datepicker');
-                                $('.datepicker-here').datepicker({
-                                    minDate: new Date(),
-                                    position: "top left",
-                                    dateFormat: 'dd-mm-yyyy',
-                                    onRenderCell: function (date, cellType) {
-                                        if (cellType == 'day') {
-                                            let cd = getDates(date),
-                                                isDisabled = enabledDays.indexOf(cd) == -1;
-                                            //console.log(isDisabled);
-                                            return {
-                                                disabled: isDisabled
-                                            }
-                                        }
-                                    },
-                                    onSelect: function (formattedDate) {
-                                        console.log(formattedDate);
-                                        myDatepicker.hide();
-                                        parseCost(array);
-                                    }
-                                });
-
-                */
 
                 if (typeof parseRequest.Warning_Customer === "object" && parseRequest.Cost_Delivery !== undefined) {
                     cost.classList.remove('hidden');
