@@ -81,7 +81,7 @@ function switchParameters() {
   let fieldDimension = cargosBox.querySelectorAll('.js-input-dimensions');
   let fieldValue = cargosBox.querySelectorAll('.js-input-values');
   let swLenght = swDimension.length;
-  var x;
+  let x;
   console.log(swDimension[0], swLenght);
 
   for (let i = 0; i < swLenght; i++) {
@@ -131,33 +131,41 @@ function switchParameters() {
 
 // Вычисление объема
 
-const dimensions = document.querySelectorAll('input[name="dimensions"]');
-const volumeInput = document.querySelector('input[name="volume"]');
-for (let i = 0; i < dimensions.length; i++) {
-    dimensions[i].addEventListener('focus', function () {
-        if (dimensions[i].value === '') {
-            volumeInput.value = 0
+function calculateVolume() {
+  let fieldDimension = cargosBox.querySelectorAll('.js-input-dimensions');
+  let fieldValue = cargosBox.querySelectorAll('.js-input-values');
+  //let allDimensions = cargosBox.querySelectorAll('.js-input-values');
+  let swLenght = fieldDimension.length;
+  let x;
+  for (let i = 0; i < swLenght; i++) {
+    fieldDimension[i].addEventListener('change', function(evt) {
+      evt.preventDefault();
+      let current = evt.currentTarget;
+      if (current.classList.contains('js-input-dimensions')) {
+        let n = swLenght;
+        while(n--) {
+          if(fieldDimension[n] == current) {
+            x = n;
+            break;
+          }
         }
+        let inputsDimension = fieldDimension[x].querySelectorAll('.js-calculate');
+        let inputValue = fieldValue[x].querySelector('.js-calculate');
+        for (let i = 0; i < inputsDimension.length; i++) {
+          //inputsDimension[i].value = inputsDimension[i].value.replace(/,/, '.').replace(/[^.\d]+/g, "").replace(/^([^\.]*\.)|\./g, '$1');
+          replaceToNum(inputsDimension[i]);
+        }
+        let curValue = inputsDimension[0].value * inputsDimension[1].value * inputsDimension[2].value;
+        //inputValue.value = Math.floor(curValue * 10) / 10;
+        inputValue.value = + curValue.toFixed(2);
+        console.log('рассчитаем объем', inputValue.value);
+      };
     });
-    dimensions[i].addEventListener('focus', function () {
-        volumeInput.value = dimensions[0].value * dimensions[1].value * dimensions[2].value;
-    });
-    dimensions[i].addEventListener('blur', function () {
-        volumeInput.value = dimensions[0].value * dimensions[1].value * dimensions[2].value;
-    });
-    dimensions[i].addEventListener('input', function () {
-        volumeInput.value = dimensions[0].value * dimensions[1].value * dimensions[2].value;
-    });
+  }
 }
 
-volumeInput.addEventListener('input', function () {
-    dimensions[0].value = 0;
-    dimensions[1].value = 0;
-    dimensions[2].value = 0;
-});
-
-function replaceToNum() {
-    this.value = this.value.replace(/,/, '.').replace(/[^.\d]+/g, "").replace(/^([^\.]*\.)|\./g, '$1');
+function replaceToNum(input) {
+    input.value = input.value.replace(/,/, '.').replace(/[^.\d]+/g, "").replace(/^([^\.]*\.)|\./g, '$1');
 }
 
 const weightInput = document.querySelector('input[name="weight"]');
@@ -217,6 +225,7 @@ $('.js-cargo-add').click(function() {
     cargos++;
     cleanInput();
     switchParameters();
+    calculateVolume();
   }
 });
 
@@ -230,5 +239,5 @@ if(cargos > 1) {
 
 cleanInput();
 switchParameters();
-
+calculateVolume();
 });
