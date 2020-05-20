@@ -1,6 +1,16 @@
 $(document).ready(function () {
 
 var cargosBox = document.querySelector('.cargos-box');
+var calculatorDateToday = document.querySelector('.calculator__date-download');
+var dateToday = new Date();
+
+var options = {
+  year: 'numeric',
+  month: 'numeric',
+  day: 'numeric',
+};
+
+calculatorDateToday.value = dateToday.toLocaleString("ru", options);
 
 // Подключение справочника
 
@@ -288,4 +298,34 @@ switchParameters();
 calculateVolumes();
 entryWeight();
 changeQuantity();
+
+
+// отправка формы
+
+var form = document.querySelector('#calculator-widget');
+
+var spinner = document.querySelector('.spinner');
+
+var listiner = function(evt) {
+  evt.preventDefault();
+  spinner.classList.remove('hidden');
+  var formData = $(this).serialize();
+  $.ajax({
+    'method': "POST",
+    'dataType': 'json',
+    'url': '/local/auction-bet.php',
+    'data':  formData,
+    complete: function() {
+      //form.reset();
+      //removePopup();
+      setTimeout(alert('Спасибо!'), 2000);
+      //alert('Спасибо!');
+      //spinner.classList.add('hidden');
+      //setTimeout(window.location.reload(), 1000);
+    }
+  })
+};
+
+form.addEventListener( 'submit', listiner);
+
 });
