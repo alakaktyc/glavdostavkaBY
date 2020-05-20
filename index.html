@@ -111,49 +111,54 @@
                             <input id="cityTo" class="form__input  js-calculate" type="text" placeholder="Например, Витебск">
                             <button class="btn-reverse calculator__swap" type="button"></button>
                         </div>
-                        <div class="form__cargo">
-                            <label class="form__label form__label--smaller">
-                                Вес
-                                <input class="form__input js-calculate" name="weight" type="text" placeholder="0.0" maxlength="4">
-                                <span class="form__label-measure">кг</span>
-                            </label>
-                            <label class="form__label form__label--small">
+                        <div class="cargos-box">
+                          <div class="form__cargo">
+                              <label class="form__label form__label--smaller">
+                                  Вес
+                                  <input class="form__input js-calculate" name="weight" type="text" placeholder="0.0" maxlength="4">
+                                  <span class="form__label-measure">кг</span>
+                              </label>
+                              <div class="form__label form__label--small">
                                 <span class="form__switch">
-                                    <span class="switch">Габариты</span> | <span>Объём</span>
+                                    <span class="switch js-switch-parameters js-switch-dimensions">Габариты</span> | <span class="js-switch-parameters js-switch-value">Объём</span>
                                 </span>
-                                <span class="form__sizes form__sizes--visible">
-                                    <span class="form__inputs-row">
-                                        <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
-                                        <span>x</span>
-                                        <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
-                                        <span>x</span>
-                                        <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
+                                <label class="js-input-parameters">
+                                    <span class="form__sizes js-input-dimensions">
+                                        <span class="form__inputs-row">
+                                            <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
+                                            <span>x</span>
+                                            <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
+                                            <span>x</span>
+                                            <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
+                                        </span>
+                                        <span class="form__label-info">Длина х Ширина х Высота</span>
+                                        <span class="form__label-measure">м</span>
                                     </span>
-                                    <span class="form__label-info">Длина х Ширина х Высота</span>
-                                    <span class="form__label-measure">м</span>
-                                </span>
-                                <span class="form__sizes">
-                                    <input class="form__input js-calculate" name="volume" type="text" placeholder="0.0" maxlength="4">
-                                    <span class="form__label-measure">м<sup>3</sup></span>
-                                </span>
-                            </label>
-                            <label class="form__label form__label--smaller">
-                                Кол-во груза
-                                <span class="btn-arrow btn-arrow--left">-</span>
-                                <input class="form__input form__input--indent calculator__dimensions-quantity" type="number" step="1"
-                                       value="1">
-                                <span class="btn-arrow btn-arrow--right">+</span>
-                                <span class="form__label-measure">шт</span>
-                            </label>
-                            <div class="controls-cargo">
-                                <label class="controls-cargo__label">
-                                    <input class="controls-cargo__btn controls-cargo__btn--white" type="button" value="-">
+                                    <span class="form__sizes js-input-values hidden">
+                                        <input class="form__input js-calculate" name="volume" type="text" placeholder="0.0" maxlength="4">
+                                        <span class="form__label-measure">м<sup>3</sup></span>
+                                    </span>
                                 </label>
-                                <label class="controls-cargo__label">
-                                    <input class="controls-cargo__btn" type="button" value="+">
-                                </label>
-                            </div>
+                              </div>
+                              <label class="form__label form__label--smaller">
+                                  Кол-во груза
+                                  <span class="btn-arrow btn-arrow--left">-</span>
+                                  <input class="form__input form__input--indent calculator__dimensions-quantity" type="number" step="1"
+                                         value="1">
+                                  <span class="btn-arrow btn-arrow--right">+</span>
+                                  <span class="form__label-measure">шт</span>
+                              </label>
+                              <div class="controls-cargo">
+                                  <label class="controls-cargo__label">
+                                      <input class="controls-cargo__btn controls-cargo__btn--white js-cargo-remove" type="button" value="-">
+                                  </label>
+                                  <label class="controls-cargo__label">
+                                      <input id="js-cargo-add" class="controls-cargo__btn js-cargo-add" type="button" value="+">
+                                  </label>
+                              </div>
+                          </div>
                         </div>
+
                     </div>
                     <label class="form-main__checkbox checkbox">
                         <input class="calculator__сustomer-delivery" type="checkbox">
@@ -656,7 +661,50 @@
     <li class="widgets-btn__icon top"><a href="#"></a></li>
 </ul>
 
+
 <div class="preloader"></div>
+
+<template id="cargo-calc">
+  <div class="form__cargo">
+      <label class="form__label form__label--smaller">
+          Вес
+          <input class="form__input js-calculate" name="weight" type="text" placeholder="0.0" maxlength="4">
+          <span class="form__label-measure">кг</span>
+      </label>
+      <div class="form__label form__label--small">
+        <span class="form__switch">
+            <span class="switch js-switch-parameters js-switch-dimensions">Габариты</span> | <span class="js-switch-parameters js-switch-value">Объём</span>
+        </span>
+        <label class="js-input-parameters">
+            <span class="form__sizes js-input-dimensions">
+                <span class="form__inputs-row">
+                    <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
+                    <span>x</span>
+                    <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
+                    <span>x</span>
+                    <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
+                </span>
+                <span class="form__label-info">Длина х Ширина х Высота</span>
+                <span class="form__label-measure">м</span>
+            </span>
+            <span class="form__sizes js-input-values">
+                <input class="form__input js-calculate" name="volume" type="text" placeholder="0.0" maxlength="4">
+                <span class="form__label-measure">м<sup>3</sup></span>
+            </span>
+        </label>
+      </div>
+      <label class="form__label form__label--smaller">
+          Кол-во груза
+          <span class="btn-arrow btn-arrow--left">-</span>
+          <input class="form__input form__input--indent calculator__dimensions-quantity" type="number" step="1"
+                 value="1">
+          <span class="btn-arrow btn-arrow--right">+</span>
+          <span class="form__label-measure">шт</span>
+      </label>
+
+
+  </div>
+</template>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="assets/owl/owl.carousel.min.js"></script>
@@ -664,5 +712,6 @@
 <script src="assets/js/provider.js"></script>
 <script src="assets/js/datepicker.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/calculator.js"></script>
 </body>
 </html>

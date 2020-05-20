@@ -178,6 +178,7 @@
       width: 100%;
     }
     &-info {
+      position: absolute;
       font-size: 12px;
       line-height: 20px;
       color: rgba(247, 247, 255, 0.5);
@@ -198,7 +199,6 @@
   &__input {
     width: 100%;
     height: 30px;
-    margin-top: 4px;
     padding: 5px 10px;
     font-family: 'Effra', 'Arial', sans-serif;
     font-size: 15px;
@@ -262,8 +262,6 @@
   }
 
   &__sizes {
-    height: 50px;
-    display: none;
     &.form__sizes--visible {
       display: block;
     }
