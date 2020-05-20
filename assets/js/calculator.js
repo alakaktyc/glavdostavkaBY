@@ -313,7 +313,7 @@ var listiner = function(evt) {
   $.ajax({
     'method': "POST",
     'dataType': 'json',
-    'url': '/local/auction-bet.php',
+    'url': '/calc-new.php',
     'data':  formData,
     complete: function() {
       //form.reset();
