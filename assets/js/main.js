@@ -58,15 +58,15 @@ let numbers = 0;
 
 let switchParameter = document.querySelectorAll('.js-switcher');
 
-
 let weightInput = document.querySelectorAll('input[name="weight"]');
 
 let inputsNumber = document.querySelectorAll('.js-number');
 
+let inputsWeight = document.querySelectorAll('.js-number_weight');
+let inputsHeight = document.querySelectorAll('.js-number_height');
+let inputsLenght = document.querySelectorAll('.js-number_lenght');
 
 let inputsFormCalc = formCalculate.querySelectorAll('.js-calculate');
-
-
 
 function addCargo() {
     const template = document.querySelector('#sample').content;
@@ -147,7 +147,6 @@ cargoBox.addEventListener('click', function (event) {
             })
         }
     }
-
 
 });
 
@@ -313,7 +312,7 @@ function parseCost(array) {
         formData.append('Oversized', false);
         formData.append('Customer_delivery', customerDelivery.checked);
 
-        
+
         formData.append('Number_Packages', quantityPlace.value);
 
 
@@ -561,6 +560,8 @@ function currentSlide(n) {
 }
 
 
+// Слайдер
+
 $(document).ready(function () {
     $(".owl-carousel").owlCarousel({
             loop: true,
@@ -614,6 +615,8 @@ $(document).ready(function () {
         console.log(changeTariffsType);
     });
 });
+
+// Прайс-лист для таблиц
 
 function getPrices(foo) {
     const oReq = new XMLHttpRequest();
