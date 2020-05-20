@@ -115,7 +115,7 @@
                           <div class="form__cargo">
                               <label class="form__label form__label--smaller">
                                   Вес
-                                  <input class="form__input js-calculate js-input-weight" name="weight" type="text" placeholder="0.0" maxlength="4">
+                                  <input class="form__input js-calculate js-input-weight" name="weight[]" type="text" placeholder="0.0" maxlength="4">
                                   <span class="form__label-measure">кг</span>
                               </label>
                               <div class="form__label form__label--small">
@@ -125,27 +125,27 @@
                                 <label class="js-input-parameters">
                                     <span class="form__sizes js-input-dimensions">
                                         <span class="form__inputs-row">
-                                            <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4" value="0">
+                                            <input class="form__input js-calculate" name="length[]" type="text" placeholder="0.0" maxlength="4" value="0">
                                             <span>x</span>
-                                            <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4" value="0">
+                                            <input class="form__input js-calculate" name="width[]" type="text" placeholder="0.0" maxlength="4" value="0">
                                             <span>x</span>
-                                            <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4" value="0">
+                                            <input class="form__input js-calculate" name="height[]" type="text" placeholder="0.0" maxlength="4" value="0">
                                         </span>
                                         <span class="form__label-info">Длина х Ширина х Высота</span>
                                         <span class="form__label-measure">м</span>
                                     </span>
                                     <span class="form__sizes js-input-values hidden">
-                                        <input class="form__input js-calculate js-cargo-value" name="volume" type="text" placeholder="0.0" maxlength="4" value="0">
+                                        <input class="form__input js-calculate js-cargo-value" name="volume[]" type="text" placeholder="0.0" maxlength="4" value="0">
                                         <span class="form__label-measure">м<sup>3</sup></span>
                                     </span>
                                 </label>
                               </div>
                               <label class="form__label form__label--smaller">
                                   Кол-во груза
-                                  <span class="btn-arrow btn-arrow--left">-</span>
-                                  <input class="form__input form__input--indent calculator__dimensions-quantity" type="number" step="1"
+                                  <span class="btn-arrow btn-arrow--left js-place-reduce">-</span>
+                                  <input class="form__input form__input--indent calculator__dimensions-quantity" name="placeQuantity[]" type="number" step="1"
                                          value="1">
-                                  <span class="btn-arrow btn-arrow--right">+</span>
+                                  <span class="btn-arrow btn-arrow--right js-place-add">+</span>
                                   <span class="form__label-measure">шт</span>
                               </label>
                               <div class="controls-cargo">
@@ -668,7 +668,7 @@
   <div class="form__cargo">
       <label class="form__label form__label--smaller">
           Вес
-          <input class="form__input js-calculate" name="weight" type="text" placeholder="0.0" maxlength="4">
+          <input class="form__input js-calculate js-input-weight" name="weight[]" type="text" placeholder="0.0" maxlength="4">
           <span class="form__label-measure">кг</span>
       </label>
       <div class="form__label form__label--small">
@@ -678,31 +678,37 @@
         <label class="js-input-parameters">
             <span class="form__sizes js-input-dimensions">
                 <span class="form__inputs-row">
-                    <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
+                    <input class="form__input js-calculate" name="length[]" type="text" placeholder="0.0" maxlength="4" value="0">
                     <span>x</span>
-                    <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
+                    <input class="form__input js-calculate" name="width[]" type="text" placeholder="0.0" maxlength="4" value="0">
                     <span>x</span>
-                    <input class="form__input js-calculate" name="dimensions" type="text" placeholder="0.0" maxlength="4">
+                    <input class="form__input js-calculate" name="height[]" type="text" placeholder="0.0" maxlength="4" value="0">
                 </span>
                 <span class="form__label-info">Длина х Ширина х Высота</span>
                 <span class="form__label-measure">м</span>
             </span>
-            <span class="form__sizes js-input-values">
-                <input class="form__input js-calculate" name="volume" type="text" placeholder="0.0" maxlength="4">
+            <span class="form__sizes js-input-values hidden">
+                <input class="form__input js-calculate js-cargo-value" name="volume[]" type="text" placeholder="0.0" maxlength="4" value="0">
                 <span class="form__label-measure">м<sup>3</sup></span>
             </span>
         </label>
       </div>
       <label class="form__label form__label--smaller">
           Кол-во груза
-          <span class="btn-arrow btn-arrow--left">-</span>
-          <input class="form__input form__input--indent calculator__dimensions-quantity" type="number" step="1"
+          <span class="btn-arrow btn-arrow--left js-place-reduce">-</span>
+          <input class="form__input form__input--indent calculator__dimensions-quantity" name="placeQuantity[]" type="number" step="1"
                  value="1">
-          <span class="btn-arrow btn-arrow--right">+</span>
+          <span class="btn-arrow btn-arrow--right js-place-add">+</span>
           <span class="form__label-measure">шт</span>
       </label>
-
-
+      <div class="controls-cargo">
+          <label class="controls-cargo__label">
+              <input class="controls-cargo__btn controls-cargo__btn--white js-cargo-remove" type="button" value="-">
+          </label>
+          <label class="controls-cargo__label">
+              <input id="js-cargo-add" class="controls-cargo__btn js-cargo-add" type="button" value="+">
+          </label>
+      </div>
   </div>
 </template>
 

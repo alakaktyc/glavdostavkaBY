@@ -55,23 +55,51 @@ swapCity.addEventListener('click', function (event) {
     cityToVal.value = temp;
 });
 
-// Кастомное числовое поле Не работает!!!
+// Изменение количества грузов
 
-const quantityPlace = document.querySelector('.calculator__dimensions-quantity');
-const plusPlace = document.querySelector('.btn-arrow--right');
-const minusPlace = document.querySelector('.btn-arrow--left');
-plusPlace.addEventListener('click', function () {
-    if (!quantityPlace.hasAttribute('disabled')) {
-        quantityPlace.value++
-    }
-});
-minusPlace.addEventListener('click', function () {
-    if (!quantityPlace.hasAttribute('disabled')) {
-        if (quantityPlace.value > 1) {
-            quantityPlace.value--
+function changeQuantity() {
+  let placeInputs = cargosBox.querySelectorAll('.calculator__dimensions-quantity');
+  let placeAddBtns = cargosBox.querySelectorAll('.js-place-add');
+  let placeReduceBtns = cargosBox.querySelectorAll('.js-place-reduce');
+  let placesLenght = placeInputs.length;
+
+  console.log(placeInputs[0]);
+
+  let x;
+  for (let i = 0; i < placesLenght; i++) {
+    placeAddBtns[i].addEventListener('click', function(evt) {
+      evt.preventDefault();
+      let current = evt.currentTarget;
+      if (current.classList.contains('js-place-add')) {
+        let n = placesLenght;
+        while(n--) {
+          if(placeAddBtns[n] == current) {
+            x = n;
+            break;
+          }
         }
-    }
-});
+        placeInputs[x].value = (1 * placeInputs[x].value) + 1;
+        console.log(x);
+      };
+    });
+    placeReduceBtns[i].addEventListener('click', function(evt) {
+      evt.preventDefault();
+      let current = evt.currentTarget;
+      if (current.classList.contains('js-place-reduce')) {
+        let n = placesLenght;
+        while(n--) {
+          if(placeReduceBtns[n] == current) {
+            x = n;
+            break;
+          }
+        }
+        if (placeInputs[x].value > 1) {
+          placeInputs[x].value = (1 * placeInputs[x].value)  - 1;
+        }
+      };
+    });
+  }
+}
 
 //переключатель объём/габариты
 
@@ -218,7 +246,7 @@ function getDates(date) {
     return date = year + "-" + month + "-" + day;
 }
 
-// Добавление удаление грузам
+// Добавление/удаление грузов
 
 // Подлючени шаблона груза
 
@@ -244,9 +272,9 @@ $('.js-cargo-add').click(function() {
     switchParameters();
     calculateVolumes();
     entryWeight();
+    changeQuantity();
   }
 });
-
 
 $('.js-cargo-remove').click(function() {
 if(cargos > 1) {
@@ -259,4 +287,5 @@ cleanInput();
 switchParameters();
 calculateVolumes();
 entryWeight();
+changeQuantity();
 });
