@@ -68,48 +68,54 @@ swapCity.addEventListener('click', function (event) {
 // Изменение количества грузов
 
 function changeQuantity() {
+
+  cargosBox.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    let x;
+    let current = evt.target;
+    console.log(current);
+    if (current.classList.contains('js-place-add')) {
+      listinerAddBtn(current);
+    }
+    if (current.classList.contains('js-place-reduce')) {
+      listinerReduceBtn(current);
+    };
+  });
+}
+
+// Слушаем кнопку увеличить
+
+function listinerAddBtn(current) {
   let placeInputs = cargosBox.querySelectorAll('.calculator__dimensions-quantity');
   let placeAddBtns = cargosBox.querySelectorAll('.js-place-add');
-  let placeReduceBtns = cargosBox.querySelectorAll('.js-place-reduce');
-  let placesLenght = placeInputs.length;
-
-  console.log(placeInputs[0]);
-
-  let x;
-  for (let i = 0; i < placesLenght; i++) {
-    placeAddBtns[i].addEventListener('click', function(evt) {
-      evt.preventDefault();
-      let current = evt.currentTarget;
-      if (current.classList.contains('js-place-add')) {
-        let n = placesLenght;
-        while(n--) {
-          if(placeAddBtns[n] == current) {
-            x = n;
-            break;
-          }
-        }
-        placeInputs[x].value = (1 * placeInputs[x].value) + 1;
-        console.log(x);
-      };
-    });
-    placeReduceBtns[i].addEventListener('click', function(evt) {
-      evt.preventDefault();
-      let current = evt.currentTarget;
-      if (current.classList.contains('js-place-reduce')) {
-        let n = placesLenght;
-        while(n--) {
-          if(placeReduceBtns[n] == current) {
-            x = n;
-            break;
-          }
-        }
-        if (placeInputs[x].value > 1) {
-          placeInputs[x].value = (1 * placeInputs[x].value)  - 1;
-        }
-      };
-    });
+  let n = placeInputs.length;
+  while(n--) {
+    if(placeAddBtns[n] == current) {
+      x = n;
+      break;
+    }
   }
-}
+  placeInputs[x].value = (1 * placeInputs[x].value) + 1;
+  console.log(x);
+};
+
+// Слушаем кнопку уменьшить
+
+function listinerReduceBtn(current) {
+  let placeInputs = cargosBox.querySelectorAll('.calculator__dimensions-quantity');
+  let placeReduceBtns = cargosBox.querySelectorAll('.js-place-reduce');
+  let n = placeInputs.length;
+  while(n--) {
+    if(placeReduceBtns[n] == current) {
+      x = n;
+      break;
+    }
+  }
+  if (placeInputs[x].value > 1) {
+    placeInputs[x].value = (1 * placeInputs[x].value)  - 1;
+  }
+  console.log(x);
+};
 
 //переключатель объём/габариты
 
@@ -282,7 +288,6 @@ $('.js-cargo-add').click(function() {
     switchParameters();
     calculateVolumes();
     entryWeight();
-    changeQuantity();
   }
 });
 
@@ -310,17 +315,18 @@ var listiner = function(evt) {
   evt.preventDefault();
   spinner.classList.remove('hidden');
   var formData = $(this).serialize();
+  console.log(formData);
   $.ajax({
     'method': "POST",
     'dataType': 'json',
-    'url': '/calc-new.php',
+    'url': 'https://glavdostavka.by/newsitegd/glavdostavkaBY/calc-new.php',
     'data':  formData,
     complete: function() {
       //form.reset();
       //removePopup();
       setTimeout(alert('Спасибо!'), 2000);
       //alert('Спасибо!');
-      //spinner.classList.add('hidden');
+      spinner.classList.add('hidden');
       //setTimeout(window.location.reload(), 1000);
     }
   })

@@ -1,0 +1,32 @@
+<Detail_Rows>
+		<Description>груз</Description>
+		<Weight>0</Weight>
+		<Volume>0</Volume>
+		<Number_Packages>1</Number_Packages>
+		<Length>0</Length>
+		<Width>0</Width>
+		<Height>0</Height>
+		<Oversized>false</Oversized>
+		<Рacking_Box_630_320_340>0</Рacking_Box_630_320_340>
+		<Рacking_Box_630_320_340_Cost>0</Рacking_Box_630_320_340_Cost>
+		<Fasten_Strapping_Tape>false</Fasten_Strapping_Tape>
+		<Fasten_Strapping_Tape_Cost>0</Fasten_Strapping_Tape_Cost>
+		<Bubble_Wrap_Packaging>true</Bubble_Wrap_Packaging>
+		<Bubble_Wrap_Packaging_Cost>4</Bubble_Wrap_Packaging_Cost>
+		<Packing_Bag_Seal>0</Packing_Bag_Seal>
+		<Packing_Bag_Seal_Cost>0</Packing_Bag_Seal_Cost>
+		<Pallet_Packing>false</Pallet_Packing>
+		<Pallet_Packing_Cost>0</Pallet_Packing_Cost>
+		<Packing_Safe_Bag>0</Packing_Safe_Bag>
+		<Packing_Safe_Bag_Cost>0</Packing_Safe_Bag_Cost>
+		<Stretch_Wrap>false</Stretch_Wrap>
+		<Stretch_Wrap_Cost>0</Stretch_Wrap_Cost>
+		<Cargo_Crate>false</Cargo_Crate>
+		<Cargo_Crate_Cost>0</Cargo_Crate_Cost>
+		<Palletization_1>1</Palletization_1>
+		<Palletization_1_Cost>0</Palletization_1_Cost>
+		<Palletization_2>0</Palletization_2>
+		<Palletization_2_Cost>0</Palletization_2_Cost>
+		<Providing_Pallet>0</Providing_Pallet>
+		<Providing_Pallet_Cost>0</Providing_Pallet_Cost>
+</Detail_Rows>

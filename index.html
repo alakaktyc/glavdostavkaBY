@@ -61,7 +61,6 @@
 <main>
     <h1>перевозки по беларуси</h1>
     <section class="main-slider">
-
             <div class="main-slider__item">
                 <figure class="slide active">
                     <img src="assets/img/bg/slide-1_glavdostavka.jpg" alt="">
@@ -157,11 +156,11 @@
                             <label class="form__label" for="cityFrom">
                                 Город отправления
                             </label>
-                            <input id="cityFrom" class="form__input js-calculate" type="text" placeholder="Например, Минск">
+                            <input id="cityFrom" class="form__input js-calculate" name="Departure" type="text" placeholder="Например, Минск">
                             <label class="form__label" for="cityTo">
                                 Город доставки
                             </label>
-                            <input id="cityTo" class="form__input  js-calculate" type="text" placeholder="Например, Витебск">
+                            <input id="cityTo" class="form__input  js-calculate" name="Destination" type="text" placeholder="Например, Витебск">
                             <button class="btn-reverse calculator__swap" type="button"></button>
                         </div>
                         <div class="cargos-box">
@@ -196,7 +195,7 @@
                               <label class="form__label form__label--smaller">
                                   Кол-во груза
                                   <span class="btn-arrow btn-arrow--left js-place-reduce">-</span>
-                                  <input class="form__input form__input--indent calculator__dimensions-quantity" name="placeQuantity[]" type="number" step="1"
+                                  <input class="form__input form__input--indent calculator__dimensions-quantity" name="Number_Packages[]" type="number" step="1"
                                          value="1">
                                   <span class="btn-arrow btn-arrow--right js-place-add">+</span>
                                   <span class="form__label-measure">шт</span>
@@ -211,10 +210,9 @@
                               </div>
                           </div>
                         </div>
-
                     </div>
                     <label class="form-main__checkbox checkbox">
-                        <input class="calculator__сustomer-delivery" type="checkbox">
+                        <input class="calculator__сustomer-delivery" name="Customer_delivery" type="checkbox">
                         <span></span>
                         Самостоятельно привезу груз на склад
                     </label>
@@ -721,7 +719,7 @@
   <div class="form__cargo">
       <label class="form__label form__label--smaller">
           Вес
-          <input class="form__input js-calculate js-input-weight" name="weight[]" type="text" placeholder="0.0" maxlength="4">
+          <input class="form__input js-calculate js-input-weight" name="weight[]" type="text" placeholder="0.0" maxlength="4" value="0.0">
           <span class="form__label-measure">кг</span>
       </label>
       <div class="form__label form__label--small">
@@ -731,17 +729,17 @@
         <label class="js-input-parameters">
             <span class="form__sizes js-input-dimensions">
                 <span class="form__inputs-row">
-                    <input class="form__input js-calculate" name="length[]" type="text" placeholder="0.0" maxlength="4" value="0">
+                    <input class="form__input js-calculate" name="length[]" type="text" placeholder="0.0" maxlength="4" value="0.0">
                     <span>x</span>
-                    <input class="form__input js-calculate" name="width[]" type="text" placeholder="0.0" maxlength="4" value="0">
+                    <input class="form__input js-calculate" name="width[]" type="text" placeholder="0.0" maxlength="4" value="0.0">
                     <span>x</span>
-                    <input class="form__input js-calculate" name="height[]" type="text" placeholder="0.0" maxlength="4" value="0">
+                    <input class="form__input js-calculate" name="height[]" type="text" placeholder="0.0" maxlength="4" value="0.0">
                 </span>
                 <span class="form__label-info">Длина х Ширина х Высота</span>
                 <span class="form__label-measure">м</span>
             </span>
             <span class="form__sizes js-input-values hidden">
-                <input class="form__input js-calculate js-cargo-value" name="volume[]" type="text" placeholder="0.0" maxlength="4" value="0">
+                <input class="form__input js-calculate js-cargo-value" name="volume[]" type="text" placeholder="0.0" maxlength="4" value="0.0">
                 <span class="form__label-measure">м<sup>3</sup></span>
             </span>
         </label>
@@ -749,7 +747,7 @@
       <label class="form__label form__label--smaller">
           Кол-во груза
           <span class="btn-arrow btn-arrow--left js-place-reduce">-</span>
-          <input class="form__input form__input--indent calculator__dimensions-quantity" name="placeQuantity[]" type="number" step="1"
+          <input class="form__input form__input--indent calculator__dimensions-quantity" name="Number_Packages[]" type="number" step="1"
                  value="1">
           <span class="btn-arrow btn-arrow--right js-place-add">+</span>
           <span class="form__label-measure">шт</span>
