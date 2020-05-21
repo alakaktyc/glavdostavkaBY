@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+var locationArr = arr;
 var cargosBox = document.querySelector('.cargos-box');
 var calculatorDateToday = document.querySelector('.calculator__date-download');
 var dateToday = new Date();
@@ -15,20 +16,6 @@ calculatorDateToday.value = dateToday.toLocaleString("ru", options);
 // Подключение справочника
 
 const formCalculate = document.querySelector('.calculator-widget');
-let arrayLocation = [];
-function getLocal(cb) {
-    const oReq = new XMLHttpRequest();
-    oReq.open("GET", 'assets/json/loc.json', true);
-    oReq.addEventListener('load', () => {
-        let locationArr = JSON.parse(oReq.responseText);
-        console.log(locationArr);
-        cb(locationArr);
-    });
-    oReq.addEventListener('error', () => {
-        console.log('error');
-    });
-    oReq.send();
-}
 
 let cityFrom = document.querySelector('#cityFrom');
 let cityTo = document.querySelector('#cityTo');
@@ -64,22 +51,6 @@ swapCity.addEventListener('click', function (event) {
     cityFromVal.value = cityToVal.value;
     cityToVal.value = temp;
 });
-
-// Изменение количества грузов
-
-function changeQuantity() {
-
-  cargosBox.addEventListener('click', function(evt) {
-    evt.preventDefault();
-    let current = evt.target;
-    if (current.classList.contains('js-place-add')) {
-      listinerAddBtn(current);
-    }
-    if (current.classList.contains('js-place-reduce')) {
-      listinerReduceBtn(current);
-    };
-  });
-}
 
 // Слушаем кнопку увеличить
 
@@ -260,12 +231,11 @@ function getDates(date) {
     return date = year + "-" + month + "-" + day;
 }
 
-// Добавление/удаление грузов
+// Добавление грузов через шаблон
 
-// Подлючени шаблона груза
-
-var templateCargo = document.querySelector('#cargo-calc');
-var elementToCloneCargo;
+let templateCargo = document.querySelector('#cargo-calc');
+let elementToCloneCargo;
+let cargos = 1;
 
 if ('content' in templateCargo) {
   elementToCloneCargo = templateCargo.content.querySelector('.form__cargo');
@@ -273,46 +243,31 @@ if ('content' in templateCargo) {
   elementToCloneCargo = templateCargo.querySelector('.form__cargo');
 }
 
-let formCargo = elementToCloneCargo.cloneNode(true);
-
-var cargos = 1;
-
-$('.js-cargo-add').click(function() {
+function cloneCargo() {
   if (cargos < 5) {
     let formCargo = elementToCloneCargo.cloneNode(true);
     cargosBox.append(formCargo);
-    cargos++;
     cleanInput();
     switchParameters();
     calculateVolumes();
     entryWeight();
+    cargos++;
   }
-});
-
-$('.js-cargo-remove').click(function() {
-if(cargos > 1) {
-  $('.form__cargo:last').remove();
-  cargos--;
 }
-});
-
-cleanInput();
-switchParameters();
-calculateVolumes();
-entryWeight();
-changeQuantity();
-
 
 // отправка формы
 
 var form = document.querySelector('#calculator-widget');
 var formCities = form.querySelector('.form__cities');
-
-
 var spinner = document.querySelector('.spinner');
-var response;
+var fieldDateDownload = form.querySelector('.calculator__date-download');
+var fieldDateDelivery = form.querySelector('.calculator__date-delivery');
+var messageCalculator = document.querySelector('.price-box__message');
+var priceCalculator = document.querySelector('.js-price');
 
 function sendToCalculator() {
+
+  //let responseCalculator;
   spinner.classList.remove('hidden');
   //let currentForm = document.querySelector('#calculator-widget');
   var formData = $('#calculator-widget').serialize();
@@ -322,14 +277,90 @@ function sendToCalculator() {
     'url': 'https://glavdostavka.by/newsitegd/glavdostavkaBY/calc-new.php',
     'data':  formData,
     complete: function(result) {
+      //debugger;
       spinner.classList.add('hidden');
-      //return result.responseText
-      response = result.responseText;
-      console.log(result.responseText);
+      console.log(result);
+      let responseCalculator = result.responseJSON;
+      if (responseCalculator.ErrorMesage) {
+        console.log('ошибка!');
+      } else {
+        callCalendar(responseCalculator);
+        fieldDateDownload.value = responseCalculator.DeliverySchedule[0].Date_delivery;
+        fieldDateDelivery.innerText = responseCalculator.Date_delivery;
+        messageCalculator.innerText = responseCalculator.Warning_Customer;
+        priceCalculator.innerText = 1 * responseCalculator.Cost_Delivery + 1 * responseCalculator.Cost_OversizedCargo;
+      }
     }
   });
-  //return response;
 }
+
+function callCalendar(response) {
+  let enabledDays = [];
+  for (let i = 0; i < response.DeliverySchedule.length; ++i) {
+      enabledDays.push(response.DeliverySchedule[i].Date_delivery)
+  }
+  console.log(enabledDays);
+  let myDatepicker = $('.datepicker-here').datepicker().data('datepicker');
+  $('.datepicker-here').datepicker({
+      minDate: new Date(),
+      position: "top left",
+      dateFormat: 'dd-mm-yyyy',
+      onRenderCell: function (date, cellType) {
+          if (cellType == 'day') {
+              let cd = getDates(date),
+                  isDisabled = enabledDays.indexOf(cd) == -1;
+              //console.log(isDisabled);
+              return {
+                  disabled: isDisabled
+              }
+          }
+      },
+      onSelect: function (formattedDate) {
+          console.log(formattedDate);
+          myDatepicker.hide();
+          sendToCalculator();
+      }
+  });
+}
+
+// убрать груз
+
+function removeCargo(current) {
+  let formsCargo = cargosBox.querySelectorAll('.form__cargo');
+  let cargoRemoveBtns = cargosBox.querySelectorAll('.js-cargo-remove');
+  let n = formsCargo.length;
+  while(n--) {
+    if(cargoRemoveBtns[n] == current) {
+      x = n;
+      break;
+    }
+  }
+  if (cargos > 1) {
+    formsCargo[x].remove();
+    cargos--;
+  }
+}
+
+// слушаем блок с грузами
+
+cargosBox.addEventListener('click', function(evt) {
+  evt.preventDefault();
+  let current = evt.target;
+  if (current.classList.contains('js-place-add')) {
+    listinerAddBtn(current);
+  }
+  if (current.classList.contains('js-place-reduce')) {
+    listinerReduceBtn(current);
+  };
+  if (current.classList.contains('js-cargo-add')) {
+    cloneCargo();
+  };
+  if (current.classList.contains('js-cargo-remove')) {
+    removeCargo(current);
+  }
+});
+
+// слушаем форму и проверяем перед отправкой
 
 cargosBox.addEventListener('input', function(evt) {
   evt.preventDefault();
@@ -337,7 +368,6 @@ cargosBox.addEventListener('input', function(evt) {
   let cargoValue = cargosBox.querySelector('.js-cargo-value');
   if ((inputWeight.value != 0)&&(cargoValue.value != 0)) {
     setTimeout(sendToCalculator, 500);
-    //sendToCalculator();
   }
 });
 
@@ -345,17 +375,31 @@ formCities.addEventListener('change', function(evt) {
   evt.preventDefault();
   let cityFrom = formCities.querySelector('#cityFrom');
   let cityTo = formCities.querySelector('#cityTo');
-  if ((cityFrom.value)&&(cityTo.value)) {
-    setTimeout(sendToCalculator, 100);
-    //sendToCalculator();
-  }
+  function searchСity() {
+    let cityFromKey = false;
+    let cityToKey = false;
+    if ((cityFrom.value)&&(cityTo.value)) {
+      for (var i = 0; i < locationArr.length; i++) {
+        if (cityFrom.value === locationArr[i]) {
+          cityFromKey = true;
+          console.log(locationArr[0]);
+        }
+        if (cityTo.value === locationArr[i]) {
+          cityToKey = true;
+          console.log(locationArr[1]);
+        }
+      }
+      if ((cityFromKey)&&(cityToKey)) {
+        sendToCalculator();
+      }
+    }
+  };
+  setTimeout(searchСity, 500);
 });
 
 
 form.addEventListener('click', function(evt) {
-  //evt.preventDefault();
   let current = evt.target;
-
   let inputWeight = cargosBox.querySelector('.js-input-weight');
   let cargoValue = cargosBox.querySelector('.js-cargo-value');
   let cityFrom = formCities.querySelector('#cityFrom');
@@ -371,12 +415,16 @@ form.addEventListener('click', function(evt) {
       if (current.classList.contains('btn-reverse')) {
         setTimeout(sendToCalculator, 500);
       }
+      if (current.classList.contains('js-cargo-remove')) {
+        setTimeout(sendToCalculator, 500);
+      }
     }
   }
 });
 
 
-//form.addEventListener( 'input', listiner);
-//var response = result.responseText;
-
+cleanInput();
+switchParameters();
+calculateVolumes();
+entryWeight();
 });
