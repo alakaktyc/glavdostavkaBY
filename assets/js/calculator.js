@@ -71,9 +71,7 @@ function changeQuantity() {
 
   cargosBox.addEventListener('click', function(evt) {
     evt.preventDefault();
-    let x;
     let current = evt.target;
-    console.log(current);
     if (current.classList.contains('js-place-add')) {
       listinerAddBtn(current);
     }
@@ -308,30 +306,77 @@ changeQuantity();
 // отправка формы
 
 var form = document.querySelector('#calculator-widget');
+var formCities = form.querySelector('.form__cities');
+
 
 var spinner = document.querySelector('.spinner');
+var response;
 
-var listiner = function(evt) {
-  evt.preventDefault();
+function sendToCalculator() {
   spinner.classList.remove('hidden');
-  var formData = $(this).serialize();
-  console.log(formData);
+  //let currentForm = document.querySelector('#calculator-widget');
+  var formData = $('#calculator-widget').serialize();
   $.ajax({
     'method': "POST",
     'dataType': 'json',
     'url': 'https://glavdostavka.by/newsitegd/glavdostavkaBY/calc-new.php',
     'data':  formData,
-    complete: function() {
-      //form.reset();
-      //removePopup();
-      setTimeout(alert('Спасибо!'), 2000);
-      //alert('Спасибо!');
+    complete: function(result) {
       spinner.classList.add('hidden');
-      //setTimeout(window.location.reload(), 1000);
+      //return result.responseText
+      response = result.responseText;
+      console.log(result.responseText);
     }
-  })
-};
+  });
+  //return response;
+}
 
-form.addEventListener( 'submit', listiner);
+cargosBox.addEventListener('input', function(evt) {
+  evt.preventDefault();
+  let inputWeight = cargosBox.querySelector('.js-input-weight');
+  let cargoValue = cargosBox.querySelector('.js-cargo-value');
+  if ((inputWeight.value != 0)&&(cargoValue.value != 0)) {
+    setTimeout(sendToCalculator, 500);
+    //sendToCalculator();
+  }
+});
+
+formCities.addEventListener('change', function(evt) {
+  evt.preventDefault();
+  let cityFrom = formCities.querySelector('#cityFrom');
+  let cityTo = formCities.querySelector('#cityTo');
+  if ((cityFrom.value)&&(cityTo.value)) {
+    setTimeout(sendToCalculator, 100);
+    //sendToCalculator();
+  }
+});
+
+
+form.addEventListener('click', function(evt) {
+  //evt.preventDefault();
+  let current = evt.target;
+
+  let inputWeight = cargosBox.querySelector('.js-input-weight');
+  let cargoValue = cargosBox.querySelector('.js-cargo-value');
+  let cityFrom = formCities.querySelector('#cityFrom');
+  let cityTo = formCities.querySelector('#cityTo');
+  if ((inputWeight.value != 0)&&(cargoValue.value != 0)) {
+    if ((cityFrom.value)&&(cityTo.value)) {
+      if (current.classList.contains('btn-arrow')) {
+        setTimeout(sendToCalculator, 500);
+      }
+      if (current.classList.contains('form-main__checkbox')) {
+        setTimeout(sendToCalculator, 500);
+      }
+      if (current.classList.contains('btn-reverse')) {
+        setTimeout(sendToCalculator, 500);
+      }
+    }
+  }
+});
+
+
+//form.addEventListener( 'input', listiner);
+//var response = result.responseText;
 
 });
