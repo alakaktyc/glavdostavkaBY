@@ -68,6 +68,26 @@ function listinerAddBtn(current) {
   console.log(x);
 };
 
+// Очитска габаритов при вводе только объема
+
+function cleanDimensions(current) {
+  let fieldLength = cargosBox.querySelectorAll('.js-input-length');
+  let fieldWidth = cargosBox.querySelectorAll('.js-input-width');
+  let fieldHeight = cargosBox.querySelectorAll('.js-input-height');
+  let fieldValue = cargosBox.querySelectorAll('.js-cargo-value');
+  let x;
+  let n = fieldValue.length;
+  while(n--) {
+    if(fieldValue[n] == current) {
+      x = n;
+      break;
+    }
+  }
+  fieldLength[x].value = 0.0;
+  fieldWidth[x].value = 0.0;
+  fieldHeight[x].value = 0.0;
+};
+
 // Слушаем кнопку уменьшить
 
 function listinerReduceBtn(current) {
@@ -147,7 +167,7 @@ function switchParameters() {
 function calculateVolumes() {
   function calculateVolume() {
     let inputsDimension = fieldDimension[x].querySelectorAll('.js-calculate');
-    let inputValue = fieldValue[x].querySelector('.js-calculate');
+    let inputValue = fieldValue[x].querySelector('.js-cargo-value');
     for (let i = 0; i < inputsDimension.length; i++) {
       replaceToNum(inputsDimension[i]);
     }
@@ -357,6 +377,9 @@ cargosBox.addEventListener('click', function(evt) {
   };
   if (current.classList.contains('js-cargo-remove')) {
     removeCargo(current);
+  }
+  if (current.classList.contains('js-cargo-value')) {
+    cleanDimensions(current);
   }
 });
 
