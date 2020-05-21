@@ -5,13 +5,20 @@ var cargosBox = document.querySelector('.cargos-box');
 var calculatorDateToday = document.querySelector('.calculator__date-download');
 var dateToday = new Date();
 
-var options = {
-  year: 'numeric',
-  month: 'numeric',
-  day: 'numeric',
-};
+// Дата строкой 05.05.2020
 
-calculatorDateToday.value = dateToday.toLocaleString("ru", options);
+function fomatDate(date) {
+  var options = {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+  };
+
+  formattedDate = date.toLocaleString("ru", options);
+  return formattedDate;
+}
+
+calculatorDateToday.value = fomatDate(dateToday);
 
 // Подключение справочника
 
@@ -236,21 +243,6 @@ function cleanInput() {
   }
 }
 
-//правильный формат даты
-
-function getDates(date) {
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    if (day < 10) {
-        day = '0' + day;
-    }
-    if (month < 10) {
-        month = '0' + month
-    }
-    let year = date.getFullYear();
-    return date = year + "-" + month + "-" + day;
-}
-
 // Добавление грузов через шаблон
 
 let templateCargo = document.querySelector('#cargo-calc');
@@ -287,9 +279,7 @@ var priceCalculator = document.querySelector('.js-price');
 
 function sendToCalculator() {
 
-  //let responseCalculator;
   spinner.classList.remove('hidden');
-  //let currentForm = document.querySelector('#calculator-widget');
   var formData = $('#calculator-widget').serialize();
   $.ajax({
     'method': "POST",
@@ -305,14 +295,17 @@ function sendToCalculator() {
         console.log('ошибка!');
       } else {
         callCalendar(responseCalculator);
-        fieldDateDownload.value = responseCalculator.DeliverySchedule[0].Date_delivery;
-        fieldDateDelivery.innerText = responseCalculator.Date_delivery;
+        fieldDateDownload.value = fomatDate(responseCalculator.DeliverySchedule[0].Date_delivery);
+        fieldDateDelivery.innerText = fomatDate(responseCalculator.Date_delivery);
+        console.log(fieldDateDownload.value);
         messageCalculator.innerText = responseCalculator.Warning_Customer;
         priceCalculator.innerText = 1 * responseCalculator.Cost_Delivery + 1 * responseCalculator.Cost_OversizedCargo;
       }
     }
   });
 }
+
+// календарь
 
 function callCalendar(response) {
   let enabledDays = [];
@@ -335,12 +328,27 @@ function callCalendar(response) {
               }
           }
       },
-      onSelect: function (formattedDate) {
-          console.log(formattedDate);
-          myDatepicker.hide();
+      onSelect: function (selectedDate) {
+          console.log(selectedDate);
           sendToCalculator();
+          myDatepicker.hide();
       }
   });
+}
+
+//правильный формат даты
+
+function getDates(date) {
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  if (day < 10) {
+    day = '0' + day;
+  }
+  if (month < 10) {
+    month = '0' + month
+  }
+  let year = date.getFullYear();
+  return date = year + "-" + month + "-" + day;
 }
 
 // убрать груз
