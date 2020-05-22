@@ -4,6 +4,8 @@ var locationArr = arr;
 var cargosBox = document.querySelector('.cargos-box');
 var calculatorDateToday = document.querySelector('.calculator__date-download');
 var dateToday = new Date();
+var messageWarning = 'Проверьте город отправления/доставки!';
+var errorBox = document.querySelector('.js-errorBox');
 
 // Дата строкой 05.05.2020
 
@@ -274,7 +276,7 @@ var formCities = form.querySelector('.form__cities');
 var spinner = document.querySelector('.spinner');
 var fieldDateDownload = form.querySelector('.calculator__date-download');
 var fieldDateDelivery = form.querySelector('.calculator__date-delivery');
-var messageCalculator = document.querySelector('.price-box__message');
+var messageCalculator = document.querySelector('.js-message');
 var priceCalculator = document.querySelector('.js-price');
 
 function sendToCalculator() {
@@ -292,13 +294,24 @@ function sendToCalculator() {
       console.log(result);
       let responseCalculator = result.responseJSON;
       if (responseCalculator.ErrorMesage) {
-        console.log('ошибка!');
+        errorBox.innerText = responseCalculator.ErrorMesage;
+        errorBox.classList.remove('hidden');
       } else {
+        if (!(errorBox.classList.contains('hidden'))) {
+          errorBox.classList.add('hidden');
+        }
         callCalendar(responseCalculator);
-        fieldDateDownload.value = fomatDate(responseCalculator.DeliverySchedule[0].Date_delivery);
-        fieldDateDelivery.innerText = fomatDate(responseCalculator.Date_delivery);
+        let responseDateDownload = new Date(Date.parse(responseCalculator.Date_download));
+        let responseDateDelivery = new Date(Date.parse(responseCalculator.Date_delivery));
+        fieldDateDownload.value = fomatDate(responseDateDownload);
+        fieldDateDelivery.innerText = fomatDate(responseDateDelivery);
         console.log(fieldDateDownload.value);
-        messageCalculator.innerText = responseCalculator.Warning_Customer;
+        let message = responseCalculator.Warning_Customer;
+        if (typeof message == "object") {
+          messageCalculator.innerText = '';
+        } else {
+          messageCalculator.innerText = responseCalculator.Warning_Customer;
+        }
         priceCalculator.innerText = 1 * responseCalculator.Cost_Delivery + 1 * responseCalculator.Cost_OversizedCargo;
       }
     }
@@ -329,8 +342,9 @@ function callCalendar(response) {
           }
       },
       onSelect: function (selectedDate) {
-          console.log(selectedDate);
-          sendToCalculator();
+          console.log(fomatDate(selectedDate));
+          setTimeout(sendToCalculator, 500);
+          //sendToCalculator();
           myDatepicker.hide();
       }
   });
@@ -350,6 +364,37 @@ function getDates(date) {
   let year = date.getFullYear();
   return date = year + "-" + month + "-" + day;
 }
+
+// Проверяем города по классификатору
+
+function searchСity() {
+  let cityFrom = formCities.querySelector('#cityFrom');
+  let cityTo = formCities.querySelector('#cityTo');
+  let cityFromKey = false;
+  let cityToKey = false;
+  if ((cityFrom.value)&&(cityTo.value)) {
+    for (var i = 0; i < locationArr.length; i++) {
+      if (cityFrom.value === locationArr[i]) {
+        cityFromKey = true;
+        console.log(locationArr[i]);
+      }
+      if (cityTo.value === locationArr[i]) {
+        cityToKey = true;
+        console.log(locationArr[i]);
+      }
+    }
+    if ((cityFromKey)&&(cityToKey)) {
+      if (!(errorBox.classList.contains('hidden'))) {
+        errorBox.classList.add('hidden');
+      }
+      sendToCalculator();
+    } else {
+      errorBox.innerText = 'Проверьте город отправления/доставки!'
+      errorBox.classList.remove('hidden');
+      console.log('Проверьте город отправления/доставки')
+    }
+  }
+};
 
 // убрать груз
 
@@ -395,39 +440,19 @@ cargosBox.addEventListener('click', function(evt) {
 
 cargosBox.addEventListener('input', function(evt) {
   evt.preventDefault();
-  let inputWeight = cargosBox.querySelector('.js-input-weight');
-  let cargoValue = cargosBox.querySelector('.js-cargo-value');
-  if ((inputWeight.value != 0)&&(cargoValue.value != 0)) {
-    setTimeout(sendToCalculator, 500);
+  let inputWeight = cargosBox.querySelectorAll('.js-input-weight');
+  let cargoValue = cargosBox.querySelectorAll('.js-cargo-value');
+  for (var i = 0; i < cargoValue.length; i++) {
+    if ((inputWeight[i].value != 0)&&(cargoValue[i].value != 0)) {
+      setTimeout(sendToCalculator, 500);
+    }
   }
 });
 
 formCities.addEventListener('change', function(evt) {
   evt.preventDefault();
-  let cityFrom = formCities.querySelector('#cityFrom');
-  let cityTo = formCities.querySelector('#cityTo');
-  function searchСity() {
-    let cityFromKey = false;
-    let cityToKey = false;
-    if ((cityFrom.value)&&(cityTo.value)) {
-      for (var i = 0; i < locationArr.length; i++) {
-        if (cityFrom.value === locationArr[i]) {
-          cityFromKey = true;
-          console.log(locationArr[0]);
-        }
-        if (cityTo.value === locationArr[i]) {
-          cityToKey = true;
-          console.log(locationArr[1]);
-        }
-      }
-      if ((cityFromKey)&&(cityToKey)) {
-        sendToCalculator();
-      }
-    }
-  };
   setTimeout(searchСity, 500);
 });
-
 
 form.addEventListener('click', function(evt) {
   let current = evt.target;

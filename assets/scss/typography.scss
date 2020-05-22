@@ -351,8 +351,7 @@ input[type=number] {
   font-size: 15px;
   input[type="checkbox"]:checked,
   input[type="checkbox"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
+    display: none;
   }
 
   input[type="checkbox"]:checked + span,

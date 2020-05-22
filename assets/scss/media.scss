@@ -415,17 +415,13 @@
   .wrapper {
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 0;
     z-index: 6;
-    min-width: 1280px;
-    transform: translate(-50%, -50%);
+    width: 100%;
   }
 
   .calculator {
-    position: absolute;
-    top: 0;
-    /*left: calc(100vw/2 - 60px);*/
-    right: 14%;
+    position: relative;
     max-width: 520px;
     border-radius: 0 0 20px 20px;
   }

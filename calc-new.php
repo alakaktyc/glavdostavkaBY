@@ -21,8 +21,9 @@ $width = $_POST["width"];
 $height = $_POST["height"];
 $customerDelivery = htmlspecialchars($_POST["Customer_delivery"]);
 $date = $_POST["Date_download"];
+
 if ($date) {
-  $dateDownload = $date;
+  $dateDownload = date("Y-m-d", strtotime($date));
 } else {
   $dateDownload = date("Y-m-d");
 }
@@ -50,7 +51,7 @@ if ($customerDelivery) {
 $xml = '<PACKAGE xmlns="http://www.sample-package.org" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">';
 $xml .= '<Departure>'.$departureCode.'</Departure>';
 $xml .= '<Destination>'.$destinationCode.'</Destination>';
-$xml .= '<Dimensions_one_place>false</Dimensions_one_place>';
+$xml .= '<Dimensions_one_place>true</Dimensions_one_place>';
 $xml .= '<Oversized>false</Oversized>';
 
 $xml .= '<Customer_delivery>'.$customerDelivery.'</Customer_delivery>';
@@ -110,16 +111,12 @@ if (($departureKey)&&($destinationKey)) {
   }
 
   echo $json;
+
+  //echo $dateDownload;
 } else {
   echo json_encode([
-    'ErrorMesage' => [
-      'не правильно указан город отправления или доставки!',
-      'тестовое сообщение'
-      ],
-    'WarningMessage' => [
-      'тестовое сообщение',
-      'тестовое сообщение'
-    ]
-]);
+    'ErrorMesage' =>
+      'Не правильно указан город отправления или доставки!'
+    ]);
 
 }

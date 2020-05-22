@@ -113,12 +113,26 @@
   &__btn.btn {
     margin: 15px 0;
   }
+  &__message-box {
+    margin: 0.8em auto;
+    min-height: 60px;
+    text-align: center;
+    font-size: 1em;
+    color: #ffffff;
+  }
+  &__error-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 3;
+  }
 }
 
 .price-box {
   width: 100%;
   min-height: 60px;
-  margin-bottom: 64px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -132,10 +146,21 @@
     text-align: center;
     text-transform: uppercase;
   }
-  &__message {
-    font-size: 12px;
-    display: none;
-  }
+}
+
+.error-box {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 2em;
+  color: $basic-color-pink;
+  background: $basic-color-gray;
+  box-shadow: 2px 2px 5px $basic-color-pink;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .form {
@@ -267,21 +292,23 @@
     }
   }
 
-  &-main__checkbox.checkbox {
-    margin: 13px 0 0;
-    font-size: 15px;
-    line-height: 20px;
-    color: $basic-color-gray;
-    input[type="checkbox"]:checked + span:before,
-    input[type="checkbox"]:not(:checked) + span:before {
-      border: 2px solid #fff;
-      background-color: transparent;
-    }
+  &-main {
+    &__checkbox {
+      margin: 1.5em 0 0;
+      font-size: 15px;
+      line-height: 20px;
+      color: $basic-color-gray;
+      input[type="checkbox"]:checked + span:before,
+      input[type="checkbox"]:not(:checked) + span:before {
+        border: 2px solid #fff;
+        background-color: transparent;
+      }
 
-    input[type="checkbox"]:checked + span:after,
-    input[type="checkbox"]:not(:checked) + span:after {
-      border-left: 3px solid #fff;
-      border-bottom: 3px solid #fff;
+      input[type="checkbox"]:checked + span:after,
+      input[type="checkbox"]:not(:checked) + span:after {
+        border-left: 3px solid #fff;
+        border-bottom: 3px solid #fff;
+      }
     }
   }
 
