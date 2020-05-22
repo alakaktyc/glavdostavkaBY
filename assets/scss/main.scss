@@ -128,6 +128,13 @@
     margin: auto;
     z-index: 3;
   }
+  &__date-delivery {
+    display: block;
+    padding: 7px;
+    border: 2px solid #ffffff;
+    border-radius:5px;
+    margin-top: 1em;
+  }
 }
 
 .price-box {
@@ -166,7 +173,8 @@
 .form {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   &__inner {
     width: calc(100% - 25px);
   }
@@ -376,24 +384,40 @@
 
 .date-box {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   padding-bottom: 30px;
   color: $basic-color-gray;
   .form__input {
     width: 150px;
   }
   .form__label {
+    position: relative;
     flex-direction: row;
     align-items: center;
+    &::before {
+      position: absolute;
+      top: 12px;
+      left: 130px;
+      z-index: 55;
+      display: block;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-top-color: #253746;
+      border-bottom: 0;
+      content: '';
+    }
   }
   &__item {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     margin-top: 25px;
   }
   &__text {
+    display: block;
     margin-left: 3px;
     font-size: 15px;
     line-height: 20px;
@@ -408,7 +432,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  border-bottom: 4px solid $basic-color-gray;
+  align-items: baseline;
+}
+
+.form {
+  hr{
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin-top: 1em;
+    background-color: #ffffff;
+  }
 }
 
 .btn-reverse {

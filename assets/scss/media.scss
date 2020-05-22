@@ -555,7 +555,15 @@
 
   .calculator {
     right: 6%;
+    .date-box {
+      width: 57%;
+    }
+    .btn-box {
+      width: 42%;
+    }
   }
+
+
 
   .form {
     &__item {
@@ -635,6 +643,15 @@
   .flex-wrap {
     justify-content: space-between;
   }
+
+  .container {
+    &_calculator {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+
 
   /*--------------------------------------------------------------
   # Header 1280px
@@ -743,11 +760,6 @@
     &__parameters {
       width: 85%;
     }
-  }
-
-  .controls-cargo {
-    top: 10px;
-    right: -18%;
   }
 
   .controls-cargo__description {
