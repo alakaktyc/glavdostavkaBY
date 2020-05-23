@@ -254,12 +254,6 @@
       margin-left: 26px;
       background: #FFF;
     }
-    /*      &::-webkit-calendar-picker-indicator {
-            color: transparent;
-            opacity: 1;
-            background: none;
-            background-size: contain;
-          }*/
   }
   &__inputs-row {
     display: flex;
@@ -320,7 +314,7 @@
     }
   }
 
-  /*--------------------------------------------------------------
+/*--------------------------------------------------------------
 # big calculator
 --------------------------------------------------------------*/
 
@@ -423,6 +417,50 @@
     line-height: 20px;
     &.date-box__text--bold {
       font-weight: bold;
+    }
+  }
+}
+
+/*------------------custom-datepicker-------------------------*/
+
+.datepicker {
+  border: 0px;
+  border-radius: 5px;
+  overflow: hidden;
+  &--nav {
+    color: $basic-color-gray;
+    background-color: $basic-color-pink;
+    &-title:hover {
+      color: #253746;
+    }
+  }
+  &--content {
+    background-color: #ffffff;
+  }
+  &--day {
+    &-name {
+      color: #253746;
+      &.-weekend- {
+        color: $basic-color-pink;
+      }
+    }
+
+  }
+  &--cell {
+    &.-current-,
+    &:hover {
+      color: $basic-color-pink;
+      background-color: #f7f7ff;
+      border: 1px solid $basic-color-pink;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    &.-selected- {
+      color: #f7f7ff;
+      background-color: $basic-color-pink;
+    }
+    &-day-weekend {
+      color: $basic-color-pink;
     }
   }
 }
