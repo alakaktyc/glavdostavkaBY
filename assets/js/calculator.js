@@ -311,8 +311,13 @@ function sendToCalculator() {
           messageCalculator.innerText = '';
         } else {
           messageCalculator.innerText = responseCalculator.Warning_Customer;
-        }
-        priceCalculator.innerText = 1 * responseCalculator.Cost_Delivery + 1 * responseCalculator.Cost_OversizedCargo;
+        };
+        if ((responseCalculator.Volume > 0)&&(responseCalculator.Weight > 0)) {
+          priceCalculator.innerText = 1 * responseCalculator.Cost_Delivery + 1 * responseCalculator.Cost_OversizedCargo;
+        } else {
+          priceCalculator.innerText = 0;
+        };
+        console.log(responseCalculator.Volume);
       }
     }
   });
